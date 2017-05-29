@@ -25,9 +25,16 @@ class FirstLaunchViewController: UIViewController {
     var pageState = "First"
     var delegate:ContainerDelegateProtocol?
     
+    override func viewWillAppear(_ animated: Bool) {
+        if UserDefaults.standard.bool(forKey: "launchedBefore") == true {
+        }else{
+            self.navigationController?.setNavigationBarHidden(true, animated: true)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         checkingStates()
         
         //Creating the swiping option

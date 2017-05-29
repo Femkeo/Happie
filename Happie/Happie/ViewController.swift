@@ -22,10 +22,6 @@ class ViewController: UIViewController, ContainerDelegateProtocol {
     
     override func viewWillAppear(_ animated: Bool) {
         
-        //this makes the navigationcontroller hide on this page.
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
-
-        
         //if the app has run before it will hide ScreenViewController (see bottom of page)
         if UserDefaults.standard.bool(forKey: "launchedBefore") == true {
             if tutorialView != nil{
@@ -53,6 +49,8 @@ class ViewController: UIViewController, ContainerDelegateProtocol {
         avatarBodyLabel.isHidden = false
         getStartedButton.isHidden = false
         resetLaunchButton.isHidden = false
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+
     }
     
     func hideStuff(buttonPressed: Bool){

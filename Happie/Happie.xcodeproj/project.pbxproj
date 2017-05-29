@@ -13,6 +13,9 @@
 		ECE643F01EDC4BB700E7E58D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECE643EF1EDC4BB700E7E58D /* Assets.xcassets */; };
 		ECE643F31EDC4BB700E7E58D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECE643F11EDC4BB700E7E58D /* LaunchScreen.storyboard */; };
 		ECE643FB1EDC51BB00E7E58D /* FirstLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE643FA1EDC51BB00E7E58D /* FirstLaunchViewController.swift */; };
+		ECE644011EDC86ED00E7E58D /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE644001EDC86ED00E7E58D /* CategoriesViewController.swift */; };
+		ECE644031EDC872F00E7E58D /* EditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE644021EDC872F00E7E58D /* EditingViewController.swift */; };
+		ECE644051EDC884700E7E58D /* GameSelectingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE644041EDC884700E7E58D /* GameSelectingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		ECE643F21EDC4BB700E7E58D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ECE643F41EDC4BB700E7E58D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECE643FA1EDC51BB00E7E58D /* FirstLaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstLaunchViewController.swift; sourceTree = "<group>"; };
+		ECE644001EDC86ED00E7E58D /* CategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		ECE644021EDC872F00E7E58D /* EditingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditingViewController.swift; sourceTree = "<group>"; };
+		ECE644041EDC884700E7E58D /* GameSelectingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSelectingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,50 @@
 		ECE643E71EDC4BB700E7E58D /* Happie */ = {
 			isa = PBXGroup;
 			children = (
-				ECE643E81EDC4BB700E7E58D /* AppDelegate.swift */,
-				ECE643EA1EDC4BB700E7E58D /* ViewController.swift */,
-				ECE643EC1EDC4BB700E7E58D /* Main.storyboard */,
-				ECE643FA1EDC51BB00E7E58D /* FirstLaunchViewController.swift */,
+				ECE643FF1EDC86A700E7E58D /* SupportingFiles */,
+				ECE643FE1EDC868F00E7E58D /* Views */,
+				ECE643FC1EDC866A00E7E58D /* Controller */,
+				ECE643FD1EDC867300E7E58D /* Model */,
 				ECE643EF1EDC4BB700E7E58D /* Assets.xcassets */,
 				ECE643F11EDC4BB700E7E58D /* LaunchScreen.storyboard */,
 				ECE643F41EDC4BB700E7E58D /* Info.plist */,
 			);
 			path = Happie;
+			sourceTree = "<group>";
+		};
+		ECE643FC1EDC866A00E7E58D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				ECE643EA1EDC4BB700E7E58D /* ViewController.swift */,
+				ECE643FA1EDC51BB00E7E58D /* FirstLaunchViewController.swift */,
+				ECE644021EDC872F00E7E58D /* EditingViewController.swift */,
+				ECE644001EDC86ED00E7E58D /* CategoriesViewController.swift */,
+				ECE644041EDC884700E7E58D /* GameSelectingViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		ECE643FD1EDC867300E7E58D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		ECE643FE1EDC868F00E7E58D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ECE643EC1EDC4BB700E7E58D /* Main.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		ECE643FF1EDC86A700E7E58D /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				ECE643E81EDC4BB700E7E58D /* AppDelegate.swift */,
+			);
+			name = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +183,9 @@
 			files = (
 				ECE643EB1EDC4BB700E7E58D /* ViewController.swift in Sources */,
 				ECE643FB1EDC51BB00E7E58D /* FirstLaunchViewController.swift in Sources */,
+				ECE644011EDC86ED00E7E58D /* CategoriesViewController.swift in Sources */,
+				ECE644051EDC884700E7E58D /* GameSelectingViewController.swift in Sources */,
+				ECE644031EDC872F00E7E58D /* EditingViewController.swift in Sources */,
 				ECE643E91EDC4BB700E7E58D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
