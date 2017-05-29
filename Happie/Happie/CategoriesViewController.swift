@@ -22,7 +22,6 @@ class CategoriesViewController: UIViewController {
 
     
     @IBAction func CategorySelectionButtonAction(_ sender: UIButton) {
-    
         rememberingButtonTitle = sender.currentTitle!
         performSegue(withIdentifier: "ToShowingCategory", sender: self)
     }
