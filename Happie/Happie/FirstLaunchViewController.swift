@@ -108,7 +108,7 @@ class FirstLaunchViewController: UIViewController {
             //everything about the button
             launchButton.isHidden = false
             launchButton.setTitle("Ik snap het!", for: .normal)
-            launchButton.layer.cornerRadius = 15.0
+            launchButton.layer.cornerRadius = 20.0
             launchButton.layer.borderWidth = 1.5
             launchButton.layer.borderColor = UIColor.black.cgColor
             //end
