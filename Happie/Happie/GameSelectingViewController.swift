@@ -15,12 +15,13 @@ class GameSelectingViewController: UIViewController {
     @IBOutlet var secondGameButtons: [UIButton]!
     @IBOutlet var thirdGameButtons: [UIButton]!
     @IBOutlet var allButtons: [UIButton]!
+    @IBOutlet var allLabels: [UILabel]!
     
     
     @IBOutlet var allImages: [UIImageView]!
     
     
-    var categoryOne = ["Game1.0", "Game1.1", "Game1.2", "Game2.0", "Game2.1", "Game2.2", "Game3.0", "Game3.1", "Game3.2"]
+    var categoryOne = ["Raad de tekening - makkelijk", "Raad de tekening - ", "Game1.2", "Game2.0", "Game2.1", "Game2.2", "Game3.0", "Game3.1", "Game3.2"]
     var categoryTwo = ["Game4.0", "Game4.1", "Game4.2", "Game5.0", "Game5.1", "Game5.2", "Game6.0", "Game6.1", "Game6.2"]
     var categoryThree = ["Game7.0", "Game7.1", "Game7.2", "Game8.0", "Game8.1", "Game8.2", "Game9.0", "Game9.1", "Game9.2"]
     
