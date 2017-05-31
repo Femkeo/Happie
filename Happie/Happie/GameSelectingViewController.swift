@@ -16,19 +16,21 @@ class GameSelectingViewController: UIViewController {
     @IBOutlet var thirdGameButtons: [UIButton]!
     @IBOutlet var allButtons: [UIButton]!
     @IBOutlet var allLabels: [UILabel]!
-    
-    
+    @IBOutlet var allLevelViews: [UIView]!
     @IBOutlet var allImages: [UIImageView]!
     
     
-    var categoryOne = ["Raad de tekening - makkelijk", "Raad de tekening - ", "Game1.2", "Game2.0", "Game2.1", "Game2.2", "Game3.0", "Game3.1", "Game3.2"]
+    var categoryOne = ["Game 1.0", "Game 1.1", "Game1.2", "Game2.0", "Game2.1", "Game2.2", "Game3.0", "Game3.1", "Game3.2"]
     var categoryTwo = ["Game4.0", "Game4.1", "Game4.2", "Game5.0", "Game5.1", "Game5.2", "Game6.0", "Game6.1", "Game6.2"]
     var categoryThree = ["Game7.0", "Game7.1", "Game7.2", "Game8.0", "Game8.1", "Game8.2", "Game9.0", "Game9.1", "Game9.2"]
+    
+    var labelsOne = ["Raad de Tekening", "Wat is mijn droom?", "Foto-challenge"]
     
     var imagesOne = ["drawingGuessEasy","drawingGuessMedium","drawingGuessHard","dreamGuessEasy","dreamGuessMedium","dreamGuessHard","fotoChallengeEasy","fotoChallengeMedium","fotoChallengeHard"]
 
     var number = 0
     var imageNumber = 0
+    var labelNumber = 0
     var PreviousButtonTitle = ""
     
     
@@ -36,6 +38,19 @@ class GameSelectingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         gettingCorrectInfo()
+        
+        for levelView in allLevelViews{
+            levelView.layer.cornerRadius = 8.0
+            levelView.backgroundColor = UIColor(red: 253/255, green: 252/255, blue: 248/255, alpha: 1)
+            levelView.layer.borderWidth = 1
+            levelView.layer.borderColor = UIColor.black.cgColor
+        }
+        
+        for label in allLabels{
+            label.layer.borderWidth = 1
+            label.layer.borderColor = UIColor.black.cgColor
+        }
+        
     }
     
     func gettingCorrectInfo(){
@@ -44,6 +59,12 @@ class GameSelectingViewController: UIViewController {
                 allButtons[button].setTitle(categoryOne[number], for: .normal)
                 number += 1
             }
+            
+            for label in 0..<allLabels.count{
+                allLabels[label].text = "\(labelsOne[labelNumber])"
+                labelNumber += 1
+            }
+            
             for image in 0..<allImages.count{
                 allImages[image].image = UIImage(named: imagesOne[imageNumber])
                 imageNumber += 1
