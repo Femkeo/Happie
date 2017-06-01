@@ -42,14 +42,18 @@ class GameSelectingViewController: UIViewController {
         for levelView in allLevelViews{
             levelView.layer.cornerRadius = 8.0
             levelView.backgroundColor = UIColor(red: 253/255, green: 252/255, blue: 248/255, alpha: 1)
-            levelView.layer.borderWidth = 1
-            levelView.layer.borderColor = UIColor.black.cgColor
+
         }
         
-        for label in allLabels{
-            label.layer.borderWidth = 1
-            label.layer.borderColor = UIColor.black.cgColor
-        }
+//        for label in allLabels{
+//            label.layer.borderWidth = 2
+//            label.layer.borderColor = UIColor.black.cgColor
+//        }
+        
+//        for image in allImages{
+//            image.contentMode = UIViewContentMode.scaleAspectFit;
+//        }
+        
         
     }
     
