@@ -12,10 +12,23 @@ class ViewController: UIViewController, ContainerDelegateProtocol {
     
     
     @IBOutlet weak var dreamNameLabel: UILabel!
-    @IBOutlet weak var avatarBodyLabel: UIImageView!
+    
+    
+    @IBOutlet weak var skinImage: UIImageView!
+    @IBOutlet weak var hairImage: UIImageView!
+    @IBOutlet weak var clothesImage: UIImageView!
+    
     @IBOutlet weak var getStartedButton: UIButton!
     @IBOutlet weak var tutorialView: UIView!
     @IBOutlet weak var resetLaunchButton: UIButton!
+    
+    var first: Bool?
+    var defaultAvatar = [
+        "hair" : "Hair1",
+        "skin" : "Skin1",
+        "clothes" : "Clothes1",
+        "dream" : "Vul hier je droom in"
+    ]
     
     //this checks if the app has run before. If not, it shows a little tutorial view (ScreenViewController)
     let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
@@ -28,34 +41,55 @@ class ViewController: UIViewController, ContainerDelegateProtocol {
                 tutorialView.isHidden = true
             }
         }
+        
+        if UserDefaults.standard.dictionary(forKey: "SettingsDict")?["hair"] == nil{
+            UserDefaults.standard.set(defaultAvatar, forKey: "SettingsDict")
+        }
+        
+        hairImage.image = UIImage(named: UserDefaults.standard.dictionary(forKey: "SettingsDict")?["hair"] as? String ?? String())
+        skinImage.image = UIImage(named: UserDefaults.standard.dictionary(forKey: "SettingsDict")?["skin"] as? String ?? String())
+        clothesImage.image = UIImage(named: UserDefaults.standard.dictionary(forKey: "SettingsDict")?["clothes"] as? String ?? String())
+        dreamNameLabel.text = UserDefaults.standard.dictionary(forKey: "SettingsDict")?["dream"] as? String ?? String()
     }//end viewWillAppear
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         if UserDefaults.standard.bool(forKey: "launchedBefore") == true {
         }else{
             dreamNameLabel.isHidden = true
-            avatarBodyLabel.isHidden = true
+            hairImage.isHidden = true
+            skinImage.isHidden = true
+            clothesImage.isHidden = true
             getStartedButton.isHidden = true
             resetLaunchButton.isHidden = true
-            
         }
-
     }
+    
+
+    
 
     func close() {
         tutorialView.isHidden = true
         dreamNameLabel.isHidden = false
-        avatarBodyLabel.isHidden = false
+        hairImage.isHidden = false
+        skinImage.isHidden = false
+        clothesImage.isHidden = false
         getStartedButton.isHidden = false
         resetLaunchButton.isHidden = false
         self.navigationController?.setNavigationBarHidden(false, animated: true)
 
     }
     
+    
+    
     func hideStuff(buttonPressed: Bool){
         self.tutorialView.isHidden = true
     }
+    
+    
+    
     
     //Sending info to different ViewControllers
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -64,6 +98,8 @@ class ViewController: UIViewController, ContainerDelegateProtocol {
             (segue.destination as! FirstLaunchViewController).delegate = self;
         }
     }
+    
+    
     
     //by uncommenting this, you can link this to a button to make the app think it hasnt been launched before
         @IBAction func Testbutton(_ sender: Any) {
