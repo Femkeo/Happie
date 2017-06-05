@@ -17,60 +17,60 @@ class GameData{
         
         Games = [
             "Categories" : [
-                "DroomHet" : [
-                    "RaadMijnDroom" : [
+                "Droom het" : [
+                    "Raad mijn droom" : [
                         "counter": 0,
                         "easy" : true,
                         "medium" : false,
                         "hard" : false
                     ],
-                    "FotoChallenge" : [
+                    "Foto challenge" : [
                         "counter": 0,
                         "easy" : true,
                         "medium" : false,
                         "hard" : false
                     ],
-                    "RaadDeTekening" : [
+                    "Raad de tekening" : [
                         "counter": 0,
                         "easy" : true,
                         "medium" : false,
                         "hard" : false
                     ]
                 ],
-                "SpeelHet" : [
-                    "Dilemmas" : [
+                "Speel het" : [
+                    "Dilemma's" : [
                         "counter": 0,
                         "easy" : true,
                         "medium" : false,
                         "hard" : false
                     ],
-                    "IkHebEenDroomEnIkNeemMee" : [
+                    "Ik heb een droom en ik neem mee" : [
                         "counter": 0,
                         "easy" : true,
                         "medium" : false,
                         "hard" : false
                     ],
-                    "QuickQuiz" : [
+                    "Quick quiz" : [
                         "counter": 0,
                         "easy" : true,
                         "medium" : false,
                         "hard" : false
                     ]
                 ],
-                "DoeHet" : [
-                    "WeljaGeenNee" : [
+                "Doe het" : [
+                    "Welja, geen nee" : [
                         "counter": 0,
                         "easy" : true,
                         "medium" : false,
                         "hard" : false
                     ],
-                    "KwaliteitenQuiz" : [
+                    "Kwaliteiten quiz" : [
                         "counter": 0,
                         "easy" : true,
                         "medium" : false,
                         "hard" : false
                     ],
-                    "WatIsMijnKarakter" : [
+                    "Wat is mijn karakter" : [
                         "counter": 0,
                         "easy" : true,
                         "medium" : false,
