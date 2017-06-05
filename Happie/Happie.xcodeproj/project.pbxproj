@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC7E671A1EE5815D00643E43 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7E67191EE5815C00643E43 /* GameData.swift */; };
 		ECE643E91EDC4BB700E7E58D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE643E81EDC4BB700E7E58D /* AppDelegate.swift */; };
 		ECE643EB1EDC4BB700E7E58D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE643EA1EDC4BB700E7E58D /* ViewController.swift */; };
 		ECE643EE1EDC4BB700E7E58D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECE643EC1EDC4BB700E7E58D /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EC7E67191EE5815C00643E43 /* GameData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
 		ECE643E51EDC4BB700E7E58D /* Happie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Happie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECE643E81EDC4BB700E7E58D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECE643EA1EDC4BB700E7E58D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				ECE643EA1EDC4BB700E7E58D /* ViewController.swift */,
+				EC7E67191EE5815C00643E43 /* GameData.swift */,
 				ECE643FA1EDC51BB00E7E58D /* FirstLaunchViewController.swift */,
 				ECE644021EDC872F00E7E58D /* EditingViewController.swift */,
 				ECE644001EDC86ED00E7E58D /* CategoriesViewController.swift */,
@@ -185,6 +188,7 @@
 				ECE643FB1EDC51BB00E7E58D /* FirstLaunchViewController.swift in Sources */,
 				ECE644011EDC86ED00E7E58D /* CategoriesViewController.swift in Sources */,
 				ECE644051EDC884700E7E58D /* GameSelectingViewController.swift in Sources */,
+				EC7E671A1EE5815D00643E43 /* GameData.swift in Sources */,
 				ECE644031EDC872F00E7E58D /* EditingViewController.swift in Sources */,
 				ECE643E91EDC4BB700E7E58D /* AppDelegate.swift in Sources */,
 			);
@@ -352,6 +356,7 @@
 				ECE643F91EDC4BB700E7E58D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
