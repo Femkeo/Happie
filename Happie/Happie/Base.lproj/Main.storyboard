@@ -60,7 +60,6 @@
                                     <action selector="Testbutton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="95J-fU-9cx"/>
                                 </connections>
                             </button>
-
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kti-As-ob6">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
@@ -859,8 +858,13 @@
                 <viewController id="exr-Jq-R72" customClass="FirstLaunchViewController" customModule="Happie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <viewControllerLayoutGuide type="top" id="ZsO-CI-ACn"/>
                         <viewControllerLayoutGuide type="bottom" id="Fw4-5j-U4s"/>
+=======
+                        <viewControllerLayoutGuide type="top" id="Fdc-ce-ogQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="DXN-du-KCa"/>
+>>>>>>> feature-6/design
 =======
                         <viewControllerLayoutGuide type="top" id="Fdc-ce-ogQ"/>
                         <viewControllerLayoutGuide type="bottom" id="DXN-du-KCa"/>
@@ -949,15 +953,21 @@
         </scene>
     </scenes>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <inferredMetricsTieBreakers>
         <segue reference="mRR-R1-8x9"/>
         <segue reference="Nws-Nh-w07"/>
     </inferredMetricsTieBreakers>
 =======
+=======
+>>>>>>> feature-6/design
     <resources>
         <image name="backgroundThree" width="586" height="147"/>
         <image name="droomHet" width="165" height="123"/>
         <image name="speelHet" width="149" height="130"/>
     </resources>
+<<<<<<< HEAD
+>>>>>>> feature-6/design
+=======
 >>>>>>> feature-6/design
 </document>
