@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Dilemmas</key>
+	<dict>
+		<key>NewItem9</key>
+		<array>
+			<string>Je kunt teleporteren maar alleen als je naakt bent</string>
+			<string>Je kunt gedachten lezen maar alleen als je je oor op diegene zijn voorhoofd legt</string>
+		</array>
+		<key>NewItem8</key>
+		<array>
+			<string>Nooit meer een foto maken</string>
+			<string>Iedere foto die je maakt wordt op Instagram geplaatst</string>
+		</array>
+		<key>NewItem7</key>
+		<array>
+			<string>Je moet voor de rest van je leven je haar wassen met mayonaise</string>
+			<string>Je moet de rest van je leven kleding en schoenen dragen die twee maten te klein is</string>
+		</array>
+		<key>NewItem6</key>
+		<array>
+			<string>Al je dromen komen uit maar alleen op het moment dat het niet meer een droom is</string>
+			<string>Je wint 5 miljoen euro op het moment dat je alles al hebt wat je wil</string>
+		</array>
+		<key>NewItem5</key>
+		<array>
+			<string>De rest van je leven iedereen aanspreken met Hare Majesteit</string>
+			<string>De rest van je leven op blote voeten lopen</string>
+		</array>
+		<key>NewItem4</key>
+		<array>
+			<string>Je mag alleen nog maar cola drinken</string>
+			<string>Je ontbijt altijd met een patat speciaal</string>
+		</array>
+		<key>NewItem3</key>
+		<array>
+			<string>Je begroet iedereen door de Mario-tune te zingen</string>
+			<string>Je geeft iedere persoon die je tegenkomt een high five</string>
+		</array>
+		<key>NewItem2</key>
+		<array>
+			<string>Armen in plaats van benen</string>
+			<string>Benen in plaats van armen</string>
+		</array>
+		<key>NewItem1</key>
+		<array>
+			<string>De rest van je leven achteruitlopen</string>
+			<string>De rest van je leven hinkelen</string>
+		</array>
+		<key>NewItem0</key>
+		<array>
+			<string>Nooit meer douchen</string>
+			<string>Nooit meer je tandenpoetsen</string>
+		</array>
+	</dict>
+	<key>QuestionsListed</key>
+	<array>
+		<string>Ik ben een doorzetter</string>
+		<string>Ik ga uitdagingen niet snel uit de weg</string>
+		<string>Ik leg graag nieuwe contacten</string>
+		<string>Ik kan anderen motiveren</string>
+		<string>Ik kan goed plannen</string>
+		<string>Ik ben creatief</string>
+		<string>Ik ben praktisch</string>
+		<string>Ik kan goed improviseren</string>
+		<string>Ik ben niet bang om hard te werken</string>
+		<string>Ik kan mijn droom bereiken!</string>
+	</array>
+	<key>QuickQuestions</key>
+	<array>
+		<string>Lach je altijd op foto’s?</string>
+		<string>Is het op dit moment mooi weer?</string>
+		<string>Doe je wel eens aan wildplassen?</string>
+		<string>Heb je wel eens zo hard gelachen dat je moest huilen?</string>
+		<string>Zing je onder de douche?</string>
+		<string>Ben je goed in koken?</string>
+		<string>Hou je van achtbanen?</string>
+		<string>Zou je wel eens willen parachutespringen?</string>
+		<string>Heb je een talent?</string>
+		<string>Kun jij je droom realiseren?</string>
+	</array>
+	<key>Dreams</key>
+	<array>
+		<string>Vrijwilliger worden bij de brandweer</string>
+		<string>Een succesvolle cariere hebben</string>
+		<string>Een groot gezin hebben</string>
+		<string>Een vreemde taal leren</string>
+		<string>Een wereldreis maken</string>
+		<string>Winnen bij een groot sportevenement</string>
+		<string>De loterij winnen</string>
+		<string>Een oplossing vinden tegen hongersnood</string>
+		<string>Een geneesmiddel voor een ziekte ontdekken</string>
+		<string>Een planeet ontdekken</string>
+	</array>
+	<key>Characteristics</key>
+	<array>
+		<string>Doortastend</string>
+		<string>Sarcastisch</string>
+		<string>Nieuwsgierig</string>
+		<string>Ambitieus</string>
+		<string>Flexibel</string>
+		<string>Hard werkend</string>
+		<string>Perfectionistisch</string>
+		<string>Precies</string>
+		<string>Vriendelijk</string>
+		<string>Sociaal</string>
+	</array>
+</dict>
+</plist>
