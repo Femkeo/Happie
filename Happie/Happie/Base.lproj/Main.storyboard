@@ -23,20 +23,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kti-As-ob6">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qkx-5o-ibt">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                        <connections>
-                                            <segue destination="exr-Jq-R72" kind="embed" identifier="FirstLaunchContainer" id="ZYv-bi-hXF"/>
-                                        </connections>
-                                    </containerView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1bu-wR-uBX">
                                 <rect key="frame" x="67" y="130" width="240" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -60,6 +46,18 @@
                                     <action selector="Testbutton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="95J-fU-9cx"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xNt-vj-Sai">
+                                <rect key="frame" x="103" y="200" width="165" height="235"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0oM-U4-Ej5">
+                                <rect key="frame" x="103" y="200" width="165" height="235"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FiK-7s-B9C">
+                                <rect key="frame" x="103" y="200" width="165" height="235"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kti-As-ob6">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
@@ -857,18 +855,9 @@
             <objects>
                 <viewController id="exr-Jq-R72" customClass="FirstLaunchViewController" customModule="Happie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        <viewControllerLayoutGuide type="top" id="ZsO-CI-ACn"/>
-                        <viewControllerLayoutGuide type="bottom" id="Fw4-5j-U4s"/>
-=======
+
                         <viewControllerLayoutGuide type="top" id="Fdc-ce-ogQ"/>
                         <viewControllerLayoutGuide type="bottom" id="DXN-du-KCa"/>
->>>>>>> feature-6/design
-=======
-                        <viewControllerLayoutGuide type="top" id="Fdc-ce-ogQ"/>
-                        <viewControllerLayoutGuide type="bottom" id="DXN-du-KCa"/>
->>>>>>> feature-6/design
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Qnc-SX-j3j">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -952,22 +941,13 @@
             <point key="canvasLocation" x="1076" y="-555.47226386806597"/>
         </scene>
     </scenes>
-<<<<<<< HEAD
-<<<<<<< HEAD
     <inferredMetricsTieBreakers>
         <segue reference="mRR-R1-8x9"/>
         <segue reference="Nws-Nh-w07"/>
     </inferredMetricsTieBreakers>
-=======
-=======
->>>>>>> feature-6/design
     <resources>
         <image name="backgroundThree" width="586" height="147"/>
         <image name="droomHet" width="165" height="123"/>
         <image name="speelHet" width="149" height="130"/>
     </resources>
-<<<<<<< HEAD
->>>>>>> feature-6/design
-=======
->>>>>>> feature-6/design
 </document>

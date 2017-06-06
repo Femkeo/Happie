@@ -62,9 +62,7 @@ class GameSelectingViewController: UIViewController {
             case "Doe het" : categorieArray = Array(categoryUserData["Doe het"]!.keys)
             fillingCurrentLabel()
             default: categorieArray = Array(categoryUserData["Droom het"]!.keys)
-
-            gettingCorrectInfo()
-        
+            
         for levelView in allLevelViews{
             levelView.layer.cornerRadius = 8.0
             levelView.backgroundColor = UIColor(red: 253/255, green: 252/255, blue: 248/255, alpha: 1)
