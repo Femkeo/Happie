@@ -403,21 +403,9 @@
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MQr-yv-dul">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hc7-Id-4YB">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="19"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
                                         <color key="backgroundColor" red="0.99215686274509807" green="0.9882352941176471" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="34a-Wh-sjw"/>
-                                            <constraint firstAttribute="trailing" secondItem="hc7-Id-4YB" secondAttribute="trailing" id="IsU-nt-pqY"/>
-                                            <constraint firstItem="hc7-Id-4YB" firstAttribute="leading" secondItem="MQr-yv-dul" secondAttribute="leading" id="Xi7-j8-h4B"/>
-                                            <constraint firstAttribute="bottom" secondItem="hc7-Id-4YB" secondAttribute="bottom" id="bw9-ew-8hM"/>
-                                            <constraint firstItem="hc7-Id-4YB" firstAttribute="top" secondItem="MQr-yv-dul" secondAttribute="top" id="zAJ-Mh-YM5"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FQ9-c6-Wub" userLabel="2.1">
@@ -706,7 +694,6 @@
                         <outletCollection property="thirdGameButtons" destination="c1P-QD-LoK" collectionClass="NSMutableArray" id="MeR-z3-eNb"/>
                         <outletCollection property="allImages" destination="Tdw-zN-UFW" collectionClass="NSMutableArray" id="k59-PI-PKC"/>
                         <outletCollection property="allLabels" destination="kA1-VH-xon" collectionClass="NSMutableArray" id="Idl-Dr-RHE"/>
-                        <outletCollection property="allLabels" destination="hc7-Id-4YB" collectionClass="NSMutableArray" id="Cul-q5-dAO"/>
                         <outletCollection property="allLabels" destination="zM7-kJ-bWc" collectionClass="NSMutableArray" id="d7S-EQ-cys"/>
                         <outletCollection property="allLevelViews" destination="roM-TF-2CZ" collectionClass="NSMutableArray" id="2zu-aD-HqA"/>
                         <outletCollection property="allLevelViews" destination="N00-dc-4uk" collectionClass="NSMutableArray" id="EBX-Tc-tCU"/>
