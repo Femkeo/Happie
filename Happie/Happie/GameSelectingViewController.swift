@@ -83,11 +83,8 @@ class GameSelectingViewController: UIViewController {
         
         switch category{
             case "Droom het" : categoryArray = Array(categoryUserData["Droom het"]!.keys)
-  
             case "Speel het" : categoryArray = Array(categoryUserData["Speel het"]!.keys)
-
             case "Doe het" : categoryArray = Array(categoryUserData["Doe het"]!.keys)
-      
             default: categoryArray = Array(categoryUserData["Droom het"]!.keys)
         }
         fillingCurrentLabel()
@@ -129,23 +126,23 @@ class GameSelectingViewController: UIViewController {
                 }
             }
         }
-    
-    
+
     
     // if the game is playable
     func gameStateIsTrue(i: Int){
         allButtons[i].setTitle(difficultyArray[difficultyNumber], for: .normal)
-        allButtons[i].setTitleColor(UIColor.green, for: .normal)
+        allButtons[i].setTitleColor(UIColor.clear, for: .normal)
         allButtons[i].isEnabled = true
+        allImages[i].alpha = 1.0
     }
     
     //if the game is not playable
     func gameStateIsFalse(i: Int){
         allButtons[i].setTitle(difficultyArray[difficultyNumber], for: .normal)
-        allButtons[i].setTitleColor(UIColor.gray, for: .normal)
+        allButtons[i].setTitleColor(UIColor.clear, for: .normal)
         allButtons[i].isEnabled = false
+        allImages[i].alpha = 0.1
     }
-    
     
     
     //using the info from the buttonfunction to activate the right segue
