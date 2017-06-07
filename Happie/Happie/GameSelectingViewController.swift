@@ -18,10 +18,6 @@ class GameSelectingViewController: UIViewController {
     @IBOutlet var allImages: [UIImageView]!
     
     
-    
-    var categoryOne = ["Guesseasy", "Guessmedium", "Guesshard", "Fotoeasy", "Fotomedium", "Fotohard", "Draweasy", "Drawmedium", "Drawhard"]
-    var categoryTwo = ["Dilemmaeasy", "Dilemmamedium", "Dilemmahard", "Meenemeneasy", "Meenemenmedium", "Meenemenhard", "Quickeasy", "Quickmedium", "Quickhard"]
-    var categoryThree = ["Neeeasy", "Neemedium", "Neehard", "Kwaliteiteasy", "Kwaliteitmedium", "Kwaliteithard", "Karaktereasy", "Karaktermedium", "Karakterhard"]
 
     //var number = 0
     var PreviousButtonTitle = ""
@@ -81,26 +77,30 @@ class GameSelectingViewController: UIViewController {
     
     func gettingCorrectInfo(category: String){
         let categoryUserData = userData["Categories"] ?? Dictionary()
+        var number = 0
+        var catNumber = 0
         //this collects the names of the games that match each category
+        
         switch category{
             case "Droom het" : categoryArray = Array(categoryUserData["Droom het"]!.keys)
-            fillingCurrentLabel()
-            for image in 0..<allImages.count{
-                allImages[image].image = UIImage(named: categoryOne[image])
-            }
+  
             case "Speel het" : categoryArray = Array(categoryUserData["Speel het"]!.keys)
-            fillingCurrentLabel()
-            for image in 0..<allImages.count{
-                allImages[image].image = UIImage(named: categoryTwo[image])
-            }
+
             case "Doe het" : categoryArray = Array(categoryUserData["Doe het"]!.keys)
-            fillingCurrentLabel()
-            for image in 0..<allImages.count{
-                allImages[image].image = UIImage(named: categoryThree[image])
-            }
+      
             default: categoryArray = Array(categoryUserData["Droom het"]!.keys)
         }
-        print("CategorieArray: \(categoryArray)")
+        fillingCurrentLabel()
+
+        for image in 0..<allImages.count{
+            allImages[image].image = UIImage(named: "\(categoryArray[catNumber])\(difficultyArray[number])")
+            if number == 2{
+                number = 0
+                catNumber += 1
+            }else{
+                number += 1
+            }
+        }
     }
     
     
