@@ -43,7 +43,8 @@ class GameSelectingViewController: UIViewController {
         super.viewDidLoad()
         //this uses the info of the button on the previous page to correct
         gettingCorrectInfo(category: PreviousButtonTitle)
-        
+        print(userData["Categories"] ?? Dictionary())
+        print("categorie: \(PreviousButtonTitle)")
     }
     
     
@@ -99,6 +100,7 @@ class GameSelectingViewController: UIViewController {
             }
             default: categoryArray = Array(categoryUserData["Droom het"]!.keys)
         }
+        print("CategorieArray: \(categoryArray)")
     }
     
     
