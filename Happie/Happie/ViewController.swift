@@ -17,6 +17,7 @@ class ViewController: UIViewController, ContainerDelegateProtocol {
     @IBOutlet weak var skinImage: UIImageView!
     @IBOutlet weak var hairImage: UIImageView!
     @IBOutlet weak var clothesImage: UIImageView!
+    @IBOutlet weak var avatarBackgroundImage: UIImageView!
     
     @IBOutlet weak var getStartedButton: UIButton!
     @IBOutlet weak var tutorialView: UIView!
@@ -40,7 +41,25 @@ class ViewController: UIViewController, ContainerDelegateProtocol {
             if tutorialView != nil{
                 tutorialView.isHidden = true
             }
+            
         }
+        
+        let images = [skinImage, hairImage, clothesImage, avatarBackgroundImage]
+        
+        //designstuff
+        
+        for image in images{
+            image?.layer.cornerRadius = (image?.frame.size.width)!/2
+            image?.clipsToBounds = true
+            image?.layer.borderColor = UIColor.black.cgColor
+            image?.layer.borderWidth = 2
+        }
+        
+        getStartedButton.layer.cornerRadius = 20.0
+        getStartedButton.layer.borderWidth = 1.5
+        getStartedButton.layer.borderColor = UIColor.black.cgColor
+        
+        //end designstuff
         
         if UserDefaults.standard.dictionary(forKey: "SettingsDict")?["hair"] == nil{
             UserDefaults.standard.set(defaultAvatar, forKey: "SettingsDict")

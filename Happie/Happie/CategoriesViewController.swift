@@ -13,6 +13,7 @@ class CategoriesViewController: UIViewController {
     @IBOutlet var allButtons: [UIButton]!
     @IBOutlet var allViews: [UIView]!
     @IBOutlet var allBackgroundImages: [UIImageView]!
+    @IBOutlet var categorieLabels: [UILabel]!
     
     var Data = GameData()
     var userData = UserDefaults.standard.dictionary(forKey: "Games") ?? Dictionary()
@@ -25,6 +26,8 @@ class CategoriesViewController: UIViewController {
             userData = UserDefaults.standard.dictionary(forKey: "Games") ?? Dictionary()
         }
         fillingLabels()
+        
+        
     }
     
     
@@ -39,6 +42,13 @@ class CategoriesViewController: UIViewController {
             image.layer.cornerRadius = 15.0
             image.layer.masksToBounds = true
         }
+        
+        for label in categorieLabels{
+            label.numberOfLines = 1;
+            label.minimumScaleFactor = 49./label.font.pointSize;
+            label.adjustsFontSizeToFitHeight = YES;
+        }
+
     }
 
     
