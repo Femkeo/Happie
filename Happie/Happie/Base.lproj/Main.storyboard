@@ -5,10 +5,10 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -285,7 +285,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Wf-kX-qnu">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kA1-VH-xon">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kA1-VH-xon">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="19"/>
                                                 <nil key="textColor"/>
@@ -312,9 +312,11 @@
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="firstGameButtonAction:" destination="YJW-3A-tFu" eventType="touchUpInside" id="ljc-YS-Zuv"/>
+                                                </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.58363872800000005" green="1" blue="0.35524772360000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="7s2-fC-Sd7" secondAttribute="trailing" id="FRb-FU-Heu"/>
                                             <constraint firstItem="AoJ-Tg-nUD" firstAttribute="top" secondItem="roM-TF-2CZ" secondAttribute="top" constant="8" id="G2B-nu-RWT"/>
@@ -339,9 +341,11 @@
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="firstGameButtonAction:" destination="YJW-3A-tFu" eventType="touchUpInside" id="IH5-Gz-DhD"/>
+                                                </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.53141276039999996" green="0.13988572360000001" blue="0.2076617479" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="ZzP-EI-vyX" firstAttribute="leading" secondItem="N00-dc-4uk" secondAttribute="leading" id="1VN-oU-Xcl"/>
                                             <constraint firstAttribute="trailing" secondItem="ZzP-EI-vyX" secondAttribute="trailing" id="2F8-h0-EFC"/>
@@ -366,9 +370,11 @@
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="firstGameButtonAction:" destination="YJW-3A-tFu" eventType="touchUpInside" id="iyX-9e-UGG"/>
+                                                </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.59326839450000002" green="0.80028122660000001" blue="0.82628434900000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="nDA-1P-gNn" secondAttribute="trailing" id="3Bi-WU-I9u"/>
                                             <constraint firstItem="nDA-1P-gNn" firstAttribute="top" secondItem="E9Q-sU-8oy" secondAttribute="top" id="7Zg-8c-tuT"/>
@@ -430,9 +436,11 @@
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="secondGameAction:" destination="YJW-3A-tFu" eventType="touchUpInside" id="R04-cF-Zeh"/>
+                                                </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.86833822729999999" green="0.1721698046" blue="0.25903424619999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="giw-3g-7FQ" secondAttribute="bottom" id="1nn-li-B3t"/>
                                             <constraint firstAttribute="trailing" secondItem="giw-3g-7FQ" secondAttribute="trailing" id="7RX-zg-qOL"/>
@@ -455,9 +463,11 @@
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="secondGameAction:" destination="YJW-3A-tFu" eventType="touchUpInside" id="5zn-8S-OJb"/>
+                                                </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.96118384599999995" green="0.95021265749999995" blue="0.87920314070000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="WYf-3V-KgP" secondAttribute="bottom" id="1eE-1d-iRk"/>
                                             <constraint firstItem="KRg-AP-gYG" firstAttribute="top" secondItem="X6X-XX-Y0i" secondAttribute="top" constant="8" id="2Bn-1e-gw9"/>
@@ -480,9 +490,11 @@
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="secondGameAction:" destination="YJW-3A-tFu" eventType="touchUpInside" id="MKr-AZ-7Sd"/>
+                                                </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.99886673690000005" green="0.87804371120000002" blue="0.87272101639999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="4aw-Kp-tDf" firstAttribute="top" secondItem="Y8v-i9-E5G" secondAttribute="top" constant="8" id="7we-ty-kFE"/>
                                             <constraint firstAttribute="bottom" secondItem="I7z-RD-zcC" secondAttribute="bottom" id="CUZ-HI-r1o"/>
@@ -529,7 +541,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zFl-sU-QCB">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zM7-kJ-bWc">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zM7-kJ-bWc">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="19"/>
                                                 <nil key="textColor"/>
@@ -556,9 +568,11 @@
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="thirdGameAction:" destination="YJW-3A-tFu" eventType="touchUpInside" id="qVj-yO-7eD"/>
+                                                </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.86833822729999999" green="0.66319444444444442" blue="0.94097222222222221" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="wKf-WN-6JK" secondAttribute="trailing" id="J9l-kc-zKF"/>
                                             <constraint firstItem="wKf-WN-6JK" firstAttribute="top" secondItem="i9s-4a-aAl" secondAttribute="top" id="O3o-tO-eRb"/>
@@ -581,9 +595,11 @@
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="thirdGameAction:" destination="YJW-3A-tFu" eventType="touchUpInside" id="9MN-yZ-XcM"/>
+                                                </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" red="1" green="0.72566731770833337" blue="0.28370962910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="Q6L-8B-6yO" secondAttribute="trailing" constant="8" id="7dG-HJ-dTv"/>
                                             <constraint firstAttribute="trailing" secondItem="iS3-3C-cyG" secondAttribute="trailing" id="I04-g6-XYZ"/>
@@ -606,9 +622,11 @@
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="thirdGameAction:" destination="YJW-3A-tFu" eventType="touchUpInside" id="OZs-0a-qWB"/>
+                                                </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="Tdw-zN-UFW" secondAttribute="trailing" constant="8" id="At9-dp-pvS"/>
                                             <constraint firstItem="Tdw-zN-UFW" firstAttribute="top" secondItem="u1q-8D-7GR" secondAttribute="top" constant="8" id="EU2-fI-gK0"/>
@@ -679,38 +697,22 @@
                     <connections>
                         <outletCollection property="allImages" destination="AoJ-Tg-nUD" collectionClass="NSMutableArray" id="phy-Rk-Sgb"/>
                         <outletCollection property="allImages" destination="7tq-hT-U3b" collectionClass="NSMutableArray" id="7bO-zQ-LIJ"/>
-                        <outletCollection property="allButtons" destination="ZzP-EI-vyX" collectionClass="NSMutableArray" id="83n-C8-f4D"/>
-                        <outletCollection property="firstGameButtons" destination="ZzP-EI-vyX" collectionClass="NSMutableArray" id="ZRk-j0-7zl"/>
                         <outletCollection property="allImages" destination="rrd-Ta-T97" collectionClass="NSMutableArray" id="1Zl-eg-PwR"/>
-                        <outletCollection property="allButtons" destination="nDA-1P-gNn" collectionClass="NSMutableArray" id="4mM-Xj-GHu"/>
-                        <outletCollection property="firstGameButtons" destination="nDA-1P-gNn" collectionClass="NSMutableArray" id="t4B-Rt-ywZ"/>
-                        <outletCollection property="firstGameButtons" destination="7s2-fC-Sd7" collectionClass="NSMutableArray" id="h30-yd-gHQ"/>
-                        <outletCollection property="allButtons" destination="7s2-fC-Sd7" collectionClass="NSMutableArray" id="X3I-IA-vwi"/>
-                        <outletCollection property="allButtons" destination="giw-3g-7FQ" collectionClass="NSMutableArray" id="G97-Y1-dBe"/>
-                        <outletCollection property="secondGameButtons" destination="giw-3g-7FQ" collectionClass="NSMutableArray" id="SJW-fM-WOP"/>
                         <outletCollection property="allImages" destination="cQC-os-Fjd" collectionClass="NSMutableArray" id="rc1-Re-QMy"/>
-                        <outletCollection property="allButtons" destination="WYf-3V-KgP" collectionClass="NSMutableArray" id="jre-Vh-wqU"/>
                         <outletCollection property="allImages" destination="KRg-AP-gYG" collectionClass="NSMutableArray" id="m7S-7x-Awb"/>
-                        <outletCollection property="secondGameButtons" destination="WYf-3V-KgP" collectionClass="NSMutableArray" id="LF1-Zb-gjX"/>
                         <outletCollection property="allImages" destination="4aw-Kp-tDf" collectionClass="NSMutableArray" id="ZOI-dC-2uL"/>
-                        <outletCollection property="secondGameButtons" destination="I7z-RD-zcC" collectionClass="NSMutableArray" id="KKf-Xr-zqc"/>
-                        <outletCollection property="allButtons" destination="I7z-RD-zcC" collectionClass="NSMutableArray" id="ZTr-vZ-NCR"/>
                         <outletCollection property="allImages" destination="1w1-yr-iKL" collectionClass="NSMutableArray" id="BHa-a4-Ech"/>
-                        <outletCollection property="allButtons" destination="wKf-WN-6JK" collectionClass="NSMutableArray" id="qw9-at-HI1"/>
-                        <outletCollection property="thirdGameButtons" destination="wKf-WN-6JK" collectionClass="NSMutableArray" id="lBq-b0-zzN"/>
-                        <outletCollection property="thirdGameButtons" destination="iS3-3C-cyG" collectionClass="NSMutableArray" id="vfq-KL-HQ8"/>
-                        <outletCollection property="allButtons" destination="iS3-3C-cyG" collectionClass="NSMutableArray" id="6ok-NT-0kh"/>
                         <outletCollection property="allImages" destination="Q6L-8B-6yO" collectionClass="NSMutableArray" id="yJr-8z-pjU"/>
-                        <outletCollection property="allButtons" destination="c1P-QD-LoK" collectionClass="NSMutableArray" id="04l-yd-UWI"/>
-                        <outletCollection property="allImages" destination="VUP-JK-le0" collectionClass="NSMutableArray" id="eLR-jU-r1h"/>
-                        <outletCollection property="allImages" destination="0IT-KM-K0x" collectionClass="NSMutableArray" id="Vtp-dc-bIQ"/>
-                        <outletCollection property="allImages" destination="eEJ-SX-1Ea" collectionClass="NSMutableArray" id="zaw-HU-wjG"/>
-                        <outletCollection property="allImages" destination="xef-ZU-W37" collectionClass="NSMutableArray" id="wkP-Mq-vXl"/>
-                        <outletCollection property="allImages" destination="Pcx-WS-1UJ" collectionClass="NSMutableArray" id="rSR-H5-u0C"/>
-                        <outletCollection property="allImages" destination="yec-xm-m9J" collectionClass="NSMutableArray" id="ASF-Hi-Dc1"/>
-                        <outletCollection property="allImages" destination="Ek9-q0-UqG" collectionClass="NSMutableArray" id="Ufu-e9-LTG"/>
-                        <outletCollection property="allImages" destination="V34-Yj-DIy" collectionClass="NSMutableArray" id="DI5-gi-Tom"/>
-                        <outletCollection property="allImages" destination="BZd-lM-UTY" collectionClass="NSMutableArray" id="jeZ-5G-bn9"/>
+                        <outletCollection property="allImages" destination="Tdw-zN-UFW" collectionClass="NSMutableArray" id="dkG-E6-fo8"/>
+                        <outletCollection property="allButtons" destination="7s2-fC-Sd7" collectionClass="NSMutableArray" id="spM-VZ-KlQ"/>
+                        <outletCollection property="allButtons" destination="ZzP-EI-vyX" collectionClass="NSMutableArray" id="VeB-E0-82Z"/>
+                        <outletCollection property="allButtons" destination="nDA-1P-gNn" collectionClass="NSMutableArray" id="Gf1-Rt-xT2"/>
+                        <outletCollection property="allButtons" destination="giw-3g-7FQ" collectionClass="NSMutableArray" id="1Lb-VJ-cqN"/>
+                        <outletCollection property="allButtons" destination="WYf-3V-KgP" collectionClass="NSMutableArray" id="BUn-0c-TFU"/>
+                        <outletCollection property="allButtons" destination="I7z-RD-zcC" collectionClass="NSMutableArray" id="wAg-wT-lOq"/>
+                        <outletCollection property="allButtons" destination="wKf-WN-6JK" collectionClass="NSMutableArray" id="tl0-Qh-2Mo"/>
+                        <outletCollection property="allButtons" destination="iS3-3C-cyG" collectionClass="NSMutableArray" id="gWv-LZ-SZi"/>
+                        <outletCollection property="allButtons" destination="c1P-QD-LoK" collectionClass="NSMutableArray" id="hAd-9U-M2K"/>
                         <segue destination="F8s-ha-Jxc" kind="show" identifier="GameToDraw" id="bs3-cg-lEL"/>
                         <segue destination="kF5-OQ-GB0" kind="show" identifier="GameToMultiple" id="H33-61-tTr"/>
                         <segue destination="HmZ-Dt-PaL" kind="show" identifier="GameToQuiz" id="y8T-Gj-4Kh"/>
@@ -1238,13 +1240,21 @@
                             <outlet property="delegate" destination="p2s-ew-sBO" id="cQH-Sm-AXT"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="iGj-kE-yTy"/>
+                    <navigationItem key="navigationItem" title="Title" id="iGj-kE-yTy">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="ay3-tm-fWD">
+                            <connections>
+                                <action selector="doneButtonAction:" destination="p2s-ew-sBO" id="6xn-RO-tug"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="personalityImage" destination="kms-Ct-ZxH" id="SZl-jl-iKR"/>
                         <segue destination="wQo-nE-UFQ" kind="show" identifier="WhatDoIDreamSegue" id="S6t-Eg-rkH"/>
+                        <segue destination="cHq-3h-t5c" kind="unwind" identifier="BackToGamesFromTable" unwindAction="UnwindtoGamesWithSegue:" id="QaO-wm-8Ss"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4vt-WA-UAM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="cHq-3h-t5c" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5016.8000000000002" y="-194.75262368815595"/>
         </scene>
@@ -1430,7 +1440,6 @@
             <objects>
                 <viewController id="exr-Jq-R72" customClass="FirstLaunchViewController" customModule="Happie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-
                         <viewControllerLayoutGuide type="top" id="Fdc-ce-ogQ"/>
                         <viewControllerLayoutGuide type="bottom" id="DXN-du-KCa"/>
                     </layoutGuides>
@@ -1516,17 +1525,17 @@
             <point key="canvasLocation" x="1076" y="-555.47226386806597"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="7EB-RB-1PN"/>
-        <segue reference="Nws-Nh-w07"/>
-        <segue reference="taJ-F4-eEH"/>
-        <segue reference="Qim-pp-d3G"/>
-        <segue reference="zSv-cY-wsz"/>
-        <segue reference="M6F-Gy-JuN"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="backgroundThree" width="586" height="147"/>
         <image name="droomHet" width="165" height="123"/>
         <image name="speelHet" width="149" height="130"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="7EB-RB-1PN"/>
+        <segue reference="Nws-Nh-w07"/>
+        <segue reference="bs3-cg-lEL"/>
+        <segue reference="H33-61-tTr"/>
+        <segue reference="EjY-yh-UdT"/>
+        <segue reference="y8T-Gj-4Kh"/>
+    </inferredMetricsTieBreakers>
 </document>

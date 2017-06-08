@@ -17,8 +17,9 @@ class oneButtonViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
     var difficultyArray = ["easy", "medium", "hard"]
-    var previousCategory = ""
-    var previousDifficulty = ""
+    var gameFromPrevious = ""
+    var difficultyFromPrevious = ""
+    var gameCategory = ""
     var nextDifficulty = ""
 
     var Yes = YesSayer()
@@ -30,12 +31,8 @@ class oneButtonViewController: UIViewController, UIImagePickerControllerDelegate
     
     
     override func viewWillAppear(_ animated: Bool) {
-        let indexOfDifficulty = difficultyArray.index(of: previousDifficulty)
-        if indexOfDifficulty == 2{
-        }else{
-            nextDifficulty = difficultyArray[indexOfDifficulty! + 1]
-        }
-
+        checkingDifficulties()
+        checkingGameCategory(game: gameFromPrevious)
     }
 
     
@@ -53,7 +50,7 @@ class oneButtonViewController: UIViewController, UIImagePickerControllerDelegate
     }
     
     @IBAction func startAction(_ sender: Any) {
-        switch previousCategory{
+        switch gameFromPrevious{
         case "Raad mijn droom":
             performSegue(withIdentifier: "OneToTableView", sender: self)
         case "Wat is mijn karakter":
@@ -96,46 +93,7 @@ class oneButtonViewController: UIViewController, UIImagePickerControllerDelegate
     }
     
     @IBAction func doneButtonAction(_ sender: Any) {
-        self.performSegue(withIdentifier: "BackToStartFromOne", sender: self)
-        var newCounterValue = 0
-        
-        if previousCategory == "Foto challenge"{
-            let counter = userData["Categories"]!["Droom het"]![previousCategory]!["counter"]! as! Int
-            newCounterValue = counter + 1
-            
-            let dataToUpdate = GameData()
-            dataToUpdate.creatingGames()
-            var newData = dataToUpdate.result
-            
-            newData["Categories"]!["Droom het"]![previousCategory]![nextDifficulty]! = true
-            newData["Categories"]!["Droom het"]![previousCategory]!["counter"] = newCounterValue
-            
-            UserDefaults.standard.set(newData, forKey: "Games")
-        }else if previousCategory == "Welja, geen nee"{
-            let counter = userData["Categories"]!["Doe het"]![previousCategory]!["counter"]! as! Int
-            newCounterValue = counter + 1
-            
-            let dataToUpdate = GameData()
-            dataToUpdate.creatingGames()
-            var newData = dataToUpdate.result
-            
-            newData["Categories"]!["Doe het"]![previousCategory]![nextDifficulty]! = true
-            newData["Categories"]!["Doe het"]![previousCategory]!["counter"] = newCounterValue
-            
-            UserDefaults.standard.set(newData, forKey: "Games")
-        }else if previousCategory == "Ik heb een droom en ik neem mee"{
-            let counter = userData["Categories"]!["Speel het"]![previousCategory]!["counter"]! as! Int
-            newCounterValue = counter + 1
-            
-            let dataToUpdate = GameData()
-            dataToUpdate.creatingGames()
-            var newData = dataToUpdate.result
-            
-            newData["Categories"]!["Speel het"]![previousCategory]![nextDifficulty]! = true
-            newData["Categories"]!["Speel het"]![previousCategory]!["counter"] = newCounterValue
-            
-            UserDefaults.standard.set(newData, forKey: "Games")
-        }
+        savingAndGoingBack()
     }
     
     
@@ -146,7 +104,7 @@ class oneButtonViewController: UIViewController, UIImagePickerControllerDelegate
     }
     
     func provideCorrectInfo(){
-        switch previousCategory{
+        switch gameFromPrevious{
         case "Raad mijn droom":
             descriptionLabel.text = "Denk je dat ‘Wie ben ik’ lastig is? Probeer dan eens ‘Wat droom ik?’, voor wie van een echte uitdagingen houdt!"
             photoImage.image = UIImage(named: "Dreamguess")
@@ -189,6 +147,50 @@ class oneButtonViewController: UIViewController, UIImagePickerControllerDelegate
         }
     }
     
+    
+    func checkingGameCategory(game: String){
+        let droomGames = Array(userData["Categories"]!["Droom het"]!.keys)
+        let speelGames = Array(userData["Categories"]!["Speel het"]!.keys)
+        let doeGames = Array(userData["Categories"]!["Doe het"]!.keys)
+        
+        if droomGames.contains(game){
+            gameCategory = "Droom het"
+        }else if speelGames.contains(game){
+            gameCategory = "Speel het"
+        }else if doeGames.contains(game){
+            gameCategory = "Doe het"
+        }
+    }
+    
+    func checkingDifficulties(){
+        let indexOfDifficulty = difficultyArray.index(of: difficultyFromPrevious)
+        if indexOfDifficulty == 2{
+            nextDifficulty = difficultyFromPrevious
+        }else{
+            nextDifficulty = difficultyArray[indexOfDifficulty! + 1]
+        }
+    }
+    
+    func savingAndGoingBack(){
+        self.performSegue(withIdentifier: "BackToStartFromOne", sender: self)
+        
+        var newCounterValue = 0
+        let counter = userData["Categories"]![gameCategory]![gameFromPrevious]!["counter"]! as! Int
+        newCounterValue = counter + 1
+        
+        let dataToUpdate = GameData()
+        dataToUpdate.creatingGames()
+        var newData = dataToUpdate.result
+        
+        newData["Categories"]![gameCategory]![gameFromPrevious]![nextDifficulty]! = true
+        
+        newData["Categories"]![gameCategory]![gameFromPrevious]!["counter"] = newCounterValue
+        
+        UserDefaults.standard.set(newData, forKey: "Games")
+    }
+
+    
+    
     func alert(){
         Yes.countingTillEnding()
         let alert =  UIAlertController(title: nil, message: "Je mag nu een minuut geen nee meer zeggen!", preferredStyle: .alert)
@@ -207,31 +209,30 @@ class oneButtonViewController: UIViewController, UIImagePickerControllerDelegate
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "OneToOne" {
             let viewController = segue.destination as! oneButtonViewController
-            viewController.previousDifficulty = previousDifficulty
-            viewController.previousCategory = previousCategory
+            viewController.difficultyFromPrevious = difficultyFromPrevious
+            viewController.gameFromPrevious = gameFromPrevious
         }
         if segue.identifier == "OneToDraw" {
             let viewController = segue.destination as! drawingViewController
-            viewController.previousDifficulty = previousDifficulty
-            viewController.previousCategory = previousCategory
+            viewController.difficultyFromPrevious = difficultyFromPrevious
+            viewController.gameFromPrevious = gameFromPrevious
 
         }
         if segue.identifier == "OneToMultiple" {
             let viewController = segue.destination as! MulipleAnswersViewController
-            viewController.previousDifficulty = previousDifficulty
-            viewController.previousCategory = previousCategory
+            viewController.difficultyFromPrevious = difficultyFromPrevious
+            viewController.gameFromPrevious = gameFromPrevious
 
         }
         if segue.identifier == "OneToTableView" {
             let viewController = segue.destination as! TableViewController
-            viewController.previousDifficulty = previousDifficulty
-            viewController.previousCategory = previousCategory
+            viewController.difficultyFromPrevious = difficultyFromPrevious
+            viewController.gameFromPrevious = gameFromPrevious
         }
         if segue.identifier == "OneToQuiz" {
             let viewController = segue.destination as! QuizViewController
-            viewController.previousDifficulty = previousDifficulty
-            viewController.previousCategory = previousCategory
-
+            viewController.difficultyFromPrevious = difficultyFromPrevious
+            viewController.gameFromPrevious = gameFromPrevious
         }
     }
 

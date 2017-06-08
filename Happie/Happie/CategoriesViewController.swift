@@ -18,6 +18,7 @@ class CategoriesViewController: UIViewController {
     var userData = UserDefaults.standard.dictionary(forKey: "Games") ?? Dictionary()
     var rememberingButtonTitle = ""
 
+    
     override func viewWillAppear(_ animated: Bool) {
         if UserDefaults.standard.bool(forKey: "launchedBefore") == true {
             Data.creatingGames()
@@ -38,12 +39,13 @@ class CategoriesViewController: UIViewController {
             image.layer.cornerRadius = 15.0
             image.layer.masksToBounds = true
         }
-
     }
 
     
     @IBAction func CategorySelectionButtonAction(_ sender: UIButton) {
         rememberingButtonTitle = sender.currentTitle!
+        print(sender.currentTitle!)
+        print("heey")
         performSegue(withIdentifier: "ToShowingCategory", sender: self)
     }
     
@@ -60,6 +62,7 @@ class CategoriesViewController: UIViewController {
         
         for label in 0..<allButtons.count{
             allButtons[label].setTitle(allCategories[number], for: .normal)
+            print(allCategories[number])
             number  += 1
         }
     }

@@ -13,23 +13,21 @@ class WhatDoIDreamViewController: UIViewController {
     @IBOutlet weak var passDeficeButton: UIButton!
     @IBOutlet weak var showDreamLabel: UILabel!
     
-    
     var currentDream: String?
-    var previousCategory = ""
-    var previousDifficulty = ""
+    var gameFromPrevious = ""
+    var difficultyFromPrevious = ""
     var nextDifficulty = ""
     var difficultyArray = ["easy", "medium", "hard"]
+    var gameCategory = ""
     
     var userData = UserDefaults.standard.dictionary(forKey: "Games") as! [String : [String : [String : [String : Any]]]]
     
     
     
     override func viewWillAppear(_ animated: Bool) {
-        let indexOfDifficulty = difficultyArray.index(of: previousDifficulty)
-        if indexOfDifficulty == 2{
-        }else{
-            nextDifficulty = difficultyArray[indexOfDifficulty! + 1]
-        }
+        checkingDifficulties()
+        checkingGameCategory(game: gameFromPrevious)
+
     }
     
     override func viewDidLoad() {
@@ -46,18 +44,46 @@ class WhatDoIDreamViewController: UIViewController {
     }
     
     @IBAction func doneButtonAction(_ sender: Any) {
+        savingAndGoingBack()
+    }
+    
+    func checkingGameCategory(game: String){
+        let droomGames = Array(userData["Categories"]!["Droom het"]!.keys)
+        let speelGames = Array(userData["Categories"]!["Speel het"]!.keys)
+        let doeGames = Array(userData["Categories"]!["Doe het"]!.keys)
+        
+        if droomGames.contains(game){
+            gameCategory = "Droom het"
+        }else if speelGames.contains(game){
+            gameCategory = "Speel het"
+        }else if doeGames.contains(game){
+            gameCategory = "Doe het"
+        }
+    }
+    
+    func checkingDifficulties(){
+        let indexOfDifficulty = difficultyArray.index(of: difficultyFromPrevious)
+        if indexOfDifficulty == 2{
+            nextDifficulty = difficultyFromPrevious
+        }else{
+            nextDifficulty = difficultyArray[indexOfDifficulty! + 1]
+        }
+    }
+    
+    func savingAndGoingBack(){
         self.performSegue(withIdentifier: "BackToGameFromDream", sender: self)
+        
         var newCounterValue = 0
-        let counter = userData["Categories"]!["Droom het"]![previousCategory]!["counter"]! as! Int
+        let counter = userData["Categories"]![gameCategory]![gameFromPrevious]!["counter"]! as! Int
         newCounterValue = counter + 1
         
         let dataToUpdate = GameData()
         dataToUpdate.creatingGames()
         var newData = dataToUpdate.result
         
-        newData["Categories"]!["Droom het"]![previousCategory]![nextDifficulty]! = true
+        newData["Categories"]![gameCategory]![gameFromPrevious]![nextDifficulty]! = true
         
-        newData["Categories"]!["Droom het"]![previousCategory]!["counter"] = newCounterValue
+        newData["Categories"]![gameCategory]![gameFromPrevious]!["counter"] = newCounterValue
         
         UserDefaults.standard.set(newData, forKey: "Games")
     }

@@ -17,9 +17,10 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var timerLabel: UILabel!
     
     var difficultyArray = ["easy", "medium", "hard"]
-    var previousCategory = ""
-    var previousDifficulty = ""
+    var gameFromPrevious = ""
+    var difficultyFromPrevious = ""
     var nextDifficulty = ""
+    var gameCategory = ""
     var Reader = PropertyReader()
     var QuestionList = [String]()
     var userData = UserDefaults.standard.dictionary(forKey: "Games") as! [String : [String : [String : [String : Any]]]]
@@ -40,13 +41,9 @@ class QuizViewController: UIViewController {
     var seconds = 20
     
     override func viewWillAppear(_ animated: Bool) {
-        let indexOfDifficulty = difficultyArray.index(of: previousDifficulty)
-        if indexOfDifficulty == 2{
-        }else{
-            nextDifficulty = difficultyArray[indexOfDifficulty! + 1]
-        }
-        gettingPreviousInfo(startedFromSection: previousCategory)
-        print(previousCategory)
+        checkingDifficulties()
+        checkingGameCategory(game: gameFromPrevious)
+        gettingPreviousInfo(startedFromSection: gameFromPrevious)
         showQualityQuestions()
         
     }
@@ -75,35 +72,7 @@ class QuizViewController: UIViewController {
     
     @IBAction func answerAction(_ sender: UIButton) {
         if sender.currentTitle == "Klaar!"{
-            self.performSegue(withIdentifier: "BackToGames", sender: self)
-            var newCounterValue = 0
-            
-            if previousCategory == "Kwaliteiten quiz"{
-                let counter = userData["Categories"]!["Doe het"]![previousCategory]!["counter"]! as! Int
-                newCounterValue = counter + 1
-                
-                let dataToUpdate = GameData()
-                dataToUpdate.creatingGames()
-                var newData = dataToUpdate.result
-                
-                newData["Categories"]!["Doe het"]![previousCategory]![nextDifficulty]! = true
-                newData["Categories"]!["Doe het"]![previousCategory]!["counter"] = newCounterValue
-                
-                UserDefaults.standard.set(newData, forKey: "Games")
-            }else{
-                let counter = userData["Categories"]!["Speel het"]![previousCategory]!["counter"]! as! Int
-                newCounterValue = counter + 1
-                
-                let dataToUpdate = GameData()
-                dataToUpdate.creatingGames()
-                var newData = dataToUpdate.result
-                
-                newData["Categories"]!["Speel het"]![previousCategory]![nextDifficulty]! = true
-                newData["Categories"]!["Speel het"]![previousCategory]!["counter"] = newCounterValue
-                
-                UserDefaults.standard.set(newData, forKey: "Games")
-            }
-            
+            savingAndGoingBack()
         }else{
             buttonSender = sender
             gettingCorrectButtonInfo()
@@ -211,7 +180,7 @@ class QuizViewController: UIViewController {
     func gettingCorrectButtonInfo(){
         print("hey! \(answersFilledIn)")
 
-        switch previousCategory{
+        switch gameFromPrevious{
         case "Quick quiz":
             
             if number < QuestionList.count - 1 {
@@ -246,6 +215,48 @@ class QuizViewController: UIViewController {
             
         default: break
         }
+    }
+    
+    func checkingGameCategory(game: String){
+        let droomGames = Array(userData["Categories"]!["Droom het"]!.keys)
+        let speelGames = Array(userData["Categories"]!["Speel het"]!.keys)
+        let doeGames = Array(userData["Categories"]!["Doe het"]!.keys)
+        
+        if droomGames.contains(game){
+            gameCategory = "Droom het"
+        }else if speelGames.contains(game){
+            gameCategory = "Speel het"
+        }else if doeGames.contains(game){
+            gameCategory = "Doe het"
+        }
+    }
+    
+    
+    func checkingDifficulties(){
+        let indexOfDifficulty = difficultyArray.index(of: difficultyFromPrevious)
+        if indexOfDifficulty == 2{
+            nextDifficulty = difficultyFromPrevious
+        }else{
+            nextDifficulty = difficultyArray[indexOfDifficulty! + 1]
+        }
+    }
+    
+    func savingAndGoingBack(){
+        self.performSegue(withIdentifier: "BackToGames", sender: self)
+        
+        var newCounterValue = 0
+        let counter = userData["Categories"]![gameCategory]![gameFromPrevious]!["counter"]! as! Int
+        newCounterValue = counter + 1
+        
+        let dataToUpdate = GameData()
+        dataToUpdate.creatingGames()
+        var newData = dataToUpdate.result
+        
+        newData["Categories"]![gameCategory]![gameFromPrevious]![nextDifficulty]! = true
+        
+        newData["Categories"]![gameCategory]![gameFromPrevious]!["counter"] = newCounterValue
+        
+        UserDefaults.standard.set(newData, forKey: "Games")
     }
     
     

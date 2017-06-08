@@ -16,22 +16,21 @@ class MulipleAnswersViewController: UIViewController {
     @IBOutlet var buttons: [UIButton]!
     
     
-    var previousCategory = ""
+    var gameFromPrevious = ""
     var Reader = PropertyReader()
 
-    var previousDifficulty = ""
+    var difficultyFromPrevious = ""
     var nextDifficulty = ""
+    var gameCategory = ""
     var difficultyArray = ["easy", "medium", "hard"]
     
     var userData = UserDefaults.standard.dictionary(forKey: "Games") as! [String : [String : [String : [String : Any]]]]
     var number = 0
     
     override func viewWillAppear(_ animated: Bool) {
-        let indexOfDifficulty = difficultyArray.index(of: previousDifficulty)
-        if indexOfDifficulty == 2{
-        }else{
-            nextDifficulty = difficultyArray[indexOfDifficulty! + 1]
-        }
+        checkingDifficulties()
+        checkingGameCategory(game: gameFromPrevious)
+
     }
     
     
@@ -47,7 +46,7 @@ class MulipleAnswersViewController: UIViewController {
         }
         
         
-        Reader.readPropertyLists(startedFromSection: previousCategory)
+        Reader.readPropertyLists(startedFromSection: gameFromPrevious)
         
         for i in 0..<buttons.count {
             buttons[i].setTitle(Reader.pListDictResult["NewItem\(number)"]?[i], for: .normal)
@@ -57,19 +56,7 @@ class MulipleAnswersViewController: UIViewController {
     
     @IBAction func buttonsAction(_ sender: UIButton) {
         if sender.currentTitle == "Klaar!"{
-            self.performSegue(withIdentifier: "BackToGameFromMulitple", sender: self)
-            var newCounterValue = 0
-            let counter = userData["Categories"]!["Speel het"]![previousCategory]!["counter"]! as! Int
-            newCounterValue = counter + 1
-            
-            let dataToUpdate = GameData()
-            dataToUpdate.creatingGames()
-            var newData = dataToUpdate.result
-            
-            newData["Categories"]!["Speel het"]![previousCategory]![nextDifficulty]! = true
-            newData["Categories"]!["Speel het"]![previousCategory]!["counter"] = newCounterValue
-            
-            UserDefaults.standard.set(newData, forKey: "Games")
+            savingAndGoingBack()
         }else{
             if number != 9{
                 number += 1
@@ -91,6 +78,48 @@ class MulipleAnswersViewController: UIViewController {
             }
         }
         
+    }
+    
+    
+    func checkingGameCategory(game: String){
+        let droomGames = Array(userData["Categories"]!["Droom het"]!.keys)
+        let speelGames = Array(userData["Categories"]!["Speel het"]!.keys)
+        let doeGames = Array(userData["Categories"]!["Doe het"]!.keys)
+        
+        if droomGames.contains(game){
+            gameCategory = "Droom het"
+        }else if speelGames.contains(game){
+            gameCategory = "Speel het"
+        }else if doeGames.contains(game){
+            gameCategory = "Doe het"
+        }
+    }
+    
+    func checkingDifficulties(){
+        let indexOfDifficulty = difficultyArray.index(of: difficultyFromPrevious)
+        if indexOfDifficulty == 2{
+            nextDifficulty = difficultyFromPrevious
+        }else{
+            nextDifficulty = difficultyArray[indexOfDifficulty! + 1]
+        }
+    }
+    
+    func savingAndGoingBack(){
+        self.performSegue(withIdentifier: "BackToGameFromMulitple", sender: self)
+        
+        var newCounterValue = 0
+        let counter = userData["Categories"]![gameCategory]![gameFromPrevious]!["counter"]! as! Int
+        newCounterValue = counter + 1
+        
+        let dataToUpdate = GameData()
+        dataToUpdate.creatingGames()
+        var newData = dataToUpdate.result
+        
+        newData["Categories"]![gameCategory]![gameFromPrevious]![nextDifficulty]! = true
+        
+        newData["Categories"]![gameCategory]![gameFromPrevious]!["counter"] = newCounterValue
+        
+        UserDefaults.standard.set(newData, forKey: "Games")
     }
     
 

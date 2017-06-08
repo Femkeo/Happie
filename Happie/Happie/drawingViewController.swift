@@ -21,10 +21,11 @@ class drawingViewController: UIViewController {
     var green: CGFloat = 0/0
     var blue: CGFloat = 0.0
     
-    var previousCategory = ""
-    var previousDifficulty = ""
+    var gameFromPrevious = ""
+    var difficultyFromPrevious = ""
     var nextDifficulty = ""
     var difficultyArray = ["easy", "medium", "hard"]
+    var gameCategory = ""
 
 
     
@@ -32,11 +33,9 @@ class drawingViewController: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
-        let indexOfDifficulty = difficultyArray.index(of: previousDifficulty)
-        if indexOfDifficulty == 2{
-        }else{
-            nextDifficulty = difficultyArray[indexOfDifficulty! + 1]
-        }
+        checkingDifficulties()
+        checkingGameCategory(game: gameFromPrevious)
+
     }
     
     override func viewDidLoad() {
@@ -57,20 +56,7 @@ class drawingViewController: UIViewController {
     }
     
     @IBAction func doneButtonAction(_ sender: Any) {
-        self.performSegue(withIdentifier: "BackToStartFromDraw", sender: self)
-        var newCounterValue = 0
-        let counter = userData["Categories"]!["Droom het"]![previousCategory]!["counter"]! as! Int
-        newCounterValue = counter + 1
-        
-        let dataToUpdate = GameData()
-        dataToUpdate.creatingGames()
-        var newData = dataToUpdate.result
-        
-        newData["Categories"]!["Droom het"]![previousCategory]![nextDifficulty]! = true
-        
-        newData["Categories"]!["Droom het"]![previousCategory]!["counter"] = newCounterValue
-        
-        UserDefaults.standard.set(newData, forKey: "Games")
+        savingAndGoingBack()
     }
     
     
@@ -118,6 +104,50 @@ class drawingViewController: UIViewController {
             UIGraphicsEndImageContext()
         }
     }
+    
+    func checkingGameCategory(game: String){
+        let droomGames = Array(userData["Categories"]!["Droom het"]!.keys)
+        let speelGames = Array(userData["Categories"]!["Speel het"]!.keys)
+        let doeGames = Array(userData["Categories"]!["Doe het"]!.keys)
+        
+        if droomGames.contains(game){
+            gameCategory = "Droom het"
+        }else if speelGames.contains(game){
+            gameCategory = "Speel het"
+        }else if doeGames.contains(game){
+            gameCategory = "Doe het"
+        }
+    }
+    
+    func checkingDifficulties(){
+        let indexOfDifficulty = difficultyArray.index(of: difficultyFromPrevious)
+        if indexOfDifficulty == 2{
+            nextDifficulty = difficultyFromPrevious
+        }else{
+            nextDifficulty = difficultyArray[indexOfDifficulty! + 1]
+        }
+    }
+    
+    func savingAndGoingBack(){
+        self.performSegue(withIdentifier: "BackToStartFromDraw", sender: self)
+        
+        var newCounterValue = 0
+        let counter = userData["Categories"]![gameCategory]![gameFromPrevious]!["counter"]! as! Int
+        newCounterValue = counter + 1
+        
+        let dataToUpdate = GameData()
+        dataToUpdate.creatingGames()
+        var newData = dataToUpdate.result
+        
+        newData["Categories"]![gameCategory]![gameFromPrevious]![nextDifficulty]! = true
+        
+        newData["Categories"]![gameCategory]![gameFromPrevious]!["counter"] = newCounterValue
+        
+        UserDefaults.standard.set(newData, forKey: "Games")
+    }
+
+    
+    
     
     func imageAlert(_ image: UIImage, withPotentialError error: NSErrorPointer, contextInfo: UnsafeRawPointer) {
         let alert =  UIAlertController(title: nil, message: "Image successfully saved to Photos library", preferredStyle: .alert)
