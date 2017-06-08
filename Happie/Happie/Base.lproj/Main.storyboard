@@ -376,11 +376,20 @@
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="droomHet" translatesAutoresizingMaskIntoConstraints="NO" id="gKu-GX-NEb">
-                                        <rect key="frame" x="15" y="15" width="81.5" height="63.5"/>
+                                        <rect key="frame" x="8" y="8" width="100" height="78"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="gKu-GX-NEb" secondAttribute="height" multiplier="9:7" id="Sec-bQ-0nm"/>
+                                            <constraint firstAttribute="width" secondItem="gKu-GX-NEb" secondAttribute="height" multiplier="9:7" constant="-0.2857142857142918" id="Sec-bQ-0nm"/>
                                         </constraints>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="droom" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="spf-ZH-Gtt">
+                                        <rect key="frame" x="116" y="10" width="181" height="76"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="spf-ZH-Gtt" secondAttribute="height" multiplier="181:76" id="lcg-sB-b2k"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="49"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PxR-sj-K1n">
                                         <rect key="frame" x="0.0" y="0.0" width="331" height="93.5"/>
                                         <state key="normal" title="Button1">
@@ -397,11 +406,15 @@
                                     <constraint firstAttribute="trailing" secondItem="PxR-sj-K1n" secondAttribute="trailing" id="Bjh-EW-oqu"/>
                                     <constraint firstItem="PxR-sj-K1n" firstAttribute="top" secondItem="grY-i4-V9O" secondAttribute="top" id="FA6-6x-UWJ"/>
                                     <constraint firstItem="sdf-Fr-Jfn" firstAttribute="leading" secondItem="grY-i4-V9O" secondAttribute="leading" id="HUI-xj-4IU"/>
-                                    <constraint firstAttribute="bottom" secondItem="gKu-GX-NEb" secondAttribute="bottom" constant="15" id="N3g-1f-omV"/>
-                                    <constraint firstItem="gKu-GX-NEb" firstAttribute="top" secondItem="grY-i4-V9O" secondAttribute="top" constant="15" id="SL1-Ks-H2k"/>
+                                    <constraint firstAttribute="trailing" secondItem="spf-ZH-Gtt" secondAttribute="trailing" constant="34" id="JXl-qw-d5h"/>
+                                    <constraint firstAttribute="bottom" secondItem="gKu-GX-NEb" secondAttribute="bottom" constant="7.5" id="N3g-1f-omV"/>
+                                    <constraint firstItem="gKu-GX-NEb" firstAttribute="top" secondItem="grY-i4-V9O" secondAttribute="top" constant="8" id="SL1-Ks-H2k"/>
+                                    <constraint firstItem="spf-ZH-Gtt" firstAttribute="leading" secondItem="gKu-GX-NEb" secondAttribute="trailing" constant="8" id="Ujp-BT-XLa"/>
                                     <constraint firstAttribute="bottom" secondItem="sdf-Fr-Jfn" secondAttribute="bottom" constant="-2.5" id="UvP-Cb-9lf"/>
+                                    <constraint firstItem="spf-ZH-Gtt" firstAttribute="top" secondItem="grY-i4-V9O" secondAttribute="top" constant="10" id="Z5V-HM-Rpj"/>
                                     <constraint firstAttribute="bottom" secondItem="PxR-sj-K1n" secondAttribute="bottom" id="byu-l0-BC3"/>
-                                    <constraint firstItem="gKu-GX-NEb" firstAttribute="leading" secondItem="grY-i4-V9O" secondAttribute="leading" constant="15" id="jE0-9U-qIn"/>
+                                    <constraint firstItem="gKu-GX-NEb" firstAttribute="leading" secondItem="grY-i4-V9O" secondAttribute="leading" constant="8" id="jE0-9U-qIn"/>
+                                    <constraint firstAttribute="bottom" secondItem="spf-ZH-Gtt" secondAttribute="bottom" constant="7.5" id="jmX-Nj-hUc"/>
                                     <constraint firstAttribute="trailing" secondItem="sdf-Fr-Jfn" secondAttribute="trailing" id="m6T-B0-4OX"/>
                                 </constraints>
                             </view>
@@ -414,10 +427,10 @@
                                             <constraint firstAttribute="width" secondItem="9pH-9v-lNQ" secondAttribute="height" multiplier="331:86" id="tNR-fn-1An"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="speelHet" translatesAutoresizingMaskIntoConstraints="NO" id="Vm5-YU-dBg">
-                                        <rect key="frame" x="15" y="15" width="80" height="64"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="speelHet" translatesAutoresizingMaskIntoConstraints="NO" id="Vm5-YU-dBg">
+                                        <rect key="frame" x="8" y="8" width="100" height="86"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="Vm5-YU-dBg" secondAttribute="height" multiplier="101:80" id="JWZ-h4-KQq"/>
+                                            <constraint firstAttribute="width" secondItem="Vm5-YU-dBg" secondAttribute="height" multiplier="101:80" constant="-8.5750000000000028" id="JWZ-h4-KQq"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HxF-ec-7ja">
@@ -436,12 +449,12 @@
                                     <constraint firstAttribute="trailing" secondItem="9pH-9v-lNQ" secondAttribute="trailing" id="62h-dN-juP"/>
                                     <constraint firstAttribute="trailing" secondItem="HxF-ec-7ja" secondAttribute="trailing" id="B9H-lS-2yO"/>
                                     <constraint firstAttribute="bottom" secondItem="HxF-ec-7ja" secondAttribute="bottom" id="FVr-i5-OCW"/>
-                                    <constraint firstItem="Vm5-YU-dBg" firstAttribute="top" secondItem="D5y-lf-urG" secondAttribute="top" constant="15" id="Qjd-9T-1Aw"/>
-                                    <constraint firstItem="Vm5-YU-dBg" firstAttribute="leading" secondItem="D5y-lf-urG" secondAttribute="leading" constant="15" id="dFV-Uf-M90"/>
+                                    <constraint firstItem="Vm5-YU-dBg" firstAttribute="top" secondItem="D5y-lf-urG" secondAttribute="top" constant="8" id="Qjd-9T-1Aw"/>
+                                    <constraint firstItem="Vm5-YU-dBg" firstAttribute="leading" secondItem="D5y-lf-urG" secondAttribute="leading" constant="8" id="dFV-Uf-M90"/>
                                     <constraint firstAttribute="bottom" secondItem="9pH-9v-lNQ" secondAttribute="bottom" constant="-2.5" id="ff7-Zk-BIZ"/>
                                     <constraint firstItem="HxF-ec-7ja" firstAttribute="top" secondItem="D5y-lf-urG" secondAttribute="top" id="gxu-NM-dkp"/>
                                     <constraint firstItem="HxF-ec-7ja" firstAttribute="leading" secondItem="D5y-lf-urG" secondAttribute="leading" id="hB3-33-JYC"/>
-                                    <constraint firstAttribute="bottom" secondItem="Vm5-YU-dBg" secondAttribute="bottom" constant="15" id="jod-yU-ydj"/>
+                                    <constraint firstAttribute="bottom" secondItem="Vm5-YU-dBg" secondAttribute="bottom" id="jod-yU-ydj"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BeI-WQ-hJ7" userLabel="Doe het">
@@ -463,12 +476,21 @@
                                             <action selector="CategorySelectionButtonAction:" destination="6gA-dM-kWp" eventType="touchUpInside" id="ZI4-hb-Ohl"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doeHet" translatesAutoresizingMaskIntoConstraints="NO" id="EjT-oG-Put">
+                                        <rect key="frame" x="8" y="8" width="100" height="85"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="EjT-oG-Put" secondAttribute="height" multiplier="20:17" id="htr-R7-7sl"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.94434553384780884" green="0.96870797872543335" blue="0.97286540269851685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="pPP-CK-enJ" secondAttribute="trailing" id="9kU-FK-Cq9"/>
+                                    <constraint firstItem="EjT-oG-Put" firstAttribute="top" secondItem="BeI-WQ-hJ7" secondAttribute="top" constant="8" id="TCk-zJ-epn"/>
+                                    <constraint firstAttribute="bottom" secondItem="EjT-oG-Put" secondAttribute="bottom" constant="0.5" id="gw0-VB-9yw"/>
                                     <constraint firstItem="pPP-CK-enJ" firstAttribute="leading" secondItem="BeI-WQ-hJ7" secondAttribute="leading" id="jFh-gf-Rgk"/>
                                     <constraint firstAttribute="bottom" secondItem="pPP-CK-enJ" secondAttribute="bottom" constant="-2.5" id="p3R-pl-x6Y"/>
+                                    <constraint firstItem="EjT-oG-Put" firstAttribute="leading" secondItem="BeI-WQ-hJ7" secondAttribute="leading" constant="8" id="s1G-Fz-IZ4"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -503,6 +525,7 @@
                         <outletCollection property="allBackgroundImages" destination="sdf-Fr-Jfn" collectionClass="NSMutableArray" id="XeR-so-ht7"/>
                         <outletCollection property="allBackgroundImages" destination="9pH-9v-lNQ" collectionClass="NSMutableArray" id="v3D-D5-ZSD"/>
                         <outletCollection property="allBackgroundImages" destination="pPP-CK-enJ" collectionClass="NSMutableArray" id="I1T-vr-NnB"/>
+                        <outletCollection property="categorieLabels" destination="spf-ZH-Gtt" collectionClass="NSMutableArray" id="tuu-DM-kea"/>
                         <segue destination="YJW-3A-tFu" kind="show" identifier="ToShowingCategory" id="Z06-e3-bN8"/>
                     </connections>
                 </viewController>
@@ -1254,9 +1277,10 @@
         <image name="dashboardDice" width="107" height="132"/>
         <image name="dashboardMedaille" width="107" height="132"/>
         <image name="dashboardTimer" width="107" height="132"/>
-        <image name="droomHet" width="165" height="123"/>
+        <image name="doeHet" width="171" height="145"/>
+        <image name="droomHet" width="171" height="145"/>
         <image name="nextButton" width="56" height="56"/>
-        <image name="speelHet" width="149" height="130"/>
+        <image name="speelHet" width="171" height="145"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="7EB-RB-1PN"/>
