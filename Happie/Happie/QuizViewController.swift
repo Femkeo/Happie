@@ -16,10 +16,14 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var countingLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
     
+    var difficultyArray = ["easy", "medium", "hard"]
     var previousCategory = ""
     var previousDifficulty = ""
+    var nextDifficulty = ""
     var Reader = PropertyReader()
     var QuestionList = [String]()
+    var userData = UserDefaults.standard.dictionary(forKey: "Games") as! [String : [String : [String : [String : Any]]]]
+
     
     //these are the QuilitiesQuiz vars
     var questionNumber = Int()
@@ -35,6 +39,17 @@ class QuizViewController: UIViewController {
     var timer = Timer()
     var seconds = 20
     
+    override func viewWillAppear(_ animated: Bool) {
+        let indexOfDifficulty = difficultyArray.index(of: previousDifficulty)
+        if indexOfDifficulty == 2{
+        }else{
+            nextDifficulty = difficultyArray[indexOfDifficulty! + 1]
+        }
+        gettingPreviousInfo(startedFromSection: previousCategory)
+        print(previousCategory)
+        showQualityQuestions()
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,8 +60,7 @@ class QuizViewController: UIViewController {
             buttons[i].layer.borderColor = UIColor.black.cgColor
         }
         
-        gettingPreviousInfo(startedFromSection: previousCategory)
-        showQualityQuestions()
+        
     }
     
     func updateTimer() {
@@ -60,8 +74,41 @@ class QuizViewController: UIViewController {
     }
     
     @IBAction func answerAction(_ sender: UIButton) {
-        buttonSender = sender
-        gettingCorrectButtonInfo()
+        if sender.currentTitle == "Klaar!"{
+            self.performSegue(withIdentifier: "BackToGames", sender: self)
+            var newCounterValue = 0
+            
+            if previousCategory == "Kwaliteiten quiz"{
+                let counter = userData["Categories"]!["Doe het"]![previousCategory]!["counter"]! as! Int
+                newCounterValue = counter + 1
+                
+                let dataToUpdate = GameData()
+                dataToUpdate.creatingGames()
+                var newData = dataToUpdate.result
+                
+                newData["Categories"]!["Doe het"]![previousCategory]![nextDifficulty]! = true
+                newData["Categories"]!["Doe het"]![previousCategory]!["counter"] = newCounterValue
+                
+                UserDefaults.standard.set(newData, forKey: "Games")
+            }else{
+                let counter = userData["Categories"]!["Speel het"]![previousCategory]!["counter"]! as! Int
+                newCounterValue = counter + 1
+                
+                let dataToUpdate = GameData()
+                dataToUpdate.creatingGames()
+                var newData = dataToUpdate.result
+                
+                newData["Categories"]!["Speel het"]![previousCategory]![nextDifficulty]! = true
+                newData["Categories"]!["Speel het"]![previousCategory]!["counter"] = newCounterValue
+                
+                UserDefaults.standard.set(newData, forKey: "Games")
+            }
+            
+        }else{
+            buttonSender = sender
+            gettingCorrectButtonInfo()
+        }
+        
     }
     
     
@@ -101,6 +148,7 @@ class QuizViewController: UIViewController {
             }else{
                 NSLog("super done")
                 disabelingButtons()
+                
                 questionLabel.text = "Gefeliciteerd! Je hebt \(Reader.pListResult.count - numberOfWrongAnswers) antwoorden in 1 keer goed"
             }
         }else{
@@ -120,15 +168,20 @@ class QuizViewController: UIViewController {
     }
     
     func disabelingButtons(){
-        for i in 0..<buttons.count {
-            buttons[i].isHidden = true
-            buttons[i].isEnabled = false
+        for _ in 0..<buttons.count {
+            buttons[1].isHidden = true
+            buttons[1].isEnabled = false
+            buttons[0].isEnabled = true
+            buttons[0].isHidden = false
+            buttons[0].setTitle("Klaar!", for: .normal)
         }
     }
     
+    
+    
     func gettingPreviousInfo(startedFromSection: String){
         Reader.readPropertyLists(startedFromSection: startedFromSection)
-        
+        print("Hi \(startedFromSection)")
         switch startedFromSection{
             
         case "Quick quiz":
@@ -156,8 +209,9 @@ class QuizViewController: UIViewController {
     
     
     func gettingCorrectButtonInfo(){
+        print("hey! \(answersFilledIn)")
+
         switch previousCategory{
-            
         case "Quick quiz":
             
             if number < QuestionList.count - 1 {

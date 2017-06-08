@@ -21,7 +21,7 @@ class GameSelectingViewController: UIViewController {
 
     //var number = 0
     var PreviousButtonTitle = ""
-    let userData = UserDefaults.standard.dictionary(forKey: "Games") as! [String : [String : [String : [String : Any]]]]
+    var userData = UserDefaults.standard.dictionary(forKey: "Games") as! [String : [String : [String : [String : Any]]]]
     var categoryArray = [String]()
     var gameAmount: Int?
     
@@ -31,6 +31,12 @@ class GameSelectingViewController: UIViewController {
     
     var category = ""
     var buttonInfo = ""
+    
+    override func viewWillAppear(_ animated: Bool) {
+        userData = UserDefaults.standard.dictionary(forKey: "Games") as! [String : [String : [String : [String : Any]]]]
+        gettingCorrectInfo(category: PreviousButtonTitle)
+       
+    }
 
     
     
@@ -38,9 +44,7 @@ class GameSelectingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //this uses the info of the button on the previous page to correct
-        gettingCorrectInfo(category: PreviousButtonTitle)
-        print(userData["Categories"] ?? Dictionary())
-        print("categorie: \(PreviousButtonTitle)")
+        
     }
     
     
@@ -60,6 +64,7 @@ class GameSelectingViewController: UIViewController {
     @IBAction func thirdGameAction(_ sender: UIButton) {
         category = categoryArray[2]
         buttonInfo = sender.currentTitle!
+
         settingDifficulty(sender: buttonInfo)
     }
     
@@ -102,11 +107,12 @@ class GameSelectingViewController: UIViewController {
     
     
     func fillingCurrentLabel(){
+        var categoryNumber = 0
             //this is the array of difficulties
             //for each label do something
             for i in 0..<allButtons.count{
                 //check if the difficulty that is used is true or false.
-                let checkingBool = userData["Categories"]![PreviousButtonTitle]![categoryArray[difficultyNumber]]![difficultyArray[difficultyNumber]]! as! Bool
+                let checkingBool = userData["Categories"]![PreviousButtonTitle]![categoryArray[categoryNumber]]![difficultyArray[difficultyNumber]]! as! Bool
                 
                 //if its true set it to active
                 if checkingBool == true{
@@ -121,6 +127,7 @@ class GameSelectingViewController: UIViewController {
                 //start over if 2 was reached (for the arrays)
                 if difficultyNumber == 2{
                     difficultyNumber = 0
+                    categoryNumber += 1
                 }else{
                     difficultyNumber += 1
                 }
@@ -184,7 +191,7 @@ class GameSelectingViewController: UIViewController {
                 performSegue(withIdentifier: "GameToOne", sender: self)
             }else{
                 print("checking is not 0")
-                performSegue(withIdentifier: "GameToMultiple", sender: self)
+                performSegue(withIdentifier: "GameToQuiz", sender: self)
             }
         case "Welja, geen nee":
             performSegue(withIdentifier: "GameToOne", sender: self)
@@ -234,6 +241,11 @@ class GameSelectingViewController: UIViewController {
             viewController.previousDifficulty = difficulty
             viewController.previousCategory = category
         }
+        
+    }
+
+    
+    @IBAction func UnwindtoGames(segue: UIStoryboardSegue) {
         
     }
 

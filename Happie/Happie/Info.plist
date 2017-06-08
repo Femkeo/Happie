@@ -7,7 +7,7 @@
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Listens when you turn something down</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>$(DreamPrototypeTwo)</string>
+	<string>$(Happie)</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Uses your camera, so can take a picture of a sertain subject</string>
 	<key>CFBundleDevelopmentRegion</key>

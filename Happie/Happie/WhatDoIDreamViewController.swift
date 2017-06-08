@@ -15,7 +15,22 @@ class WhatDoIDreamViewController: UIViewController {
     
     
     var currentDream: String?
+    var previousCategory = ""
+    var previousDifficulty = ""
+    var nextDifficulty = ""
+    var difficultyArray = ["easy", "medium", "hard"]
     
+    var userData = UserDefaults.standard.dictionary(forKey: "Games") as! [String : [String : [String : [String : Any]]]]
+    
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let indexOfDifficulty = difficultyArray.index(of: previousDifficulty)
+        if indexOfDifficulty == 2{
+        }else{
+            nextDifficulty = difficultyArray[indexOfDifficulty! + 1]
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +45,22 @@ class WhatDoIDreamViewController: UIViewController {
         showDreamLabel.text = currentDream
     }
     
+    @IBAction func doneButtonAction(_ sender: Any) {
+        self.performSegue(withIdentifier: "BackToGameFromDream", sender: self)
+        var newCounterValue = 0
+        let counter = userData["Categories"]!["Droom het"]![previousCategory]!["counter"]! as! Int
+        newCounterValue = counter + 1
+        
+        let dataToUpdate = GameData()
+        dataToUpdate.creatingGames()
+        var newData = dataToUpdate.result
+        
+        newData["Categories"]!["Droom het"]![previousCategory]![nextDifficulty]! = true
+        
+        newData["Categories"]!["Droom het"]![previousCategory]!["counter"] = newCounterValue
+        
+        UserDefaults.standard.set(newData, forKey: "Games")
+    }
 
 
 }

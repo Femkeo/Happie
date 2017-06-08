@@ -8,7 +8,7 @@
 
 import UIKit
 
-class oneButtonViewController: UIViewController {
+class oneButtonViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     
     @IBOutlet weak var startButton: UIButton!
@@ -16,35 +16,26 @@ class oneButtonViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
+    var difficultyArray = ["easy", "medium", "hard"]
     var previousCategory = ""
     var previousDifficulty = ""
+    var nextDifficulty = ""
+
     var Yes = YesSayer()
     var hasLoadedBefore = false
     var number = 0
     
+    var userData = UserDefaults.standard.dictionary(forKey: "Games") as! [String : [String : [String : [String : Any]]]]
+
+    
     
     override func viewWillAppear(_ animated: Bool) {
-        number += 1
-        if number == 2{
-            hasLoadedBefore = true
+        let indexOfDifficulty = difficultyArray.index(of: previousDifficulty)
+        if indexOfDifficulty == 2{
+        }else{
+            nextDifficulty = difficultyArray[indexOfDifficulty! + 1]
         }
-        if hasLoadedBefore == true{
-            if previousCategory != "Dilemma's"{
-                if previousCategory != "(Fotochallenge: Beeld iets uit met foto's)"{
-                    startButton.isHidden = true
-                    startButton.isEnabled = true
-                    photoImage.image = UIImage(named: "lightbulb")
-                    switch previousCategory{
-                    case "Wat droom ik": descriptionLabel.text = "Soms vergeet je de details en dat is helemaal niet erg! Toch is het goed om zo nu en dan stil te staan bij alle ins en outs van je droom. Je hebt zonet allemaal droom-gerelateerde vragen gesteld, doe dit ook eens bij je eigen droom. Kom maar op met al die nieuwe inzichten!"
-                    case "Karakter eigenschappen kiezen": descriptionLabel.text = "Anderen kunnen je soms positiever zien dan dat jij jezelf ziet. Dat kan je ogen openen. Besef dat jij de juiste eigenschappen hebt om jouw droom uit te laten komen. Dus hup hup, je kan het!"
-                    case "Snelle antwoorden!": descriptionLabel.text = "Je hebt zonet vol overtuiging een hele hoop keuzes gemaakt. Het maken van keuzes zul je in de toekomst nog vaak moeten doen, zeker als je bezig gaat met het realiseren van je droom. Gelukkig kun je jezelf hierin trainen door regelmatig knopen door te hakken. Je zult erachter komen dat je eigenlijk heel goed bent in het maken van de juiste beslissing!"
-                    case "Kwaliteiten Quiz": descriptionLabel.text = "Soms zie je je eigen kwaliteiten niet super scherp. Daarom kan jouw partner-in-crime jou net even een confidence boost geven door jouw kwaliteiten te benoemen. Vraag tijdens de weg naar jouw droom eens naar feedback van de mensen om je heen. Je zult merken dat het je zal motiveren en wie wordt er nou niet blij van een paar veren in zijn reet."
-                    case "DreamDrawing": descriptionLabel.text = "Door goed na te denken over hoe je jouw droom n voor een ander kunt visualisere, ga je veel beter over je droom nadenken. Daarnaast brengt het delen van je droom met anderen, je iets dichter bij het realiseren van je droom. Doe dit dus vooral!"
-                    default: break
-                    }
-                }
-            }
-        }
+
     }
 
     
@@ -83,7 +74,7 @@ class oneButtonViewController: UIViewController {
         case "Foto challenge":
             if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
                 let imagePicker = UIImagePickerController()
-                imagePicker.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
+                imagePicker.delegate = self
                 imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
                 imagePicker.allowsEditing = false
                 self.present(imagePicker, animated: true, completion: nil)
@@ -101,10 +92,51 @@ class oneButtonViewController: UIViewController {
             return
         }
         UIImageWriteToSavedPhotosAlbum(self.photoImage.image!,self, #selector(imageAlert(_:withPotentialError:contextInfo:)), nil)
-        descriptionLabel.text = "Waarschijnlijk heb je al een beeld in je hoofd van hoe het zal zijn als je je droom gerealiseerd hebt. Dat is hartstikke goed! Het is nog beter als je deze visualisatie in beeld brengt, zoals je zonet hebt gedaan. Hierdoor heb je iets tastbaars om op terug te kijken als je droombeeld even niet zo helder is. "
-        startButton.setTitle("Opnieuw", for: .normal)
+       
     }
     
+    @IBAction func doneButtonAction(_ sender: Any) {
+        self.performSegue(withIdentifier: "BackToStartFromOne", sender: self)
+        var newCounterValue = 0
+        
+        if previousCategory == "Foto challenge"{
+            let counter = userData["Categories"]!["Droom het"]![previousCategory]!["counter"]! as! Int
+            newCounterValue = counter + 1
+            
+            let dataToUpdate = GameData()
+            dataToUpdate.creatingGames()
+            var newData = dataToUpdate.result
+            
+            newData["Categories"]!["Droom het"]![previousCategory]![nextDifficulty]! = true
+            newData["Categories"]!["Droom het"]![previousCategory]!["counter"] = newCounterValue
+            
+            UserDefaults.standard.set(newData, forKey: "Games")
+        }else if previousCategory == "Welja, geen nee"{
+            let counter = userData["Categories"]!["Doe het"]![previousCategory]!["counter"]! as! Int
+            newCounterValue = counter + 1
+            
+            let dataToUpdate = GameData()
+            dataToUpdate.creatingGames()
+            var newData = dataToUpdate.result
+            
+            newData["Categories"]!["Doe het"]![previousCategory]![nextDifficulty]! = true
+            newData["Categories"]!["Doe het"]![previousCategory]!["counter"] = newCounterValue
+            
+            UserDefaults.standard.set(newData, forKey: "Games")
+        }else if previousCategory == "Ik heb een droom en ik neem mee"{
+            let counter = userData["Categories"]!["Speel het"]![previousCategory]!["counter"]! as! Int
+            newCounterValue = counter + 1
+            
+            let dataToUpdate = GameData()
+            dataToUpdate.creatingGames()
+            var newData = dataToUpdate.result
+            
+            newData["Categories"]!["Speel het"]![previousCategory]![nextDifficulty]! = true
+            newData["Categories"]!["Speel het"]![previousCategory]!["counter"] = newCounterValue
+            
+            UserDefaults.standard.set(newData, forKey: "Games")
+        }
+    }
     
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {

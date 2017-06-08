@@ -116,6 +116,8 @@ class TableViewController: UITableViewController {
         if segue.identifier == "WhatDoIDreamSegue" {
             let viewController = segue.destination as! WhatDoIDreamViewController
             viewController.currentDream = dreamToUse!
+            viewController.previousCategory = previousCategory
+            viewController.previousDifficulty = previousDifficulty
         }
     }
 

@@ -12,10 +12,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Happie" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Home" id="BYZ-38-t0r" customClass="ViewController" customModule="Happie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -97,10 +97,10 @@
             </objects>
             <point key="canvasLocation" x="1076" y="136.28185907046478"/>
         </scene>
-        <!--Title-->
+        <!--Categories-->
         <scene sceneID="SZ3-nN-dQe">
             <objects>
-                <viewController id="6gA-dM-kWp" customClass="CategoriesViewController" customModule="Happie" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Categories" id="6gA-dM-kWp" customClass="CategoriesViewController" customModule="Happie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QV5-3I-WWg"/>
                         <viewControllerLayoutGuide type="bottom" id="gf5-Kk-5As"/>
@@ -148,10 +148,10 @@
             </objects>
             <point key="canvasLocation" x="1841" y="137"/>
         </scene>
-        <!--Title-->
+        <!--Games-->
         <scene sceneID="cdK-NA-FZW">
             <objects>
-                <viewController id="YJW-3A-tFu" customClass="GameSelectingViewController" customModule="Happie" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Games" id="YJW-3A-tFu" customClass="GameSelectingViewController" customModule="Happie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8ux-Le-kB1"/>
                         <viewControllerLayoutGuide type="bottom" id="5DD-Mj-lTG"/>
@@ -207,6 +207,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WYf-3V-KgP">
                                 <rect key="frame" x="125" y="310" width="125" height="125"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="secondGameAction:" destination="YJW-3A-tFu" eventType="touchUpInside" id="hoe-pF-e4G"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pcx-WS-1UJ">
                                 <rect key="frame" x="125" y="310" width="125" height="125"/>
@@ -215,6 +218,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7z-RD-zcC">
                                 <rect key="frame" x="250" y="310" width="125" height="125"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="secondGameAction:" destination="YJW-3A-tFu" eventType="touchUpInside" id="g62-uB-FOl"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yec-xm-m9J">
                                 <rect key="frame" x="250" y="310" width="125" height="125"/>
@@ -234,6 +240,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iS3-3C-cyG">
                                 <rect key="frame" x="125" y="435" width="125" height="125"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="thirdGameAction:" destination="YJW-3A-tFu" eventType="touchUpInside" id="xuh-ao-3Hj"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V34-Yj-DIy">
                                 <rect key="frame" x="125" y="435" width="125" height="125"/>
@@ -242,6 +251,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c1P-QD-LoK">
                                 <rect key="frame" x="250" y="435" width="125" height="125"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="thirdGameAction:" destination="YJW-3A-tFu" eventType="touchUpInside" id="DcX-k3-53j"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BZd-lM-UTY">
                                 <rect key="frame" x="250" y="435" width="125" height="125"/>
@@ -345,6 +357,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="uYr-cz-STa">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="5Rl-hl-M2K">
+                            <connections>
+                                <action selector="doneButtonAction:" destination="bhl-PS-pm5" id="bp7-nS-Z0a"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="p52-gm-R0t">
                             <connections>
                                 <action selector="saveButtonAction:" destination="bhl-PS-pm5" id="oju-jM-Ah9"/>
@@ -360,16 +377,18 @@
                         <segue destination="p2s-ew-sBO" kind="show" identifier="OneToTableView" id="taJ-F4-eEH"/>
                         <segue destination="HmZ-Dt-PaL" kind="show" identifier="OneToQuiz" id="M6F-Gy-JuN"/>
                         <segue destination="kF5-OQ-GB0" kind="show" identifier="OneToMultiple" id="zSv-cY-wsz"/>
+                        <segue destination="IK9-aA-RGD" kind="unwind" identifier="BackToStartFromOne" unwindAction="UnwindtoGamesWithSegue:" id="P0d-qa-JG8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VFS-MT-cuB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="IK9-aA-RGD" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3464.8000000000002" y="135.38230884557723"/>
         </scene>
-        <!--Title-->
+        <!--Drawing-->
         <scene sceneID="fzk-JB-Y6a">
             <objects>
-                <viewController id="F8s-ha-Jxc" customClass="drawingViewController" customModule="Happie" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Drawing" id="F8s-ha-Jxc" customClass="drawingViewController" customModule="Happie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="v7z-uM-dxG"/>
                         <viewControllerLayoutGuide type="bottom" id="6KL-xB-4LT"/>
@@ -517,25 +536,40 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="dMg-PL-N0F">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="BvT-fc-EAm">
+                            <connections>
+                                <action selector="doneButtonAction:" destination="F8s-ha-Jxc" id="SEN-86-Fli"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="save" id="Ra2-Bz-pSo"/>
-                            <barButtonItem systemItem="undo" id="gbS-dv-b9M"/>
+                            <barButtonItem systemItem="save" id="Ra2-Bz-pSo">
+                                <connections>
+                                    <action selector="saveImageAction:" destination="F8s-ha-Jxc" id="VFu-3E-liq"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="undo" id="gbS-dv-b9M">
+                                <connections>
+                                    <action selector="undoDrawingAction:" destination="F8s-ha-Jxc" id="I2W-fe-7Iu"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="mainImageView" destination="O2p-WQ-XiC" id="5Ht-dh-loE"/>
                         <outlet property="saveImageOutlet" destination="Ra2-Bz-pSo" id="0CQ-Dh-Sck"/>
                         <outlet property="undoDrawingOutlet" destination="gbS-dv-b9M" id="eAJ-r7-rxN"/>
+                        <segue destination="d35-NX-WTr" kind="unwind" identifier="BackToStartFromDraw" unwindAction="UnwindtoGamesWithSegue:" id="Z9D-Bo-0tX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sXb-p8-rju" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="d35-NX-WTr" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4306" y="-193"/>
         </scene>
-        <!--Muliple Answers View Controller-->
+        <!--MultipleAnswers-->
         <scene sceneID="xdO-Qh-6vA">
             <objects>
-                <viewController id="kF5-OQ-GB0" customClass="MulipleAnswersViewController" customModule="Happie" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="MultipleAnswers" id="kF5-OQ-GB0" customClass="MulipleAnswersViewController" customModule="Happie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FxI-13-I39"/>
                         <viewControllerLayoutGuide type="bottom" id="7oq-ib-XBs"/>
@@ -551,6 +585,9 @@
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="0.95725172759999999" green="0.94622439150000004" blue="0.87938213350000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonsAction:" destination="kF5-OQ-GB0" eventType="touchUpInside" id="8Az-Ur-IvE"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6yM-WZ-elN">
                                 <rect key="frame" x="80" y="226" width="216" height="105"/>
@@ -600,19 +637,24 @@
                             <constraint firstItem="orW-hL-W7B" firstAttribute="trailing" secondItem="zOM-ao-fnC" secondAttribute="trailing" id="v7g-dO-Qfa"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="sdY-jk-8cN"/>
                     <connections>
+                        <outlet property="ofLabel" destination="zOM-ao-fnC" id="1ZF-qb-F9N"/>
+                        <outlet property="preferenceLabel" destination="orW-hL-W7B" id="xL4-8m-XV5"/>
                         <outletCollection property="buttons" destination="6yM-WZ-elN" collectionClass="NSMutableArray" id="zTY-mT-Nu7"/>
                         <outletCollection property="buttons" destination="1yN-Pm-uH4" collectionClass="NSMutableArray" id="tER-ln-mKh"/>
+                        <segue destination="HTR-P5-Zy2" kind="unwind" identifier="BackToGameFromMulitple" unwindAction="UnwindtoGamesWithSegue:" id="Fio-43-zoa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hOe-ds-q3y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="HTR-P5-Zy2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4309.6000000000004" y="465.51724137931041"/>
         </scene>
-        <!--Quiz View Controller-->
+        <!--Quiz-->
         <scene sceneID="omS-hn-HLN">
             <objects>
-                <viewController id="HmZ-Dt-PaL" customClass="QuizViewController" customModule="Happie" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Quiz" id="HmZ-Dt-PaL" customClass="QuizViewController" customModule="Happie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="POE-7M-t9x"/>
                         <viewControllerLayoutGuide type="bottom" id="bG3-gu-YnA"/>
@@ -727,22 +769,25 @@
                             <constraint firstItem="fOd-eo-Y1w" firstAttribute="top" secondItem="r0I-AK-Qzt" secondAttribute="bottom" constant="40" id="ywE-F6-E5G"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="dsA-Iz-ym2"/>
                     <connections>
                         <outlet property="countingLabel" destination="fOd-eo-Y1w" id="6ir-bO-2bq"/>
                         <outlet property="questionLabel" destination="lTU-VX-ZMw" id="Ydg-am-GCh"/>
                         <outlet property="timerLabel" destination="9PV-kD-wGB" id="IBB-VX-dau"/>
                         <outletCollection property="buttons" destination="pr7-es-WtX" collectionClass="NSMutableArray" id="ftb-J8-ISg"/>
                         <outletCollection property="buttons" destination="r0I-AK-Qzt" collectionClass="NSMutableArray" id="Ak0-AM-Hgh"/>
+                        <segue destination="9uu-Nb-0A4" kind="unwind" identifier="BackToGames" unwindAction="UnwindtoGamesWithSegue:" id="HBS-FK-mh8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2gM-91-QfE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="9uu-Nb-0A4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5018" y="466"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Tableview-->
         <scene sceneID="1EX-EP-9J7">
             <objects>
-                <tableViewController id="p2s-ew-sBO" customClass="TableViewController" customModule="Happie" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Tableview" id="p2s-ew-sBO" customClass="TableViewController" customModule="Happie" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="7E9-gS-naE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -773,6 +818,7 @@
                             <outlet property="delegate" destination="p2s-ew-sBO" id="cQH-Sm-AXT"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Title" id="iGj-kE-yTy"/>
                     <connections>
                         <outlet property="personalityImage" destination="kms-Ct-ZxH" id="SZl-jl-iKR"/>
                         <segue destination="wQo-nE-UFQ" kind="show" identifier="WhatDoIDreamSegue" id="S6t-Eg-rkH"/>
@@ -782,10 +828,10 @@
             </objects>
             <point key="canvasLocation" x="5016.8000000000002" y="-194.75262368815595"/>
         </scene>
-        <!--What DoI Dream View Controller-->
+        <!--Dream-->
         <scene sceneID="iv6-QA-hCz">
             <objects>
-                <viewController id="wQo-nE-UFQ" customClass="WhatDoIDreamViewController" customModule="Happie" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Dream" id="wQo-nE-UFQ" customClass="WhatDoIDreamViewController" customModule="Happie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="s8f-nZ-MIJ"/>
                         <viewControllerLayoutGuide type="bottom" id="ZbV-8d-TmR"/>
@@ -811,12 +857,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="AkK-6Q-aNj">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="s4X-O7-eca">
+                            <connections>
+                                <action selector="doneButtonAction:" destination="wQo-nE-UFQ" id="X3U-1M-gDq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="passDeficeButton" destination="QY1-vt-LhT" id="FjW-Hh-ICu"/>
                         <outlet property="showDreamLabel" destination="W7c-jv-WGq" id="Grb-Qo-gsY"/>
+                        <segue destination="Wgf-Ba-hJx" kind="unwind" identifier="BackToGameFromDream" unwindAction="UnwindtoGamesWithSegue:" id="ph4-KU-Lha"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O8i-cq-LSt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Wgf-Ba-hJx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5730" y="-195"/>
         </scene>
@@ -1012,11 +1067,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="H33-61-tTr"/>
         <segue reference="7EB-RB-1PN"/>
         <segue reference="Nws-Nh-w07"/>
-        <segue reference="bs3-cg-lEL"/>
-        <segue reference="EjY-yh-UdT"/>
-        <segue reference="y8T-Gj-4Kh"/>
+        <segue reference="taJ-F4-eEH"/>
+        <segue reference="Qim-pp-d3G"/>
+        <segue reference="zSv-cY-wsz"/>
+        <segue reference="M6F-Gy-JuN"/>
     </inferredMetricsTieBreakers>
 </document>

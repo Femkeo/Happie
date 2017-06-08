@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EC1FEB5B1EE6D16C000E6485 /* YesSayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1FEB5A1EE6D16C000E6485 /* YesSayer.swift */; };
+		EC5F99351EE83FC2002DE181 /* newData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5F99341EE83FC2002DE181 /* newData.swift */; };
 		EC7E671A1EE5815D00643E43 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7E67191EE5815C00643E43 /* GameData.swift */; };
 		ECA7ECB01EE6AD58007C05C4 /* oneButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA7ECAF1EE6AD58007C05C4 /* oneButtonViewController.swift */; };
 		ECA7ECB41EE6ADE1007C05C4 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA7ECB31EE6ADE1007C05C4 /* TableViewController.swift */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		EC1FEB5A1EE6D16C000E6485 /* YesSayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YesSayer.swift; sourceTree = "<group>"; };
+		EC5F99341EE83FC2002DE181 /* newData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = newData.swift; path = ../newData.swift; sourceTree = "<group>"; };
 		EC7E67191EE5815C00643E43 /* GameData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
 		ECA7ECAF1EE6AD58007C05C4 /* oneButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = oneButtonViewController.swift; sourceTree = "<group>"; };
 		ECA7ECB31EE6ADE1007C05C4 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
@@ -69,7 +71,6 @@
 			isa = PBXGroup;
 			children = (
 				ECA7ECAF1EE6AD58007C05C4 /* oneButtonViewController.swift */,
-				EC1FEB5A1EE6D16C000E6485 /* YesSayer.swift */,
 				ECA7ECBF1EE6BBEB007C05C4 /* drawingViewController.swift */,
 				ECA7ECB31EE6ADE1007C05C4 /* TableViewController.swift */,
 				ECA7ECC71EE6CD6B007C05C4 /* QuizViewController.swift */,
@@ -125,6 +126,8 @@
 				EC7E67191EE5815C00643E43 /* GameData.swift */,
 				ECA7ECC31EE6CC19007C05C4 /* Question.swift */,
 				ECA7ECBB1EE6BB48007C05C4 /* PropertyReader.swift */,
+				EC5F99341EE83FC2002DE181 /* newData.swift */,
+				EC1FEB5A1EE6D16C000E6485 /* YesSayer.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				ECE643EB1EDC4BB700E7E58D /* ViewController.swift in Sources */,
 				ECE643FB1EDC51BB00E7E58D /* FirstLaunchViewController.swift in Sources */,
 				ECE644011EDC86ED00E7E58D /* CategoriesViewController.swift in Sources */,
+				EC5F99351EE83FC2002DE181 /* newData.swift in Sources */,
 				ECA7ECC01EE6BBEB007C05C4 /* drawingViewController.swift in Sources */,
 				ECA7ECB81EE6AE2F007C05C4 /* MulipleAnswersViewController.swift in Sources */,
 				ECA7ECB41EE6ADE1007C05C4 /* TableViewController.swift in Sources */,

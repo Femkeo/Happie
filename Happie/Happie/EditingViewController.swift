@@ -61,6 +61,7 @@ class EditingViewController: UIViewController {
             dream = UserDefaults.standard.dictionary(forKey: "SettingsDict")?["dream"] as? String ?? String()
         }
         
+        
         gettingRightImage(hair: hair, skin: skin, clothes: clothes)
         
         skinImage.image = UIImage(named: skinArray[skinNumber])
@@ -89,7 +90,8 @@ class EditingViewController: UIViewController {
     }
     
     @IBAction func cancelButtonAction(_ sender: Any) {
-        self.navigationController?.popToRootViewController(animated: true)    }
+        self.navigationController?.popToRootViewController(animated: true)
+    }
     
     @IBAction func hairButtonAction(_ sender: UIButton) {
         if sender == hairLeftButtonOutlet{
