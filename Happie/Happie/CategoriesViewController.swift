@@ -11,6 +11,8 @@ import UIKit
 class CategoriesViewController: UIViewController {
 
     @IBOutlet var allButtons: [UIButton]!
+    @IBOutlet var allViews: [UIView]!
+    @IBOutlet var allBackgroundImages: [UIImageView]!
     
     var Data = GameData()
     var userData = UserDefaults.standard.dictionary(forKey: "Games") ?? Dictionary()
@@ -27,6 +29,15 @@ class CategoriesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        for view in allViews{
+            view.layer.cornerRadius = 15.0
+        }
+        
+        for image in allBackgroundImages{
+            image.layer.cornerRadius = 15.0
+            image.layer.masksToBounds = true
+        }
 
     }
 
