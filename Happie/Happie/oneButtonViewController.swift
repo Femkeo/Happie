@@ -44,15 +44,20 @@ class oneButtonViewController: UIViewController, UIImagePickerControllerDelegate
         saveButton.tintColor = UIColor.clear
         saveButton.isEnabled = false
         
+        startButton.setTitle("Start!", for: .normal)
+        
         startButton.layer.cornerRadius = 20.0
         startButton.layer.borderWidth = 1.5
         startButton.layer.borderColor = UIColor.black.cgColor
         
-        startButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        startButton.titleLabel?.minimumScaleFactor = 0.2
-        startButton.titleLabel?.numberOfLines = 50
-        
         descriptionView.layer.cornerRadius = 20.0
+        
+//        startButton.titleLabel?.adjustsFontSizeToFitWidth = true
+//        startButton.titleLabel?.minimumScaleFactor = 0.2
+//        startButton.titleLabel?.numberOfLines = 1
+//        startButton.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
+
+        
         
         descriptionLabel.adjustsFontSizeToFitWidth = true
         descriptionLabel.minimumScaleFactor = 0.2
