@@ -14,6 +14,8 @@ class CategoriesViewController: UIViewController {
     @IBOutlet var allViews: [UIView]!
     @IBOutlet var allBackgroundImages: [UIImageView]!
     @IBOutlet var categorieLabels: [UILabel]!
+    @IBOutlet var categoryImages: [UIImageView]!
+    
     
     var Data = GameData()
     var userData = UserDefaults.standard.dictionary(forKey: "Games") ?? Dictionary()
@@ -26,8 +28,6 @@ class CategoriesViewController: UIViewController {
             userData = UserDefaults.standard.dictionary(forKey: "Games") ?? Dictionary()
         }
         fillingLabels()
-        
-        
     }
     
     
@@ -45,8 +45,6 @@ class CategoriesViewController: UIViewController {
         
         for label in categorieLabels{
             label.numberOfLines = 1;
-            label.minimumScaleFactor = 49./label.font.pointSize;
-            label.adjustsFontSizeToFitHeight = YES;
         }
 
     }
@@ -61,7 +59,6 @@ class CategoriesViewController: UIViewController {
     
     
     func fillingLabels(){
-        var number = 0
         
         let categoryUserData = userData["Categories"] as! [String: [String: Any]]
         
@@ -71,9 +68,9 @@ class CategoriesViewController: UIViewController {
         print(allCategories)
         
         for label in 0..<allButtons.count{
-            allButtons[label].setTitle(allCategories[number], for: .normal)
-            print(allCategories[number])
-            number  += 1
+            allButtons[label].setTitle(allCategories[label], for: .normal)
+            categoryImages[label].image = UIImage(named: allCategories[label])
+            categorieLabels[label].text = "\(allCategories[label])"
         }
     }
     
