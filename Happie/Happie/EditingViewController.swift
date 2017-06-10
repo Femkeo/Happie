@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditingViewController: UIViewController {
+class EditingViewController: UIViewController, UITextViewDelegate {
 
     
     @IBOutlet weak var dreamTextField: UITextView!
@@ -74,6 +74,12 @@ class EditingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        dreamTextField.delegate = self
+        dreamTextField.text = "Begin met typen"
+        dreamTextField.textColor = UIColor.lightGray
+        dreamTextField.layer.cornerRadius = 8.0
+        dreamTextField.clipsToBounds = true
 
     }
     
@@ -198,6 +204,20 @@ class EditingViewController: UIViewController {
         hairImage.image = UIImage(named: hairArray[hairNumber])
         skinImage.image = UIImage(named: skinArray[skinNumber])
         clothesImage.image = UIImage(named: clothesArray[clothesNumber])
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if dreamTextField.textColor == UIColor.lightGray {
+            dreamTextField.text = nil
+            dreamTextField.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if dreamTextField.text.isEmpty {
+            dreamTextField.text = "Begin met typen"
+            dreamTextField.textColor = UIColor.lightGray
+        }
     }
     
 
