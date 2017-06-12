@@ -10,10 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, ContainerDelegateProtocol {
     
-    
     @IBOutlet weak var dreamNameLabel: UILabel!
-    
-    
     @IBOutlet weak var skinImage: UIImageView!
     @IBOutlet weak var hairImage: UIImageView!
     @IBOutlet weak var clothesImage: UIImageView!
@@ -23,16 +20,17 @@ class ViewController: UIViewController, ContainerDelegateProtocol {
     @IBOutlet weak var tutorialView: UIView!
     @IBOutlet weak var resetLaunchButton: UIButton!
     
+    @IBOutlet weak var stepsLabel: UILabel!
+    @IBOutlet weak var userProgressOutlet: UIProgressView!
+    
+    var currentProgress = 0.0
     var first: Bool?
-    var defaultAvatar = [
-        "hair" : "Hair1",
-        "skin" : "Skin1",
-        "clothes" : "Clothes1",
-        "dream" : "Vul hier je droom in"
-    ]
+    var Data = UserData()
     
     //this checks if the app has run before. If not, it shows a little tutorial view (ScreenViewController)
     let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -61,15 +59,16 @@ class ViewController: UIViewController, ContainerDelegateProtocol {
         
         //end designstuff
         
-        if UserDefaults.standard.dictionary(forKey: "SettingsDict")?["hair"] == nil{
-            UserDefaults.standard.set(defaultAvatar, forKey: "SettingsDict")
-        }
+        Data.creatingUserData()
         
         hairImage.image = UIImage(named: UserDefaults.standard.dictionary(forKey: "SettingsDict")?["hair"] as? String ?? String())
         skinImage.image = UIImage(named: UserDefaults.standard.dictionary(forKey: "SettingsDict")?["skin"] as? String ?? String())
         clothesImage.image = UIImage(named: UserDefaults.standard.dictionary(forKey: "SettingsDict")?["clothes"] as? String ?? String())
         dreamNameLabel.text = UserDefaults.standard.dictionary(forKey: "SettingsDict")?["dream"] as? String ?? String()
+        userProgressOutlet.progress = UserDefaults.standard.dictionary(forKey: "SettingsDict")?["userScore"] as? Float ?? Float()
+        settingScore()
     }//end viewWillAppear
+    
     
     
     override func viewDidLoad() {
@@ -86,9 +85,8 @@ class ViewController: UIViewController, ContainerDelegateProtocol {
         }
     }
     
-
     
-
+    
     func close() {
         tutorialView.isHidden = true
         dreamNameLabel.isHidden = false
@@ -98,7 +96,6 @@ class ViewController: UIViewController, ContainerDelegateProtocol {
         getStartedButton.isHidden = false
         resetLaunchButton.isHidden = false
         self.navigationController?.setNavigationBarHidden(false, animated: true)
-
     }
     
     
@@ -107,6 +104,20 @@ class ViewController: UIViewController, ContainerDelegateProtocol {
         self.tutorialView.isHidden = true
     }
     
+    
+    
+    func settingScore(){
+        let currentUserScore = UserDefaults.standard.dictionary(forKey: "SettingsDict")?["userScore"] as? Float ?? Float()
+        if currentUserScore <= 100.0{
+            stepsLabel.text = "Zet 100 stappen"
+        }else if currentUserScore <= 200{
+            stepsLabel.text = "Je hebt al 100 stappen gezet! Probeer eens 200 te zetten!"
+        }else if currentUserScore <= 300{
+            stepsLabel.text = "Je heb al 200 stappen gezet! 300 moet nu geen probleem meer zijn voor jou!"
+        }else{
+            stepsLabel.text = "Je hebt al zoveel stappen gezet! Het is net of ben je een rondje om de wereld geweest!"
+        }
+    }
     
     
     

@@ -61,7 +61,6 @@ class GameSelectingViewController: UIViewController {
     @IBAction func thirdGameAction(_ sender: UIButton) {
         category = categoryArray[2]
         buttonInfo = sender.currentTitle!
-
         settingDifficulty(sender: buttonInfo)
     }
     
@@ -133,7 +132,7 @@ class GameSelectingViewController: UIViewController {
                     difficultyNumber += 1
                 }
             }
-        }
+    }
 
     
     // if the game is playable
