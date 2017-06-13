@@ -33,9 +33,10 @@ class TableViewController: UITableViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        Reader.readPropertyLists(startedFromSection: gameFromPrevious)
         checkingDifficulties()
         checkingGameCategory(game: gameFromPrevious)
-        Reader.readPropertyLists(startedFromSection: gameFromPrevious)
 
         if gameFromPrevious == "Wat is mijn karakter"{
             personalityImage.image = UIImage(named: "Kwaliteiten guess")
@@ -77,12 +78,14 @@ class TableViewController: UITableViewController {
         cell.textLabel?.text = Reader.pListResult[row]
         if gameFromPrevious == "Wat is mijn karakter"{
             cell.selectionStyle = UITableViewCellSelectionStyle.none
+            print("reached?")
         }
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         currentIndexPath = indexPath
+        print("Here is the indexpath row \(indexPath.row)")
         provideCorrectInfo()
         if gameFromPrevious == "Wat is mijn karakter"{
             if selectedArray.count < 5{
@@ -91,6 +94,7 @@ class TableViewController: UITableViewController {
                     print("You selected cell #\(indexPath.row)!")
                     selectedArray.append(indexPath.row)
                     print(selectedArray)
+                    print("hey")
                 }
             }
         }

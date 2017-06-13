@@ -1472,7 +1472,7 @@
         <scene sceneID="1EX-EP-9J7">
             <objects>
                 <tableViewController title="Tableview" id="p2s-ew-sBO" customClass="TableViewController" customModule="Happie" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="7E9-gS-naE">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="7E9-gS-naE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1857,11 +1857,11 @@
         <image name="nextButton" width="56" height="56"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="H33-61-tTr"/>
-        <segue reference="mRR-R1-8x9"/>
+        <segue reference="7EB-RB-1PN"/>
         <segue reference="Nws-Nh-w07"/>
-        <segue reference="bs3-cg-lEL"/>
-        <segue reference="EjY-yh-UdT"/>
+        <segue reference="H33-61-tTr"/>
         <segue reference="y8T-Gj-4Kh"/>
+        <segue reference="EjY-yh-UdT"/>
+        <segue reference="bs3-cg-lEL"/>
     </inferredMetricsTieBreakers>
 </document>
