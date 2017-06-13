@@ -9,10 +9,6 @@
 import UIKit
 
 class TableViewController: UITableViewController {
-
-    
-    
-    @IBOutlet weak var personalityImage: UIImageView!
     
     
     var gameFromPrevious = ""
@@ -34,13 +30,8 @@ class TableViewController: UITableViewController {
         checkingDifficulties()
         checkingGameCategory(game: gameFromPrevious)
         Reader.readPropertyLists(startedFromSection: gameFromPrevious)
-
-        if gameFromPrevious == "Wat is mijn karakter"{
-            personalityImage.image = UIImage(named: "Kwaliteiten guess")
-        }else{
-            personalityImage.image = UIImage(named: "Dreamguess")
-        }
     }
+
     
     
     override func viewDidLoad() {
