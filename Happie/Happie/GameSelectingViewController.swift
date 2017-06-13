@@ -14,7 +14,8 @@ class GameSelectingViewController: UIViewController {
 
     @IBOutlet var allButtons: [UIButton]!
     @IBOutlet var allImages: [UIImageView]!
-
+    @IBOutlet var allGameLabels: [UILabel]!
+    
     var PreviousButtonTitle = ""
     var userData = UserDefaults.standard.dictionary(forKey: "Games") as! [String : [String : [String : [String : Any]]]]
     var categoryArray = [String]()
