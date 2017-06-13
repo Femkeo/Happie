@@ -26,10 +26,10 @@ class drawingViewController: UIViewController {
     var nextDifficulty = ""
     var difficultyArray = ["easy", "medium", "hard"]
     var gameCategory = ""
-
-
     
-    var userData = UserDefaults.standard.dictionary(forKey: "Games") as! [String : [String : [String : [String : Any]]]]
+    var gameData = UserDefaults.standard.dictionary(forKey: "Games") as! [String : [String : [String : [String : Any]]]]
+    var userData = UserDefaults.standard.dictionary(forKey: "SettingsDict") ?? Dictionary()
+
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -106,9 +106,9 @@ class drawingViewController: UIViewController {
     }
     
     func checkingGameCategory(game: String){
-        let droomGames = Array(userData["Categories"]!["Droom het"]!.keys)
-        let speelGames = Array(userData["Categories"]!["Speel het"]!.keys)
-        let doeGames = Array(userData["Categories"]!["Doe het"]!.keys)
+        let droomGames = Array(gameData["Categories"]!["Droom het"]!.keys)
+        let speelGames = Array(gameData["Categories"]!["Speel het"]!.keys)
+        let doeGames = Array(gameData["Categories"]!["Doe het"]!.keys)
         
         if droomGames.contains(game){
             gameCategory = "Droom het"
@@ -130,9 +130,9 @@ class drawingViewController: UIViewController {
     
     func savingAndGoingBack(){
         self.performSegue(withIdentifier: "BackToStartFromDraw", sender: self)
-        
+        updateScore()
         var newCounterValue = 0
-        let counter = userData["Categories"]![gameCategory]![gameFromPrevious]!["counter"]! as! Int
+        let counter = gameData["Categories"]![gameCategory]![gameFromPrevious]!["counter"]! as! Int
         newCounterValue = counter + 1
         
         let dataToUpdate = GameData()
@@ -144,6 +144,28 @@ class drawingViewController: UIViewController {
         newData["Categories"]![gameCategory]![gameFromPrevious]!["counter"] = newCounterValue
         
         UserDefaults.standard.set(newData, forKey: "Games")
+    }
+    
+    func updateScore(){
+        var newScoreValue: Float = 0.0
+        let score = userData["userScore"] as! Float
+        
+        switch difficultyFromPrevious{
+        case "easy" : newScoreValue = 50
+        case "medium" : newScoreValue = 100
+        case "hard" : newScoreValue = 150
+        default: newScoreValue = 50
+        }
+        newScoreValue += score
+        
+        let dataToUpdate = UserData()
+        dataToUpdate.creatingUserData()
+        var newData = dataToUpdate.result
+        
+        newData["userScore"] = newScoreValue
+        
+        UserDefaults.standard.set(newData, forKey: "SettingsDict")
+        
     }
 
     

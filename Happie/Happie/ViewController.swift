@@ -23,7 +23,6 @@ class ViewController: UIViewController, ContainerDelegateProtocol {
     @IBOutlet weak var stepsLabel: UILabel!
     @IBOutlet weak var userProgressOutlet: UIProgressView!
     
-    var currentProgress = 0.0
     var first: Bool?
     var Data = UserData()
     
@@ -107,16 +106,23 @@ class ViewController: UIViewController, ContainerDelegateProtocol {
     
     
     func settingScore(){
-        let currentUserScore = UserDefaults.standard.dictionary(forKey: "SettingsDict")?["userScore"] as? Float ?? Float()
-        if currentUserScore <= 100.0{
-            stepsLabel.text = "Zet 100 stappen"
-        }else if currentUserScore <= 200{
-            stepsLabel.text = "Je hebt al 100 stappen gezet! Probeer eens 200 te zetten!"
-        }else if currentUserScore <= 300{
-            stepsLabel.text = "Je heb al 200 stappen gezet! 300 moet nu geen probleem meer zijn voor jou!"
-        }else{
-            stepsLabel.text = "Je hebt al zoveel stappen gezet! Het is net of ben je een rondje om de wereld geweest!"
+        var scoreArray: [Float] = [100.0, 250.0, 500.0, 1000.0, 1500.0, 2000.0]
+        
+        let currentUserScore: Float = UserDefaults.standard.dictionary(forKey: "SettingsDict")?["userScore"] as? Float ?? Float()
+        
+        var targetScore: Float?
+
+        for score in 0..<scoreArray.count{
+            if currentUserScore > scoreArray[score]{
+                targetScore = scoreArray[score + 1]
+            }
         }
+        
+        let currentProgress = currentUserScore / targetScore!
+        
+        userProgressOutlet.progress = currentProgress
+        print(currentProgress)
+        
     }
     
     

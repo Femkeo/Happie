@@ -209,7 +209,7 @@ class GameSelectingViewController: UIViewController {
                 performSegue(withIdentifier: "GameToOne", sender: self)
             }else{
                 print("checking is not 0")
-                performSegue(withIdentifier: "GameToQuiz", sender: self)
+                performSegue(withIdentifier: "GameToTableView", sender: self)
             }
         default: performSegue(withIdentifier: "GameToOne", sender: self)
         }

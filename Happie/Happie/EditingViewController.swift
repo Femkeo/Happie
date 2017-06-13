@@ -43,6 +43,7 @@ class EditingViewController: UIViewController, UITextFieldDelegate {
     var clothes: String = UserDefaults.standard.dictionary(forKey: "SettingsDict")?["clothes"] as? String ?? String()
 
     var dream: String = UserDefaults.standard.dictionary(forKey: "SettingsDict")?["dream"] as? String ?? String()
+    var userScore: Float = UserDefaults.standard.dictionary(forKey: "SettingsDict")?["userScore"] as? Float ?? Float()
 
     
     
@@ -61,6 +62,7 @@ class EditingViewController: UIViewController, UITextFieldDelegate {
             skin = UserDefaults.standard.dictionary(forKey: "SettingsDict")?["skin"] as? String ?? String()
             clothes = UserDefaults.standard.dictionary(forKey: "SettingsDict")?["clothes"] as? String ?? String()
             dream = UserDefaults.standard.dictionary(forKey: "SettingsDict")?["dream"] as? String ?? String()
+            userScore = UserDefaults.standard.dictionary(forKey: "SettingsDict")?["userScore"] as? Float ?? Float()
         }
         
         
@@ -70,7 +72,7 @@ class EditingViewController: UIViewController, UITextFieldDelegate {
         hairImage.image = UIImage(named: hairArray[hairNumber])
         clothesImage.image = UIImage(named: clothesArray[clothesNumber])
         
-        checkingButtonReach()
+        //checkingButtonReach()
     }
     
     
@@ -100,16 +102,21 @@ class EditingViewController: UIViewController, UITextFieldDelegate {
     }    
     
     @IBAction func saveButtonAction(_ sender: Any) {
+        var newScoreValue: Float = 25.0
+        let score = userScore
+        newScoreValue += score
+        
         let userDataUpdate = [
             "hair" : hairArray[hairNumber],
             "skin" : skinArray[skinNumber],
             "clothes" : clothesArray[clothesNumber],
             "dream" : dreamTextField.text!,
-            "userScore" : UserDefaults.standard.dictionary(forKey: "SettingsDict")?["userScore"] ?? Float()
+            "userScore": newScoreValue
         ] as [String : Any]
         UserDefaults.standard.set(userDataUpdate, forKey: "SettingsDict")
         self.navigationController?.popToRootViewController(animated: true)
     }
+
     
     @IBAction func cancelButtonAction(_ sender: Any) {
         self.navigationController?.popToRootViewController(animated: true)
@@ -123,15 +130,18 @@ class EditingViewController: UIViewController, UITextFieldDelegate {
             
             if hairNumber > 0{
                 hairNumber -= 1
-                hairImage.image = UIImage(named: hairArray[hairNumber])
+            }else{
+                hairNumber = hairArray.count - 1
             }
         }else if sender == hairRightButtonOutlet{
             if hairNumber < hairArray.count - 1{
                 hairNumber += 1
-                hairImage.image = UIImage(named: hairArray[hairNumber])
+            }else{
+                hairNumber = 0
             }
         }
-        checkingButtonReach()
+        hairImage.image = UIImage(named: hairArray[hairNumber])
+
     }
     
     @IBAction func clothesButtonAction(_ sender: UIButton) {
@@ -139,65 +149,40 @@ class EditingViewController: UIViewController, UITextFieldDelegate {
             
             if clothesNumber > 0{
                 clothesNumber -= 1
-                clothesImage.image = UIImage(named: clothesArray[clothesNumber])
+            }else{
+                clothesNumber = clothesArray.count - 1
             }
         }else if sender == clothesRightButtonOutlet{
             if clothesNumber < clothesArray.count - 1{
                 clothesNumber += 1
-                clothesImage.image = UIImage(named: clothesArray[clothesNumber])
+            }else{
+                clothesNumber = 0
             }
         }
-        checkingButtonReach()
+        clothesImage.image = UIImage(named: clothesArray[clothesNumber])
+
     }
     
     @IBAction func skinButtonAction(_ sender: UIButton) {
         if sender == skinLeftButtonOutlet{
             if skinNumber > 0 {
                 skinNumber -= 1
-                skinImage.image = UIImage(named: skinArray[skinNumber])
+            }else{
+                skinNumber = skinArray.count - 1
             }
         }else if sender == skinRightButtonOutlet{
             if skinNumber < skinArray.count - 1{
                 skinNumber += 1
-                skinImage.image = UIImage(named: skinArray[skinNumber])
+            }else{
+                skinNumber = 0
             }
         }
-        checkingButtonReach()
+        skinImage.image = UIImage(named: skinArray[skinNumber])
+
     }
     
     
-    
-    
-    func checkingButtonReach(){
-        if hairNumber == hairArray.count - 1{
-            hairRightButtonOutlet.isHidden = true
-        }else if hairNumber == 0{
-            hairLeftButtonOutlet.isHidden = true
-        }else{
-            hairLeftButtonOutlet.isHidden = false
-            hairRightButtonOutlet.isHidden = false
-        }
-        
-        if skinNumber == skinArray.count - 1{
-            skinRightButtonOutlet.isHidden = true
-        }else if skinNumber == 0{
-            skinLeftButtonOutlet.isHidden = true
-        }else{
-            skinRightButtonOutlet.isHidden = false
-            skinLeftButtonOutlet.isHidden = false
-        }
-        
-        if clothesNumber == clothesArray.count - 1{
-            clothesRightButtonOutlet.isHidden = true
-        }else if clothesNumber == 0{
-            clothesLeftButtonOutlet.isHidden = true
-        }else{
-            clothesRightButtonOutlet.isHidden = false
-            clothesLeftButtonOutlet.isHidden = false
-        }
-        
-    }
-    
+
     
     func gettingRightImage(hair: String, skin: String, clothes: String){
         if skinArray.contains(skin){
