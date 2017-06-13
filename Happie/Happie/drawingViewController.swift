@@ -59,6 +59,24 @@ class drawingViewController: UIViewController {
         savingAndGoingBack()
     }
     
+    @IBAction func changeColourAction(_ sender: UIButton) {
+        let colourTitle = sender.currentTitle!
+        
+        switch colourTitle{
+        case "white" : red = 255; green = 255; blue = 255;
+        case "black" : red = 0; green = 0; blue = 0;
+        case "brown" : red = 0.6; green = 0.4; blue = 0;
+        case "blue" : red = 0; green = 0; blue = 255;
+        case "green" : red = 0; green = 255; blue = 0;
+        case "yellow" : red = 255; green = 255; blue = 0;
+        case "orange" : red = 255; green = 0.5; blue = 0;
+        case "red" : red = 255; green = 0; blue = 0;
+            
+        default : red = 1; blue = 1; green = 1
+            
+        }
+    }
+    
     
     override func touchesBegan(_ touches: Set<UITouch>,
                                with event: UIEvent?){
