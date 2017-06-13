@@ -59,6 +59,10 @@ class ViewController: UIViewController, ContainerDelegateProtocol {
         getStartedButton.layer.borderWidth = 1.5
         getStartedButton.layer.borderColor = UIColor.black.cgColor
         
+        dreamNameLabel.adjustsFontSizeToFitWidth = true
+        dreamNameLabel.numberOfLines = 2
+        dreamNameLabel.minimumScaleFactor = 0.2
+        
         //end designstuff
         
         if UserDefaults.standard.dictionary(forKey: "SettingsDict")?["hair"] == nil{

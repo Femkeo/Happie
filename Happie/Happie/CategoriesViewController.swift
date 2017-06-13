@@ -45,9 +45,9 @@ class CategoriesViewController: UIViewController {
         }
         
         for label in categorieLabels{
-            label.numberOfLines = 1;
             label.adjustsFontSizeToFitWidth = true
             label.minimumScaleFactor = 0.2
+            label.numberOfLines = 0;
         }
 
     }

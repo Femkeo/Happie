@@ -10,12 +10,15 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
+    @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var infoImage: UIImageView!
     
     var gameFromPrevious = ""
     var difficultyFromPrevious = ""
     var nextDifficulty = ""
     var difficultyArray = ["easy", "medium", "hard"]
     var gameCategory = ""
+    
     
     var Reader = PropertyReader()
     var dreamToUse: String?
@@ -30,6 +33,19 @@ class TableViewController: UITableViewController {
         checkingDifficulties()
         checkingGameCategory(game: gameFromPrevious)
         Reader.readPropertyLists(startedFromSection: gameFromPrevious)
+        
+        infoLabel.adjustsFontSizeToFitWidth = true
+        infoLabel.minimumScaleFactor = 0.2
+        infoLabel.numberOfLines = 50
+
+        
+        if gameFromPrevious == "Wat is mijn karakter"{
+            infoLabel.text = "Ik vind jou:"
+            infoImage.image = UIImage(named: "Persoonlijkheid")
+        }else{
+            infoLabel.text = "Kies een droom voor de ander zonder dat deze het ziet!"
+            infoImage.image = UIImage(named:"dreamCloud")
+        }
     }
 
     

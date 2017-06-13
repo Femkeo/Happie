@@ -51,6 +51,10 @@ class MulipleAnswersViewController: UIViewController {
         for i in 0..<buttons.count {
             buttons[i].setTitle(Reader.pListDictResult["NewItem\(number)"]?[i], for: .normal)
         }
+        
+        preferenceLabel.adjustsFontSizeToFitWidth = true
+        preferenceLabel.minimumScaleFactor = 0.2
+        preferenceLabel.numberOfLines = 0
 
     }
     

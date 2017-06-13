@@ -52,13 +52,6 @@ class oneButtonViewController: UIViewController, UIImagePickerControllerDelegate
         
         descriptionView.layer.cornerRadius = 20.0
         
-//        startButton.titleLabel?.adjustsFontSizeToFitWidth = true
-//        startButton.titleLabel?.minimumScaleFactor = 0.2
-//        startButton.titleLabel?.numberOfLines = 1
-//        startButton.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
-
-        
-        
         descriptionLabel.adjustsFontSizeToFitWidth = true
         descriptionLabel.minimumScaleFactor = 0.2
         descriptionLabel.numberOfLines = 50

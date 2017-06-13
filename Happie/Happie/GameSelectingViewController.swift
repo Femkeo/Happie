@@ -50,6 +50,7 @@ class GameSelectingViewController: UIViewController {
         categoryInfoLabel.minimumScaleFactor = 0.2
         categoryInfoLabel.numberOfLines = 50
         
+        
     }
     
     
@@ -96,20 +97,21 @@ class GameSelectingViewController: UIViewController {
             case "Droom het" :
                 categoryArray = Array(categoryUserData["Droom het"]!.keys)
                 categoryImage.image = UIImage(named: "Droom het")
-                categoryInfoLabel.text = "Voordat je je droom gaat realiseren, moet je natuurlijk wel weten hoe je droom er eigenlijk uit ziet. Speel deze spellen en leer alle ins en outs van je droom kennen!"
+                categoryInfoLabel.text = "Speel en leer alle ins en outs van je droom kennen!"
             case "Speel het" :
                 categoryArray = Array(categoryUserData["Speel het"]!.keys)
                 categoryImage.image = UIImage(named: "Speel het")
-                categoryInfoLabel.text = "Keuzes maken kan soms moeilijk zijn. Heb je besloten dat je hier beter in wilt worden? Dan helpen deze spellen je hierbij!"
+                categoryInfoLabel.text = "Kies een spel om beter te worden in het maken van keuzes!"
             case "Doe het" :
                 categoryArray = Array(categoryUserData["Doe het"]!.keys)
                 categoryImage.image = UIImage(named: "Doe het")
-                categoryInfoLabel.text = "Na het spelen van deze spellen ben je nooit meer bang dat je iets niet kunt. Kom maar op met dat zelfvertrouwen!"
+                categoryInfoLabel.text = "Na het spelen van deze spellen barst je van het zelfvertrouwen!"
 //                allGameLabels[0].text = "Welja, geen nee"
 //                allGameLabels[1].text =
 //                allGameLabels[2].text =
             default: categoryArray = Array(categoryUserData["Droom het"]!.keys)
         }
+        
         fillingCurrentLabel()
 
         for image in 0..<allImages.count{
