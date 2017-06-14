@@ -49,7 +49,7 @@ class EditingViewController: UIViewController, UITextFieldDelegate {
     
     
     override func viewWillAppear(_ animated: Bool) {
-        if (UserDefaults.standard.dictionary(forKey: "Games")?.isEmpty)!{
+        if UserDefaults.standard.bool(forKey: "launchedBefore") == false{
             dreamTextField.text = "Vul hier je droom in"
             dreamTextField.textColor = UIColor.lightGray
         }else{
