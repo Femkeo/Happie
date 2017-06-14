@@ -15,6 +15,7 @@ class QuizViewController: UIViewController {
     @IBOutlet var buttons: [UIButton]!
     @IBOutlet weak var countingLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var timerImage: UIImageView!
     
     var difficultyArray = ["easy", "medium", "hard"]
     var gameFromPrevious = ""
@@ -57,6 +58,9 @@ class QuizViewController: UIViewController {
             buttons[i].layer.borderColor = UIColor.black.cgColor
         }
         
+        questionLabel.adjustsFontSizeToFitWidth = true
+        questionLabel.minimumScaleFactor = 0.2
+        questionLabel.numberOfLines = 50
         
     }
     
@@ -163,12 +167,13 @@ class QuizViewController: UIViewController {
             timerLabel.text = "\(seconds)"
             
             
+            
         case "Kwaliteiten quiz":
             QuestionList = Reader.pListResult
             questionLabel.text = Reader.pListResult[questionNumber]
             countingLabel.text = ""
             timerLabel.text = ""
-            
+            timerImage.image = UIImage(named:"Lamp")
             
             
         default: break
