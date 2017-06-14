@@ -44,7 +44,7 @@ class TableViewController: UITableViewController {
             infoImage.image = UIImage(named: "Persoonlijkheid")
         }else{
             infoLabel.text = "Kies een droom voor de ander zonder dat deze het ziet!"
-            infoImage.image = UIImage(named:"dreamCloud")
+            infoImage.image = UIImage(named: "Wat droom ik")
         }
     }
 

@@ -35,7 +35,9 @@ class WhatDoIDreamViewController: UIViewController {
         
         showDreamLabel.text = "Geef de telefoon aan de persoon die zijn of haar droom moet raden en laat die persoon het scherm indrukken wanneer deze hem tegen het hoofd heeft"
         
-        // Do any additional setup after loading the view.
+        showDreamLabel.adjustsFontSizeToFitWidth = true
+        showDreamLabel.minimumScaleFactor = 0.2
+        showDreamLabel.numberOfLines = 4
     }
     
     @IBAction func passDeficeButtonAction(_ sender: Any) {

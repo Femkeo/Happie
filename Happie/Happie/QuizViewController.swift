@@ -167,12 +167,13 @@ class QuizViewController: UIViewController {
             timerLabel.text = "\(seconds)"
             
             
+            
         case "Kwaliteiten quiz":
             QuestionList = Reader.pListResult
             questionLabel.text = Reader.pListResult[questionNumber]
             countingLabel.text = ""
             timerLabel.text = ""
-            timerImage.isHidden = true
+            timerImage.image = UIImage(named:"Lamp")
             
             
         default: break
