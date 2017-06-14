@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		EC1FEB5B1EE6D16C000E6485 /* YesSayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1FEB5A1EE6D16C000E6485 /* YesSayer.swift */; };
-		EC5F99351EE83FC2002DE181 /* newData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5F99341EE83FC2002DE181 /* newData.swift */; };
 		EC7E671A1EE5815D00643E43 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7E67191EE5815C00643E43 /* GameData.swift */; };
 		ECA7ECB01EE6AD58007C05C4 /* oneButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA7ECAF1EE6AD58007C05C4 /* oneButtonViewController.swift */; };
 		ECA7ECB41EE6ADE1007C05C4 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA7ECB31EE6ADE1007C05C4 /* TableViewController.swift */; };
@@ -17,8 +16,8 @@
 		ECA7ECBC1EE6BB48007C05C4 /* PropertyReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA7ECBB1EE6BB48007C05C4 /* PropertyReader.swift */; };
 		ECA7ECC01EE6BBEB007C05C4 /* drawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA7ECBF1EE6BBEB007C05C4 /* drawingViewController.swift */; };
 		ECA7ECC21EE6C9DB007C05C4 /* WhatDoIDreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA7ECC11EE6C9DB007C05C4 /* WhatDoIDreamViewController.swift */; };
-		ECA7ECC41EE6CC19007C05C4 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA7ECC31EE6CC19007C05C4 /* Question.swift */; };
 		ECA7ECC81EE6CD6B007C05C4 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA7ECC71EE6CD6B007C05C4 /* QuizViewController.swift */; };
+		ECC77CCF1EEE99C100DB5450 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC77CCE1EEE99C100DB5450 /* Question.swift */; };
 		ECE643E91EDC4BB700E7E58D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE643E81EDC4BB700E7E58D /* AppDelegate.swift */; };
 		ECE643EB1EDC4BB700E7E58D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE643EA1EDC4BB700E7E58D /* ViewController.swift */; };
 		ECE643EE1EDC4BB700E7E58D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECE643EC1EDC4BB700E7E58D /* Main.storyboard */; };
@@ -28,11 +27,11 @@
 		ECE644011EDC86ED00E7E58D /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE644001EDC86ED00E7E58D /* CategoriesViewController.swift */; };
 		ECE644031EDC872F00E7E58D /* EditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE644021EDC872F00E7E58D /* EditingViewController.swift */; };
 		ECE644051EDC884700E7E58D /* GameSelectingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE644041EDC884700E7E58D /* GameSelectingViewController.swift */; };
+		ECF4CBB91EE9790E000A0F61 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF4CBB81EE9790E000A0F61 /* UserData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EC1FEB5A1EE6D16C000E6485 /* YesSayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YesSayer.swift; sourceTree = "<group>"; };
-		EC5F99341EE83FC2002DE181 /* newData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = newData.swift; path = ../newData.swift; sourceTree = "<group>"; };
 		EC7E67191EE5815C00643E43 /* GameData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
 		ECA7ECAF1EE6AD58007C05C4 /* oneButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = oneButtonViewController.swift; sourceTree = "<group>"; };
 		ECA7ECB31EE6ADE1007C05C4 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
@@ -41,8 +40,8 @@
 		ECA7ECBB1EE6BB48007C05C4 /* PropertyReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyReader.swift; sourceTree = "<group>"; };
 		ECA7ECBF1EE6BBEB007C05C4 /* drawingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = drawingViewController.swift; sourceTree = "<group>"; };
 		ECA7ECC11EE6C9DB007C05C4 /* WhatDoIDreamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhatDoIDreamViewController.swift; sourceTree = "<group>"; };
-		ECA7ECC31EE6CC19007C05C4 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		ECA7ECC71EE6CD6B007C05C4 /* QuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		ECC77CCE1EEE99C100DB5450 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		ECE643E51EDC4BB700E7E58D /* Happie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Happie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECE643E81EDC4BB700E7E58D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECE643EA1EDC4BB700E7E58D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +53,7 @@
 		ECE644001EDC86ED00E7E58D /* CategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		ECE644021EDC872F00E7E58D /* EditingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditingViewController.swift; sourceTree = "<group>"; };
 		ECE644041EDC884700E7E58D /* GameSelectingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSelectingViewController.swift; sourceTree = "<group>"; };
+		ECF4CBB81EE9790E000A0F61 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,9 +124,9 @@
 			isa = PBXGroup;
 			children = (
 				EC7E67191EE5815C00643E43 /* GameData.swift */,
-				ECA7ECC31EE6CC19007C05C4 /* Question.swift */,
+				ECF4CBB81EE9790E000A0F61 /* UserData.swift */,
+				ECC77CCE1EEE99C100DB5450 /* Question.swift */,
 				ECA7ECBB1EE6BB48007C05C4 /* PropertyReader.swift */,
-				EC5F99341EE83FC2002DE181 /* newData.swift */,
 				EC1FEB5A1EE6D16C000E6485 /* YesSayer.swift */,
 			);
 			name = Model;
@@ -226,11 +226,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECA7ECC41EE6CC19007C05C4 /* Question.swift in Sources */,
 				ECE643EB1EDC4BB700E7E58D /* ViewController.swift in Sources */,
 				ECE643FB1EDC51BB00E7E58D /* FirstLaunchViewController.swift in Sources */,
 				ECE644011EDC86ED00E7E58D /* CategoriesViewController.swift in Sources */,
-				EC5F99351EE83FC2002DE181 /* newData.swift in Sources */,
+				ECC77CCF1EEE99C100DB5450 /* Question.swift in Sources */,
 				ECA7ECC01EE6BBEB007C05C4 /* drawingViewController.swift in Sources */,
 				ECA7ECB81EE6AE2F007C05C4 /* MulipleAnswersViewController.swift in Sources */,
 				ECA7ECB41EE6ADE1007C05C4 /* TableViewController.swift in Sources */,
@@ -238,6 +237,7 @@
 				EC7E671A1EE5815D00643E43 /* GameData.swift in Sources */,
 				ECA7ECB01EE6AD58007C05C4 /* oneButtonViewController.swift in Sources */,
 				ECA7ECC81EE6CD6B007C05C4 /* QuizViewController.swift in Sources */,
+				ECF4CBB91EE9790E000A0F61 /* UserData.swift in Sources */,
 				ECE644031EDC872F00E7E58D /* EditingViewController.swift in Sources */,
 				ECE643E91EDC4BB700E7E58D /* AppDelegate.swift in Sources */,
 				ECA7ECC21EE6C9DB007C05C4 /* WhatDoIDreamViewController.swift in Sources */,

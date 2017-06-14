@@ -8,10 +8,10 @@
 
 import UIKit
 
-class EditingViewController: UIViewController, UITextViewDelegate {
 
+class EditingViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var dreamTextField: UITextView!
+    @IBOutlet weak var dreamTextField: UITextField!
     
     @IBOutlet weak var hairImage: UIImageView!
     @IBOutlet weak var skinImage: UIImageView!
@@ -27,6 +27,7 @@ class EditingViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var skinRightButtonOutlet: UIButton!
     @IBOutlet weak var skinLeftButtonOutlet: UIButton!
     
+    var Data = UserData()
     
     var skinArray = ["Skin1","Skin2","Skin3", "Skin4", "Skin5"]
     var skinNumber = 0
@@ -42,24 +43,26 @@ class EditingViewController: UIViewController, UITextViewDelegate {
     var clothes: String = UserDefaults.standard.dictionary(forKey: "SettingsDict")?["clothes"] as? String ?? String()
 
     var dream: String = UserDefaults.standard.dictionary(forKey: "SettingsDict")?["dream"] as? String ?? String()
-    
-    var defaultAvatar = [
-        "hair" : "Hair1",
-        "skin" : "Skin1",
-        "clothes" : "Clothes1",
-        "dream" : "Vul hier je droom in"
-    ]
+    var userScore: Float = UserDefaults.standard.dictionary(forKey: "SettingsDict")?["userScore"] as? Float ?? Float()
+
     
     
     
     override func viewWillAppear(_ animated: Bool) {
+        if UserDefaults.standard.bool(forKey: "launchedBefore") == false{
+            dreamTextField.text = "Vul hier je droom in"
+            dreamTextField.textColor = UIColor.lightGray
+        }else{
+            dreamTextField.text = dream
+        }
+        Data.creatingUserData()
         if hair.isEmpty == true{
-            UserDefaults.standard.set(defaultAvatar, forKey: "SettingsDict")
+            UserDefaults.standard.set(Data.result, forKey: "SettingsDict")
             hair = UserDefaults.standard.dictionary(forKey: "SettingsDict")?["hair"] as? String ?? String()
             skin = UserDefaults.standard.dictionary(forKey: "SettingsDict")?["skin"] as? String ?? String()
             clothes = UserDefaults.standard.dictionary(forKey: "SettingsDict")?["clothes"] as? String ?? String()
             dream = UserDefaults.standard.dictionary(forKey: "SettingsDict")?["dream"] as? String ?? String()
-            
+            userScore = UserDefaults.standard.dictionary(forKey: "SettingsDict")?["userScore"] as? Float ?? Float()
         }
         
         
@@ -68,10 +71,11 @@ class EditingViewController: UIViewController, UITextViewDelegate {
         skinImage.image = UIImage(named: skinArray[skinNumber])
         hairImage.image = UIImage(named: hairArray[hairNumber])
         clothesImage.image = UIImage(named: clothesArray[clothesNumber])
-        dreamTextField.text = dream
         
-        checkingButtonReach()
     }
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,36 +88,66 @@ class EditingViewController: UIViewController, UITextViewDelegate {
 
     }
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField.textColor == UIColor.lightGray {
+            textField.text = nil
+            textField.textColor = UIColor.black
+        }
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if (textField.text?.isEmpty)! {
+            dreamTextField.text = "Begin met typen"
+            dreamTextField.textColor = UIColor.lightGray
+        }
+        resignFirstResponder()
+    }
+        
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
+    }    
     
     @IBAction func saveButtonAction(_ sender: Any) {
-        defaultAvatar = [
+        var newScoreValue: Float = 25.0
+        let score = userScore
+        newScoreValue += score
+        
+        let userDataUpdate = [
             "hair" : hairArray[hairNumber],
             "skin" : skinArray[skinNumber],
             "clothes" : clothesArray[clothesNumber],
-            "dream" : dreamTextField.text!
-        ]
-        UserDefaults.standard.set(defaultAvatar, forKey: "SettingsDict")
+            "dream" : dreamTextField.text!,
+            "userScore": newScoreValue
+        ] as [String : Any]
+        UserDefaults.standard.set(userDataUpdate, forKey: "SettingsDict")
         self.navigationController?.popToRootViewController(animated: true)
     }
+
     
     @IBAction func cancelButtonAction(_ sender: Any) {
         self.navigationController?.popToRootViewController(animated: true)
     }
+    
+    
+    
     
     @IBAction func hairButtonAction(_ sender: UIButton) {
         if sender == hairLeftButtonOutlet{
             
             if hairNumber > 0{
                 hairNumber -= 1
-                hairImage.image = UIImage(named: hairArray[hairNumber])
+            }else{
+                hairNumber = hairArray.count - 1
             }
         }else if sender == hairRightButtonOutlet{
             if hairNumber < hairArray.count - 1{
                 hairNumber += 1
-                hairImage.image = UIImage(named: hairArray[hairNumber])
+            }else{
+                hairNumber = 0
             }
         }
-        checkingButtonReach()
+        hairImage.image = UIImage(named: hairArray[hairNumber])
+
     }
     
     @IBAction func clothesButtonAction(_ sender: UIButton) {
@@ -121,68 +155,40 @@ class EditingViewController: UIViewController, UITextViewDelegate {
             
             if clothesNumber > 0{
                 clothesNumber -= 1
-                clothesImage.image = UIImage(named: clothesArray[clothesNumber])
+            }else{
+                clothesNumber = clothesArray.count - 1
             }
         }else if sender == clothesRightButtonOutlet{
             if clothesNumber < clothesArray.count - 1{
                 clothesNumber += 1
-                clothesImage.image = UIImage(named: clothesArray[clothesNumber])
+            }else{
+                clothesNumber = 0
             }
         }
-        checkingButtonReach()
+        clothesImage.image = UIImage(named: clothesArray[clothesNumber])
+
     }
-    
-    
-    
-    
     
     @IBAction func skinButtonAction(_ sender: UIButton) {
         if sender == skinLeftButtonOutlet{
             if skinNumber > 0 {
                 skinNumber -= 1
-                skinImage.image = UIImage(named: skinArray[skinNumber])
+            }else{
+                skinNumber = skinArray.count - 1
             }
         }else if sender == skinRightButtonOutlet{
             if skinNumber < skinArray.count - 1{
                 skinNumber += 1
-                skinImage.image = UIImage(named: skinArray[skinNumber])
+            }else{
+                skinNumber = 0
             }
         }
-        checkingButtonReach()
+        skinImage.image = UIImage(named: skinArray[skinNumber])
+
     }
     
     
-    
-    
-    func checkingButtonReach(){
-        if hairNumber == hairArray.count - 1{
-            hairRightButtonOutlet.isHidden = true
-        }else if hairNumber == 0{
-            hairLeftButtonOutlet.isHidden = true
-        }else{
-            hairLeftButtonOutlet.isHidden = false
-            hairRightButtonOutlet.isHidden = false
-        }
-        
-        if skinNumber == skinArray.count - 1{
-            skinRightButtonOutlet.isHidden = true
-        }else if skinNumber == 0{
-            skinLeftButtonOutlet.isHidden = true
-        }else{
-            skinRightButtonOutlet.isHidden = false
-            skinLeftButtonOutlet.isHidden = false
-        }
-        
-        if clothesNumber == clothesArray.count - 1{
-            clothesRightButtonOutlet.isHidden = true
-        }else if clothesNumber == 0{
-            clothesLeftButtonOutlet.isHidden = true
-        }else{
-            clothesRightButtonOutlet.isHidden = false
-            clothesLeftButtonOutlet.isHidden = false
-        }
-        
-    }
+
     
     func gettingRightImage(hair: String, skin: String, clothes: String){
         if skinArray.contains(skin){
@@ -206,21 +212,6 @@ class EditingViewController: UIViewController, UITextViewDelegate {
         skinImage.image = UIImage(named: skinArray[skinNumber])
         clothesImage.image = UIImage(named: clothesArray[clothesNumber])
     }
-    
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        if dreamTextField.textColor == UIColor.lightGray {
-            dreamTextField.text = nil
-            dreamTextField.textColor = UIColor.black
-        }
-    }
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if dreamTextField.text.isEmpty {
-            dreamTextField.text = "Begin met typen"
-            dreamTextField.textColor = UIColor.lightGray
-        }
-    }
-    
 
     
 }

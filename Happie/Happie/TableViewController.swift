@@ -25,14 +25,17 @@ class TableViewController: UITableViewController {
     var selectedArray = [Int]()
     var currentIndexPath: IndexPath?
     
-    var userData = UserDefaults.standard.dictionary(forKey: "Games") as! [String : [String : [String : [String : Any]]]]
+    var gameData = UserDefaults.standard.dictionary(forKey: "Games") as! [String : [String : [String : [String : Any]]]]
+    var userData = UserDefaults.standard.dictionary(forKey: "SettingsDict") ?? Dictionary()
+
     
     
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        Reader.readPropertyLists(startedFromSection: gameFromPrevious)
         checkingDifficulties()
         checkingGameCategory(game: gameFromPrevious)
-        Reader.readPropertyLists(startedFromSection: gameFromPrevious)
         
         infoLabel.adjustsFontSizeToFitWidth = true
         infoLabel.minimumScaleFactor = 0.2
@@ -82,12 +85,14 @@ class TableViewController: UITableViewController {
         cell.textLabel?.text = Reader.pListResult[row]
         if gameFromPrevious == "Wat is mijn karakter"{
             cell.selectionStyle = UITableViewCellSelectionStyle.none
+            print("reached?")
         }
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         currentIndexPath = indexPath
+        print("Here is the indexpath row \(indexPath.row)")
         provideCorrectInfo()
         if gameFromPrevious == "Wat is mijn karakter"{
             if selectedArray.count < 5{
@@ -96,6 +101,7 @@ class TableViewController: UITableViewController {
                     print("You selected cell #\(indexPath.row)!")
                     selectedArray.append(indexPath.row)
                     print(selectedArray)
+                    print("hey")
                 }
             }
         }
@@ -138,9 +144,9 @@ class TableViewController: UITableViewController {
     }
     
     func checkingGameCategory(game: String){
-        let droomGames = Array(userData["Categories"]!["Droom het"]!.keys)
-        let speelGames = Array(userData["Categories"]!["Speel het"]!.keys)
-        let doeGames = Array(userData["Categories"]!["Doe het"]!.keys)
+        let droomGames = Array(gameData["Categories"]!["Droom het"]!.keys)
+        let speelGames = Array(gameData["Categories"]!["Speel het"]!.keys)
+        let doeGames = Array(gameData["Categories"]!["Doe het"]!.keys)
         
         if droomGames.contains(game){
             gameCategory = "Droom het"
@@ -162,9 +168,9 @@ class TableViewController: UITableViewController {
     
     func savingAndGoingBack(){
         self.performSegue(withIdentifier: "BackToGamesFromTable", sender: self)
-        
+        updateScore()
         var newCounterValue = 0
-        let counter = userData["Categories"]![gameCategory]![gameFromPrevious]!["counter"]! as! Int
+        let counter = gameData["Categories"]![gameCategory]![gameFromPrevious]!["counter"]! as! Int
         newCounterValue = counter + 1
         
         let dataToUpdate = GameData()
@@ -177,6 +183,31 @@ class TableViewController: UITableViewController {
         
         UserDefaults.standard.set(newData, forKey: "Games")
     }
+    
+    func updateScore(){
+        var newScoreValue: Float = 0.0
+        let score = userData["userScore"] as! Float
+        
+        switch difficultyFromPrevious{
+        case "easy" : newScoreValue = 50
+        case "medium" : newScoreValue = 100
+        case "hard" : newScoreValue = 150
+        default: newScoreValue = 50
+        }
+        newScoreValue += score
+        
+        let dataToUpdate = UserData()
+        dataToUpdate.creatingUserData()
+        var newData = dataToUpdate.result
+        
+        newData["userScore"] = newScoreValue
+        
+        UserDefaults.standard.set(newData, forKey: "SettingsDict")
+        
+    }
+    
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "WhatDoIDreamSegue" {

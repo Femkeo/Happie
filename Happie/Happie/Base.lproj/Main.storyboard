@@ -25,10 +25,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uhy-hh-z7B" userLabel="Body">
-                                <rect key="frame" x="0.0" y="272" width="375" height="395"/>
+                                <rect key="frame" x="0.0" y="228" width="375" height="439"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XSX-12-cxy">
-                                        <rect key="frame" x="8" y="313" width="123" height="30"/>
+                                        <rect key="frame" x="8" y="357" width="123" height="30"/>
                                         <state key="normal" title="Reset FirstLaunch"/>
                                         <connections>
                                             <action selector="Testbutton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="95J-fU-9cx"/>
@@ -105,7 +105,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XaA-Gy-rnL" userLabel="progress bar">
-                                        <rect key="frame" x="8" y="155" width="359" height="84"/>
+                                        <rect key="frame" x="8" y="155" width="359" height="128"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="progressBar" translatesAutoresizingMaskIntoConstraints="NO" id="3Qo-JJ-f4s">
                                                 <rect key="frame" x="14" y="-16" width="334" height="98"/>
@@ -122,7 +122,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kSj-hZ-ho4">
-                                        <rect key="frame" x="93" y="304" width="188" height="49"/>
+                                        <rect key="frame" x="93" y="348" width="188" height="49"/>
                                         <color key="backgroundColor" red="0.89270883798599243" green="0.94134527444839478" blue="0.94567936658859253" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="49" id="Ubf-xL-09C"/>
@@ -159,7 +159,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zQy-od-XQw" userLabel="Header">
-                                <rect key="frame" x="0.0" y="64" width="375" height="208"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="208"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundStartScreen" translatesAutoresizingMaskIntoConstraints="NO" id="WPb-Is-NfQ">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="208"/>
@@ -495,11 +495,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sfz-Oo-bsy" userLabel="White overlay">
-                                <rect key="frame" x="0.0" y="232" width="375" height="435"/>
+                                <rect key="frame" x="0.0" y="199" width="375" height="468"/>
                                 <color key="backgroundColor" red="0.99209731817245483" green="0.99250727891921997" blue="0.97570115327835083" alpha="0.69442958047945202" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kDK-T8-FyW" userLabel="Game 1">
-                                <rect key="frame" x="0.0" y="221" width="375" height="148.5"/>
+                                <rect key="frame" x="0.0" y="188" width="375" height="159.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Wf-kX-qnu" userLabel="Title">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -520,13 +520,13 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="roM-TF-2CZ" userLabel="1.1">
-                                        <rect key="frame" x="20" y="54" width="101" height="89.5"/>
+                                        <rect key="frame" x="20" y="54" width="101" height="100.5"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AoJ-Tg-nUD">
-                                                <rect key="frame" x="8" y="8" width="85" height="74"/>
+                                                <rect key="frame" x="8" y="8" width="85" height="85"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7s2-fC-Sd7">
-                                                <rect key="frame" x="0.0" y="0.0" width="101" height="90"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="101" height="101"/>
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -548,13 +548,13 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N00-dc-4uk" userLabel="1.2">
-                                        <rect key="frame" x="137" y="54" width="101" height="89.5"/>
+                                        <rect key="frame" x="137" y="54" width="101" height="100.5"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7tq-hT-U3b">
-                                                <rect key="frame" x="8" y="8" width="85" height="74"/>
+                                                <rect key="frame" x="8" y="8" width="85" height="85"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZzP-EI-vyX">
-                                                <rect key="frame" x="0.0" y="0.0" width="101" height="90"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="101" height="101"/>
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -576,13 +576,13 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E9Q-sU-8oy" userLabel="1.3">
-                                        <rect key="frame" x="251" y="54" width="101" height="89.5"/>
+                                        <rect key="frame" x="251" y="54" width="101" height="100.5"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rrd-Ta-T97">
-                                                <rect key="frame" x="8" y="8" width="85" height="74"/>
+                                                <rect key="frame" x="8" y="8" width="85" height="85"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nDA-1P-gNn">
-                                                <rect key="frame" x="0.0" y="0.0" width="101" height="90"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="101" height="101"/>
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -628,7 +628,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fTG-pF-OjD" userLabel="Game 2">
-                                <rect key="frame" x="0.0" y="369.5" width="375" height="149"/>
+                                <rect key="frame" x="0.0" y="347.5" width="375" height="160"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MQr-yv-dul" userLabel="Title">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -649,13 +649,13 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FQ9-c6-Wub" userLabel="2.1">
-                                        <rect key="frame" x="19" y="53" width="100" height="89"/>
+                                        <rect key="frame" x="19" y="53" width="100" height="100"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cQC-os-Fjd">
-                                                <rect key="frame" x="8" y="8" width="85" height="74"/>
+                                                <rect key="frame" x="8" y="8" width="85" height="85"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="giw-3g-7FQ">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="89"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -677,13 +677,13 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X6X-XX-Y0i" userLabel="2.2">
-                                        <rect key="frame" x="138" y="53" width="100" height="89"/>
+                                        <rect key="frame" x="138" y="53" width="100" height="100"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KRg-AP-gYG">
-                                                <rect key="frame" x="8" y="8" width="85" height="74"/>
+                                                <rect key="frame" x="8" y="8" width="85" height="85"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WYf-3V-KgP">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="89"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -705,13 +705,13 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y8v-i9-E5G" userLabel="2.3">
-                                        <rect key="frame" x="257" y="53" width="100" height="89"/>
+                                        <rect key="frame" x="257" y="53" width="100" height="100"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4aw-Kp-tDf">
-                                                <rect key="frame" x="8" y="8" width="85" height="74"/>
+                                                <rect key="frame" x="8" y="8" width="85" height="85"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7z-RD-zcC">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="89"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -757,7 +757,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vSm-dc-YJY" userLabel="Game 3">
-                                <rect key="frame" x="0.0" y="518.5" width="375" height="148.5"/>
+                                <rect key="frame" x="0.0" y="507.5" width="375" height="159.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zFl-sU-QCB" userLabel="Title">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -778,13 +778,13 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i9s-4a-aAl" userLabel="3.1">
-                                        <rect key="frame" x="18" y="53" width="100" height="88.5"/>
+                                        <rect key="frame" x="18" y="53" width="100" height="99.5"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1w1-yr-iKL">
-                                                <rect key="frame" x="8" y="8" width="85" height="74"/>
+                                                <rect key="frame" x="8" y="8" width="85" height="85"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wKf-WN-6JK">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="89"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -806,13 +806,13 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KBm-DO-ccu" userLabel="3.2">
-                                        <rect key="frame" x="138" y="53" width="100" height="88.5"/>
+                                        <rect key="frame" x="138" y="53" width="100" height="99.5"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q6L-8B-6yO">
-                                                <rect key="frame" x="8" y="8" width="85" height="74"/>
+                                                <rect key="frame" x="8" y="8" width="85" height="85"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iS3-3C-cyG">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="88.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="99.5"/>
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -834,13 +834,13 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u1q-8D-7GR" userLabel="3.3">
-                                        <rect key="frame" x="255" y="53" width="100" height="88.5"/>
+                                        <rect key="frame" x="255" y="53" width="100" height="99.5"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tdw-zN-UFW">
-                                                <rect key="frame" x="8" y="8" width="85" height="74"/>
+                                                <rect key="frame" x="8" y="8" width="85" height="85"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c1P-QD-LoK">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="88.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="99.5"/>
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -886,10 +886,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="syf-7C-lwL" userLabel="Header">
-                                <rect key="frame" x="0.0" y="72" width="375" height="149"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="160"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mQd-D0-7Lc">
-                                        <rect key="frame" x="8" y="60" width="359" height="81"/>
+                                        <rect key="frame" x="8" y="71" width="359" height="81"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SuT-59-fcB">
                                                 <rect key="frame" x="45" y="10" width="268" height="60"/>
@@ -908,7 +908,7 @@
                                         </constraints>
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BrD-1y-v7R">
-                                        <rect key="frame" x="149" y="8" width="77" height="57"/>
+                                        <rect key="frame" x="149" y="8" width="77" height="68"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1029,10 +1029,10 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l0n-oE-Tag">
-                                <rect key="frame" x="49" y="193" width="277" height="281"/>
+                                <rect key="frame" x="49" y="149" width="277" height="325"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8T-Tc-sBf">
-                                        <rect key="frame" x="23" y="22" width="232" height="237"/>
+                                        <rect key="frame" x="23" y="22" width="232" height="281"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="40"/>
                                         <nil key="textColor"/>
@@ -1248,7 +1248,7 @@
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O2p-WQ-XiC" userLabel="mainImageView">
-                                <rect key="frame" x="0.0" y="64" width="375" height="556"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="600"/>
                                 <color key="backgroundColor" red="0.99220126870000003" green="0.98856967689999997" blue="0.97173255680000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                         </subviews>
@@ -1308,7 +1308,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mFg-9l-Sxw" userLabel="Header">
-                                <rect key="frame" x="0.0" y="64" width="375" height="165"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="165"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundThree" translatesAutoresizingMaskIntoConstraints="NO" id="Svy-EY-0k6">
                                         <rect key="frame" x="0.0" y="45" width="375" height="147"/>
@@ -1342,19 +1342,19 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="giG-9E-r8H" userLabel="Body">
-                                <rect key="frame" x="0.0" y="229" width="375" height="438"/>
+                                <rect key="frame" x="0.0" y="185" width="375" height="482"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vCJ-ed-dT5" userLabel="Buttons">
-                                        <rect key="frame" x="42" y="52" width="290" height="335"/>
+                                        <rect key="frame" x="42" y="52" width="290" height="379"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jMB-2w-kb6" userLabel="Button1">
-                                                <rect key="frame" x="0.0" y="0.0" width="290" height="152.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="290" height="174.5"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buttonAchtergrond1" translatesAutoresizingMaskIntoConstraints="NO" id="uMl-Zz-psF">
-                                                        <rect key="frame" x="0.0" y="0.0" width="290" height="152.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="290" height="174.5"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="1yN-Pm-uH4">
-                                                        <rect key="frame" x="37" y="37" width="216" height="78.5"/>
+                                                        <rect key="frame" x="37" y="37" width="216" height="100.5"/>
                                                         <color key="backgroundColor" red="0.86833822729999999" green="0.1721698046" blue="0.25903424619999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                                         <state key="normal" title="Button">
@@ -1378,19 +1378,19 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="of" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zOM-ao-fnC">
-                                                <rect key="frame" x="37" y="157.5" width="215" height="20"/>
+                                                <rect key="frame" x="37" y="179.5" width="215" height="20"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.1721698046" blue="0.25903424619999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eXa-Ix-scS" userLabel="Button2">
-                                                <rect key="frame" x="0.0" y="182.5" width="290" height="152.5"/>
+                                                <rect key="frame" x="0.0" y="204.5" width="290" height="174.5"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buttonAchtergrond2" translatesAutoresizingMaskIntoConstraints="NO" id="KUC-YH-km1">
-                                                        <rect key="frame" x="0.0" y="0.0" width="290" height="152.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="290" height="174.5"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6yM-WZ-elN">
-                                                        <rect key="frame" x="37" y="35" width="216" height="82.5"/>
+                                                        <rect key="frame" x="37" y="35" width="216" height="104.5"/>
                                                         <color key="backgroundColor" red="0.86833822729999999" green="0.1721698046" blue="0.25903424619999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                                         <state key="normal" title="Button">
@@ -1479,7 +1479,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WJ9-x5-WVU" userLabel="Header">
-                                <rect key="frame" x="0.0" y="64" width="375" height="167"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="167"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundThree" translatesAutoresizingMaskIntoConstraints="NO" id="rgO-6r-q9k">
                                         <rect key="frame" x="0.0" y="37" width="375" height="153"/>
@@ -1538,10 +1538,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ews-0q-gdg" userLabel="Body">
-                                <rect key="frame" x="0.0" y="231" width="375" height="436"/>
+                                <rect key="frame" x="0.0" y="187" width="375" height="480"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pr7-es-WtX">
-                                        <rect key="frame" x="79" y="115" width="216" height="78"/>
+                                        <rect key="frame" x="79" y="115" width="216" height="100"/>
                                         <color key="backgroundColor" red="0.86833822727203369" green="0.17216980457305908" blue="0.25903424620628357" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
                                         <state key="normal" title="JA">
@@ -1552,7 +1552,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r0I-AK-Qzt">
-                                        <rect key="frame" x="79" y="233" width="216" height="78"/>
+                                        <rect key="frame" x="79" y="255" width="216" height="100"/>
                                         <color key="backgroundColor" red="0.86833822727203369" green="0.17216980457305908" blue="0.25903424620628357" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
                                         <state key="normal" title="NEE">
@@ -1563,7 +1563,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOd-eo-Y1w">
-                                        <rect key="frame" x="166" y="376" width="42" height="21"/>
+                                        <rect key="frame" x="166" y="420" width="42" height="21"/>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1618,7 +1618,7 @@
         <scene sceneID="1EX-EP-9J7">
             <objects>
                 <tableViewController title="Tableview" id="p2s-ew-sBO" customClass="TableViewController" customModule="Happie" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="7E9-gS-naE">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="7E9-gS-naE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1764,7 +1764,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Gj-tv-zO4" userLabel="1">
-                                <rect key="frame" x="0.0" y="64" width="375" height="209"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="209"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundStartScreen" translatesAutoresizingMaskIntoConstraints="NO" id="g35-e1-pQp">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="209"/>
@@ -1808,22 +1808,22 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="42A-AB-xu2" userLabel="2">
-                                <rect key="frame" x="0.0" y="273" width="375" height="394"/>
+                                <rect key="frame" x="0.0" y="229" width="375" height="438"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vp8-A7-w0U">
-                                        <rect key="frame" x="25" y="72" width="326" height="313"/>
+                                        <rect key="frame" x="25" y="72" width="326" height="357"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LDP-GP-4m0" userLabel="Images">
-                                                <rect key="frame" x="50" y="0.0" width="225" height="312"/>
+                                                <rect key="frame" x="50" y="0.0" width="225" height="356"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZRW-nZ-Fk0">
-                                                        <rect key="frame" x="0.0" y="0.0" width="225" height="312"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="225" height="356"/>
                                                     </imageView>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cWZ-cA-cR4">
-                                                        <rect key="frame" x="0.0" y="0.0" width="225" height="312"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="225" height="356"/>
                                                     </imageView>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kQz-he-qXY">
-                                                        <rect key="frame" x="0.0" y="0.0" width="225" height="312"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="225" height="356"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1843,16 +1843,16 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tZS-QD-6ir" userLabel="Left buttons">
-                                                <rect key="frame" x="7" y="60" width="29" height="192"/>
+                                                <rect key="frame" x="7" y="60" width="29" height="236"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8YT-aE-0lP" userLabel="Hair Left">
-                                                        <rect key="frame" x="0.0" y="0.0" width="29" height="28.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="29" height="43"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backButton" translatesAutoresizingMaskIntoConstraints="NO" id="UKb-9t-8fz" userLabel="Hair Left Button Image">
-                                                                <rect key="frame" x="0.0" y="0.0" width="29" height="28.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="29" height="43"/>
                                                             </imageView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qty-LG-rbU">
-                                                                <rect key="frame" x="0.0" y="0.0" width="29" height="28.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="29" height="43"/>
                                                                 <connections>
                                                                     <action selector="hairButtonAction:" destination="CwP-GI-Wzw" eventType="touchUpInside" id="8Sq-mr-hfa"/>
                                                                 </connections>
@@ -1875,13 +1875,13 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EZ4-Uu-lce" userLabel="Skin Left">
-                                                        <rect key="frame" x="0.0" y="81.5" width="29" height="28"/>
+                                                        <rect key="frame" x="0.0" y="96" width="29" height="43"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backButton" translatesAutoresizingMaskIntoConstraints="NO" id="IMx-71-Mtj" userLabel="Hair Left Button Image">
-                                                                <rect key="frame" x="0.0" y="0.0" width="29" height="28"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="29" height="43"/>
                                                             </imageView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eeI-V5-OGw">
-                                                                <rect key="frame" x="0.0" y="0.0" width="29" height="28"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="29" height="43"/>
                                                                 <connections>
                                                                     <action selector="skinButtonAction:" destination="CwP-GI-Wzw" eventType="touchUpInside" id="8dH-TY-7Z2"/>
                                                                 </connections>
@@ -1904,13 +1904,13 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Str-aV-eCo" userLabel="Clothes Left">
-                                                        <rect key="frame" x="0.0" y="163.5" width="29" height="28.5"/>
+                                                        <rect key="frame" x="0.0" y="193" width="29" height="43"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backButton" translatesAutoresizingMaskIntoConstraints="NO" id="2a8-88-I5f" userLabel="Hair Left Button Image">
-                                                                <rect key="frame" x="0.0" y="0.0" width="29" height="28.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="29" height="43"/>
                                                             </imageView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Srz-BO-t3W">
-                                                                <rect key="frame" x="0.0" y="0.0" width="29" height="28.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="29" height="43"/>
                                                                 <connections>
                                                                     <action selector="clothesButtonAction:" destination="CwP-GI-Wzw" eventType="touchUpInside" id="d7J-7h-Xjt"/>
                                                                 </connections>
@@ -1952,16 +1952,16 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kiC-m0-xrA" userLabel="Right buttons">
-                                                <rect key="frame" x="289" y="60" width="29" height="192"/>
+                                                <rect key="frame" x="289" y="60" width="29" height="236"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZIC-cV-lwP" userLabel="Hair Right">
-                                                        <rect key="frame" x="0.0" y="0.0" width="29" height="28.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="29" height="43"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nextButton" translatesAutoresizingMaskIntoConstraints="NO" id="hkd-ha-HEk" userLabel="Hair Right Button Image">
-                                                                <rect key="frame" x="0.0" y="0.0" width="29" height="28.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="29" height="43"/>
                                                             </imageView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZU-Hl-T7v">
-                                                                <rect key="frame" x="0.0" y="0.0" width="29" height="28.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="29" height="43"/>
                                                                 <connections>
                                                                     <action selector="hairButtonAction:" destination="CwP-GI-Wzw" eventType="touchUpInside" id="kdf-NX-6Xf"/>
                                                                 </connections>
@@ -1984,13 +1984,13 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZMu-19-J50" userLabel="Clothes Right">
-                                                        <rect key="frame" x="0.0" y="163.5" width="29" height="28.5"/>
+                                                        <rect key="frame" x="0.0" y="193" width="29" height="43"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nextButton" translatesAutoresizingMaskIntoConstraints="NO" id="qkD-Ke-T1a" userLabel="Clothes Right Button Image">
-                                                                <rect key="frame" x="0.0" y="0.0" width="29" height="28.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="29" height="43"/>
                                                             </imageView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ltq-Tp-PC2">
-                                                                <rect key="frame" x="0.0" y="0.0" width="29" height="28.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="29" height="43"/>
                                                                 <connections>
                                                                     <action selector="clothesButtonAction:" destination="CwP-GI-Wzw" eventType="touchUpInside" id="BYf-fn-eEy"/>
                                                                 </connections>
@@ -2013,13 +2013,13 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ALD-CA-kTM" userLabel="Skin Right">
-                                                        <rect key="frame" x="0.0" y="81.5" width="29" height="28"/>
+                                                        <rect key="frame" x="0.0" y="96" width="29" height="43"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nextButton" translatesAutoresizingMaskIntoConstraints="NO" id="bRt-d8-Vmz" userLabel="Skin Right Button Image">
-                                                                <rect key="frame" x="0.0" y="0.0" width="29" height="28"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="29" height="43"/>
                                                             </imageView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CF3-CQ-0CH">
-                                                                <rect key="frame" x="0.0" y="0.0" width="29" height="28"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="29" height="43"/>
                                                                 <connections>
                                                                     <action selector="skinButtonAction:" destination="CwP-GI-Wzw" eventType="touchUpInside" id="w3K-zd-9Ai"/>
                                                                 </connections>
@@ -2134,7 +2134,6 @@
                         <outlet property="clothesImage" destination="cWZ-cA-cR4" id="Olg-BO-1aA"/>
                         <outlet property="clothesLeftButtonOutlet" destination="Srz-BO-t3W" id="KRF-7q-eoO"/>
                         <outlet property="clothesRightButtonOutlet" destination="ltq-Tp-PC2" id="0yx-6P-deL"/>
-                        <outlet property="dreamTextField" destination="Y9y-zc-cf6" id="xrE-4L-NNa"/>
                         <outlet property="hairImage" destination="kQz-he-qXY" id="62Z-E7-wbK"/>
                         <outlet property="hairLeftButtonOutlet" destination="Qty-LG-rbU" id="JEJ-yL-J5Q"/>
                         <outlet property="hairRightButtonOutlet" destination="aZU-Hl-T7v" id="WHA-Ae-i4e"/>

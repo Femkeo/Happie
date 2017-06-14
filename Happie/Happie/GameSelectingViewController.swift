@@ -157,7 +157,7 @@ class GameSelectingViewController: UIViewController {
                     difficultyNumber += 1
                 }
             }
-        }
+    }
 
     
     // if the game is playable
