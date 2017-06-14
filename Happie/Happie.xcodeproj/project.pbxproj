@@ -18,6 +18,7 @@
 		ECA7ECC21EE6C9DB007C05C4 /* WhatDoIDreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA7ECC11EE6C9DB007C05C4 /* WhatDoIDreamViewController.swift */; };
 		ECA7ECC81EE6CD6B007C05C4 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA7ECC71EE6CD6B007C05C4 /* QuizViewController.swift */; };
 		ECC77CCF1EEE99C100DB5450 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC77CCE1EEE99C100DB5450 /* Question.swift */; };
+		ECE539641EF1C27F004C383B /* music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ECE539631EF1C27F004C383B /* music.mp3 */; };
 		ECE643E91EDC4BB700E7E58D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE643E81EDC4BB700E7E58D /* AppDelegate.swift */; };
 		ECE643EB1EDC4BB700E7E58D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE643EA1EDC4BB700E7E58D /* ViewController.swift */; };
 		ECE643EE1EDC4BB700E7E58D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECE643EC1EDC4BB700E7E58D /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 		ECA7ECC11EE6C9DB007C05C4 /* WhatDoIDreamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhatDoIDreamViewController.swift; sourceTree = "<group>"; };
 		ECA7ECC71EE6CD6B007C05C4 /* QuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		ECC77CCE1EEE99C100DB5450 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		ECE539631EF1C27F004C383B /* music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music.mp3; sourceTree = "<group>"; };
 		ECE643E51EDC4BB700E7E58D /* Happie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Happie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECE643E81EDC4BB700E7E58D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECE643EA1EDC4BB700E7E58D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				ECE643EF1EDC4BB700E7E58D /* Assets.xcassets */,
 				ECE643F41EDC4BB700E7E58D /* Info.plist */,
 				ECA7ECB91EE6BB34007C05C4 /* QuizLists.plist */,
+				ECE539631EF1C27F004C383B /* music.mp3 */,
 			);
 			name = SupportingFiles;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECE539641EF1C27F004C383B /* music.mp3 in Resources */,
 				ECE643F31EDC4BB700E7E58D /* LaunchScreen.storyboard in Resources */,
 				ECA7ECBA1EE6BB34007C05C4 /* QuizLists.plist in Resources */,
 				ECE643F01EDC4BB700E7E58D /* Assets.xcassets in Resources */,

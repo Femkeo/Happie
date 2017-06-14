@@ -264,7 +264,7 @@ class oneButtonViewController: UIViewController, UIImagePickerControllerDelegate
     
     //this starts an alart depending on which game is played.
     func alert(){
-        Yes.countingTillEnding()
+        Yes.recordAndRecognizeSpeech()
         let alert =  UIAlertController(title: nil, message: "Je mag nu een minuut geen nee meer zeggen!", preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "OK", style: .default)
         alert.addAction(OKAction)

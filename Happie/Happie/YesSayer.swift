@@ -11,6 +11,7 @@ import Speech
 
 class YesSayer{
     
+    
     var seconds = 3600
     var timer = Timer()
     var musicPlayer: AVAudioPlayer!
@@ -92,6 +93,8 @@ class YesSayer{
     func recognizingNo(resultString: String){
         if resultString == "Nee"{
             initAudio()
+        }else if resultString == "nee"{
+            initAudio()
         }
     }
     
@@ -108,7 +111,6 @@ class YesSayer{
             print(err.debugDescription)
         }
     }
-    
-    
+
     
 }
