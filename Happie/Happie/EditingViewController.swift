@@ -22,7 +22,7 @@ class EditingViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var clothesRightButtonOutlet: UIButton!
     @IBOutlet weak var clothesLeftButtonOutlet: UIButton!
-    
+    @IBOutlet weak var backButtonOutlet: UIBarButtonItem!
     
     @IBOutlet weak var skinRightButtonOutlet: UIButton!
     @IBOutlet weak var skinLeftButtonOutlet: UIButton!
@@ -50,9 +50,11 @@ class EditingViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         if UserDefaults.standard.bool(forKey: "launchedBefore") == false{
+            backButtonOutlet.tintColor = UIColor.clear
             dreamTextField.text = "Vul hier je droom in"
             dreamTextField.textColor = UIColor.lightGray
         }else{
+            backButtonOutlet.tintColor = UIColor.blue
             dreamTextField.text = dream
         }
         Data.creatingUserData()
@@ -108,6 +110,9 @@ class EditingViewController: UIViewController, UITextFieldDelegate {
     }    
     
     @IBAction func saveButtonAction(_ sender: Any) {
+        if UserDefaults.standard.bool(forKey: "launchedBefore") == false {
+        UserDefaults.standard.set(true, forKey: "launchedBefore")
+        }
         var newScoreValue: Float = 25.0
         let score = userScore
         newScoreValue += score

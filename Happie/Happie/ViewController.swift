@@ -14,6 +14,8 @@ class ViewController: UIViewController, ContainerDelegateProtocol {
     @IBOutlet weak var skinImage: UIImageView!
     @IBOutlet weak var hairImage: UIImageView!
     @IBOutlet weak var clothesImage: UIImageView!
+    @IBOutlet var images: [UIImageView]!
+    
     @IBOutlet weak var avatarBackgroundImage: UIImageView!
     
     @IBOutlet weak var getStartedButton: UIButton!
@@ -29,8 +31,6 @@ class ViewController: UIViewController, ContainerDelegateProtocol {
     let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
     
     override func viewWillAppear(_ animated: Bool) {
-        print(UserDefaults.standard.dictionary(forKey: "SettingsDict")?["userScore"] ?? Float())
-        print(UserDefaults.standard.dictionary(forKey: "SettingsDict") ?? Dictionary())
         //if the app has run before it will hide ScreenViewController (see bottom of page)
         if UserDefaults.standard.bool(forKey: "launchedBefore") == true {
             if tutorialView != nil{
@@ -58,6 +58,10 @@ class ViewController: UIViewController, ContainerDelegateProtocol {
         dreamNameLabel.numberOfLines = 2
         dreamNameLabel.minimumScaleFactor = 0.2
         
+        stepsLabel.adjustsFontSizeToFitWidth = true
+        stepsLabel.numberOfLines = 50
+        stepsLabel.minimumScaleFactor = 0.2
+        
         //end designstuff
         
         Data.creatingUserData()
@@ -66,6 +70,9 @@ class ViewController: UIViewController, ContainerDelegateProtocol {
         skinImage.image = UIImage(named: UserDefaults.standard.dictionary(forKey: "SettingsDict")?["skin"] as? String ?? String())
         clothesImage.image = UIImage(named: UserDefaults.standard.dictionary(forKey: "SettingsDict")?["clothes"] as? String ?? String())
         dreamNameLabel.text = UserDefaults.standard.dictionary(forKey: "SettingsDict")?["dream"] as? String ?? String()
+        if dreamNameLabel.text == "Vul hier je droom in"{
+            dreamNameLabel.text = "Hey jij! Je bent vergeten je droom in te vullen!"
+        }
         userProgressOutlet.progress = UserDefaults.standard.dictionary(forKey: "SettingsDict")?["userScore"] as? Float ?? Float()
         settingScore()
     }//end viewWillAppear
@@ -108,28 +115,41 @@ class ViewController: UIViewController, ContainerDelegateProtocol {
     
     
     func settingScore(){
-        if UserDefaults.standard.dictionary(forKey: "SettingsDict")?["userScore"] != nil{
+        if UserDefaults.standard.bool(forKey: "launchedBefore") == true{
             var scoreArray: [Float] = [25.0, 100.0, 250.0, 500.0, 1000.0, 1500.0, 2000.0]
             
             let currentUserScore: Float = UserDefaults.standard.dictionary(forKey: "SettingsDict")?["userScore"] as? Float ?? Float()
-            var targetScore: Float = 0.0
+            var targetScore: Float = 25.0
             var startingScore: Float = 25.0
-            
+            print(currentUserScore)
             for score in 0..<scoreArray.count{
-                if currentUserScore > scoreArray[score] && score != scoreArray.count{
+                print("heey")
+                if currentUserScore > scoreArray[score]{
                     targetScore = scoreArray[score + 1]
                     startingScore = scoreArray[score]
+                    print("hoi")
                 }
             }
-            
+
             var currentProgress: Float = 1.0
+            print(targetScore)
             if targetScore == 0.0{
                 currentProgress = 1.0
             }else{
                 currentProgress = currentUserScore / targetScore
+                if currentProgress == 1.0{
+                    if let index = scoreArray.index(of: targetScore){
+                        targetScore = scoreArray[index + 1]
+                        currentProgress = currentUserScore / targetScore
+                    }
+                }
             }
+            print(currentProgress)
+
             
             userProgressOutlet.progress = currentProgress
+            userProgressOutlet.tintColor =  UIColor(red: 220/255, green: 45/255, blue: 66/255, alpha: 1.0)
+            
             switch startingScore{
             case 25.0 : stepsLabel.text = "Je hebt je eerste stappen gezet! Houd hier in de gaten hoever je al opweg bent!"
             case 100.0: stepsLabel.text = "Je hebt de 100 stappen bereikt! Dat is hetzelfde twee baantjes in een zwembad!"

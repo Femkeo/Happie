@@ -116,7 +116,6 @@ class FirstLaunchViewController: UIViewController {
     }//end
     
     @IBAction func launchButtonAction(_ sender: Any) {
-        UserDefaults.standard.set(true, forKey: "launchedBefore")
         delegate?.close()
     }
 
