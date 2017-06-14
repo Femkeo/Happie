@@ -14,27 +14,33 @@ import UIKit
 
 class FirstLaunchViewController: UIViewController {
 
+    //all the outlets
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageLabel: UIImageView!
     @IBOutlet weak var informationTextView: UITextView!
     @IBOutlet weak var tutorialPageControl: UIPageControl!
     @IBOutlet weak var launchButton: UIButton!
     
+    //all the variables
     var number = 0
     var textArray = ["First", "Second", "Third"]
     var pageState = "First"
     var delegate:ContainerDelegateProtocol?
     
+    
     override func viewWillAppear(_ animated: Bool) {
+        //if the user reaches this page hide the navigationbutton. It is set back when this view container is hidden.
         if UserDefaults.standard.bool(forKey: "launchedBefore") == true {
         }else{
             self.navigationController?.setNavigationBarHidden(true, animated: true)
         }
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //fill in the right states
         checkingStates()
         
         //Creating the swiping option
@@ -50,6 +56,9 @@ class FirstLaunchViewController: UIViewController {
 
     }
     
+    
+    
+
     //Creating the swiping function
     func respond(gesture: UIGestureRecognizer){
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
@@ -115,6 +124,7 @@ class FirstLaunchViewController: UIViewController {
         }
     }//end
     
+    //this activates the close function on the original viewcontroller page.
     @IBAction func launchButtonAction(_ sender: Any) {
         delegate?.close()
     }

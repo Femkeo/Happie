@@ -11,6 +11,7 @@ import UIKit
 
 class EditingViewController: UIViewController, UITextFieldDelegate {
     
+    //all the outlets
     @IBOutlet weak var dreamTextField: UITextField!
     
     @IBOutlet weak var hairImage: UIImageView!
@@ -27,12 +28,13 @@ class EditingViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var skinRightButtonOutlet: UIButton!
     @IBOutlet weak var skinLeftButtonOutlet: UIButton!
     
+    //import the UserData model
     var Data = UserData()
     
+    //these groupes make sure the user can create new data for their avatar
     var skinArray = ["Skin1","Skin2","Skin3", "Skin4", "Skin5"]
     var skinNumber = 0
     var skin: String = UserDefaults.standard.dictionary(forKey: "SettingsDict")?["skin"] as? String ?? String()
-
 
     var hairArray = ["Hair1", "Hair2", "Hair3", "Hair4", "Hair5", "Hair6", "Hair7", "Hair8", "Hair9"]
     var hairNumber = 0
@@ -50,6 +52,9 @@ class EditingViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         if UserDefaults.standard.bool(forKey: "launchedBefore") == false{
+            UserDefaults.standard.set(true, forKey: "launchedBefore")
+
+            //if this page is reached for the first time. Make sure the previous tutorial is no longer shown and hide the back button.
             backButtonOutlet.tintColor = UIColor.clear
             dreamTextField.text = "Vul hier je droom in"
             dreamTextField.textColor = UIColor.lightGray
@@ -57,7 +62,9 @@ class EditingViewController: UIViewController, UITextFieldDelegate {
             backButtonOutlet.tintColor = UIColor.blue
             dreamTextField.text = dream
         }
+        //this checks (if their is) stored data.
         Data.creatingUserData()
+        //if when this viewcontroller was loaded the data hasnt been loaded yet, do that now
         if hair.isEmpty == true{
             UserDefaults.standard.set(Data.result, forKey: "SettingsDict")
             hair = UserDefaults.standard.dictionary(forKey: "SettingsDict")?["hair"] as? String ?? String()
@@ -67,13 +74,12 @@ class EditingViewController: UIViewController, UITextFieldDelegate {
             userScore = UserDefaults.standard.dictionary(forKey: "SettingsDict")?["userScore"] as? Float ?? Float()
         }
         
-        
+        //starting the picking of characteritems, starting with the avataritems that are already chosen.
         gettingRightImage(hair: hair, skin: skin, clothes: clothes)
-        
+        //filling the images with the above colected data
         skinImage.image = UIImage(named: skinArray[skinNumber])
         hairImage.image = UIImage(named: hairArray[hairNumber])
         clothesImage.image = UIImage(named: clothesArray[clothesNumber])
-        
     }
     
     
@@ -82,6 +88,7 @@ class EditingViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //setting options for the textfield
         dreamTextField.delegate = self
         dreamTextField.text = "Begin met typen"
         dreamTextField.textColor = UIColor.lightGray
@@ -90,6 +97,10 @@ class EditingViewController: UIViewController, UITextFieldDelegate {
 
     }
     
+    
+    
+    
+    //giving textfield orders
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField.textColor == UIColor.lightGray {
             textField.text = nil
@@ -107,12 +118,12 @@ class EditingViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return false
-    }    
+    }
     
+    
+    
+    //save all the selected avatar items in the userdefaults
     @IBAction func saveButtonAction(_ sender: Any) {
-        if UserDefaults.standard.bool(forKey: "launchedBefore") == false {
-        UserDefaults.standard.set(true, forKey: "launchedBefore")
-        }
         var newScoreValue: Float = 25.0
         let score = userScore
         newScoreValue += score
@@ -129,13 +140,14 @@ class EditingViewController: UIViewController, UITextFieldDelegate {
     }
 
     
+    
+    //cancel and do nothing
     @IBAction func cancelButtonAction(_ sender: Any) {
         self.navigationController?.popToRootViewController(animated: true)
     }
     
     
-    
-    
+    //this makes the user loop through all the hair items
     @IBAction func hairButtonAction(_ sender: UIButton) {
         if sender == hairLeftButtonOutlet{
             
@@ -152,9 +164,9 @@ class EditingViewController: UIViewController, UITextFieldDelegate {
             }
         }
         hairImage.image = UIImage(named: hairArray[hairNumber])
-
     }
     
+    //this makes the user loop through all the clothing items
     @IBAction func clothesButtonAction(_ sender: UIButton) {
         if sender == clothesLeftButtonOutlet{
             
@@ -174,6 +186,7 @@ class EditingViewController: UIViewController, UITextFieldDelegate {
 
     }
     
+    //this makes the user loop through all the skin items
     @IBAction func skinButtonAction(_ sender: UIButton) {
         if sender == skinLeftButtonOutlet{
             if skinNumber > 0 {
@@ -194,7 +207,7 @@ class EditingViewController: UIViewController, UITextFieldDelegate {
     
     
 
-    
+    //this makes the arrays start at the items of the avatar that is already saved.
     func gettingRightImage(hair: String, skin: String, clothes: String){
         if skinArray.contains(skin){
             skinNumber = skinArray.index(of: skin)!
@@ -211,7 +224,6 @@ class EditingViewController: UIViewController, UITextFieldDelegate {
         }else{
             clothesNumber = 0
         }
-
         
         hairImage.image = UIImage(named: hairArray[hairNumber])
         skinImage.image = UIImage(named: skinArray[skinNumber])

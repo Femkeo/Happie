@@ -10,14 +10,14 @@ import UIKit
 
 class GameSelectingViewController: UIViewController {
 
-    
-
+    //all the outlets
     @IBOutlet var allButtons: [UIButton]!
     @IBOutlet var allImages: [UIImageView]!
     @IBOutlet var allGameLabels: [UILabel]!
     @IBOutlet weak var categoryImage: UIImageView!
     @IBOutlet weak var categoryInfoLabel: UILabel!
     
+    //all the variables
     var PreviousButtonTitle = ""
     var userData = UserDefaults.standard.dictionary(forKey: "Games") as! [String : [String : [String : [String : Any]]]]
     var categoryArray = [String]()
@@ -30,43 +30,35 @@ class GameSelectingViewController: UIViewController {
     var category = ""
     var buttonInfo = ""
 
-    
+    //get saved data and use it to fill all the labels and images etc.
     override func viewWillAppear(_ animated: Bool) {
         userData = UserDefaults.standard.dictionary(forKey: "Games") as! [String : [String : [String : [String : Any]]]]
         gettingCorrectInfo(category: PreviousButtonTitle)
-        print(allImages.count)
-       
     }
 
-    
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //this uses the info of the button on the previous page to correct
-        
+        //this makes the categoryinfolabel scalable
         categoryInfoLabel.adjustsFontSizeToFitWidth = true
         categoryInfoLabel.minimumScaleFactor = 0.2
         categoryInfoLabel.numberOfLines = 50
         
-        
     }
     
     
-    
+    //get info from the pressed button. These are three groupes of buttons, so both the game and the difficulty level can be saved easily.
     @IBAction func firstGameButtonAction(_ sender: UIButton) {
         category = categoryArray[0]
         buttonInfo = sender.currentTitle!
         settingDifficulty(sender: buttonInfo)
-        
     }
     
     @IBAction func secondGameAction(_ sender: UIButton) {
         category = categoryArray[1]
         buttonInfo = sender.currentTitle!
         settingDifficulty(sender: buttonInfo)
-        
     }
     
     @IBAction func thirdGameAction(_ sender: UIButton) {
@@ -76,6 +68,9 @@ class GameSelectingViewController: UIViewController {
     }
     
     
+    
+    
+    //this sets data for the difficulty that is going to be passes along.
     func settingDifficulty(sender: String){
         switch sender{
         case "easy" : difficulty = "easy"
@@ -87,12 +82,16 @@ class GameSelectingViewController: UIViewController {
     }
     
     
+    
+    
+    
+    //getting the right info from the previous ViewController
     func gettingCorrectInfo(category: String){
         let categoryUserData = userData["Categories"] ?? Dictionary()
         var number = 0
         var catNumber = 0
-        //this collects the names of the games that match each category
         
+        //this collects the names of the games that match each category
         switch category{
             case "Droom het" :
                 categoryArray = Array(categoryUserData["Droom het"]!.keys)
@@ -106,14 +105,12 @@ class GameSelectingViewController: UIViewController {
                 categoryArray = Array(categoryUserData["Doe het"]!.keys)
                 categoryImage.image = UIImage(named: "Doe het")
                 categoryInfoLabel.text = "Na het spelen van deze spellen barst je van het zelfvertrouwen!"
-//                allGameLabels[0].text = "Welja, geen nee"
-//                allGameLabels[1].text =
-//                allGameLabels[2].text =
             default: categoryArray = Array(categoryUserData["Droom het"]!.keys)
         }
-        
+        //filling the retreived data in the labels
         fillingCurrentLabel()
 
+        //filling the correct images
         for image in 0..<allImages.count{
             allImages[image].image = UIImage(named: "\(categoryArray[catNumber])\(difficultyArray[number])")
             if number == 2{
@@ -125,7 +122,6 @@ class GameSelectingViewController: UIViewController {
         }
     }
 
-    
     
     func fillingCurrentLabel(){
         var categoryNumber = 0
@@ -160,6 +156,8 @@ class GameSelectingViewController: UIViewController {
     }
 
     
+    
+    
     // if the game is playable
     func gameStateIsTrue(i: Int){
         
@@ -175,6 +173,8 @@ class GameSelectingViewController: UIViewController {
         allButtons[i].isEnabled = false
         allImages[i].alpha = 0.1
     }
+    
+    
     
     
     //using the info from the buttonfunction to activate the right segue
@@ -240,6 +240,10 @@ class GameSelectingViewController: UIViewController {
         }
     }
     
+    
+    
+    
+    //passing on data to the right ViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "GameToOne" {
             let viewController = segue.destination as! oneButtonViewController
@@ -268,8 +272,11 @@ class GameSelectingViewController: UIViewController {
         }
         
     }
-
     
+    
+    
+
+    //this is were the games unwind to.
     @IBAction func UnwindtoGames(segue: UIStoryboardSegue) {
         
     }

@@ -10,17 +10,19 @@ import UIKit
 
 class drawingViewController: UIViewController {
 
-    
+    //all the outlets
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var undoDrawingOutlet: UIBarButtonItem!
     @IBOutlet weak var saveImageOutlet: UIBarButtonItem!
     
+    //all the variables for drawing
     var lastPoint:CGPoint!
     var isSwiping:Bool!
     var red: CGFloat = 0.0
     var green: CGFloat = 0/0
     var blue: CGFloat = 0.0
     
+    //all the variables for datasaving and loading
     var gameFromPrevious = ""
     var difficultyFromPrevious = ""
     var nextDifficulty = ""
@@ -42,7 +44,7 @@ class drawingViewController: UIViewController {
         super.viewDidLoad()
 
     }
-    
+    //the image that has been drawn can be saved in photos by pressing this button
     @IBAction func saveImageAction(_ sender: Any) {
         if self.mainImageView.image == nil{
             return
@@ -50,15 +52,19 @@ class drawingViewController: UIViewController {
         UIImageWriteToSavedPhotosAlbum(self.mainImageView.image!,self, #selector(self.imageAlert(_:withPotentialError:contextInfo:)), nil)
     }
     
+    //this cleans the image if button is pressed
     @IBAction func undoDrawingAction(_ sender: Any) {
         self.mainImageView.image = nil
 
     }
     
+    //this saves the data and starts an unwind segue
     @IBAction func doneButtonAction(_ sender: Any) {
         savingAndGoingBack()
     }
     
+    
+    //when the button of a colour is pressed, change colour. There is a name hidden on the button which provides the colourtitle.
     @IBAction func changeColourAction(_ sender: UIButton) {
         let colourTitle = sender.currentTitle!
         
@@ -77,10 +83,9 @@ class drawingViewController: UIViewController {
         }
     }
     
-    
-    override func touchesBegan(_ touches: Set<UITouch>,
-                               with event: UIEvent?){
-        isSwiping    = false
+    //these monitor the movements of the user
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        isSwiping = false
         if let touch = touches.first{
             lastPoint = touch.location(in: mainImageView)
         }
@@ -123,6 +128,7 @@ class drawingViewController: UIViewController {
         }
     }
     
+    
     func checkingGameCategory(game: String){
         let droomGames = Array(gameData["Categories"]!["Droom het"]!.keys)
         let speelGames = Array(gameData["Categories"]!["Speel het"]!.keys)
@@ -146,6 +152,8 @@ class drawingViewController: UIViewController {
         }
     }
     
+    
+    
     func savingAndGoingBack(){
         self.performSegue(withIdentifier: "BackToStartFromDraw", sender: self)
         updateScore()
@@ -163,6 +171,9 @@ class drawingViewController: UIViewController {
         
         UserDefaults.standard.set(newData, forKey: "Games")
     }
+    
+    
+    
     
     func updateScore(){
         var newScoreValue: Float = 0.0
@@ -188,9 +199,9 @@ class drawingViewController: UIViewController {
 
     
     
-    
+    //this gives an alert when the image is saved succesfully
     func imageAlert(_ image: UIImage, withPotentialError error: NSErrorPointer, contextInfo: UnsafeRawPointer) {
-        let alert =  UIAlertController(title: nil, message: "Image successfully saved to Photos library", preferredStyle: .alert)
+        let alert =  UIAlertController(title: nil, message: "Je foto is succesvol opgeslagen!", preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "OK", style: .default)
         alert.addAction(OKAction)
         

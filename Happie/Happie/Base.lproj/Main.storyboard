@@ -1026,10 +1026,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="z0L-xA-zXC">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7no-xm-DFC">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.99209731817245483" green="0.99250727891921997" blue="0.97570115327835083" alpha="0.13642444349315069" colorSpace="custom" customColorSpace="sRGB"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v0p-Pg-p4E">
                                 <rect key="frame" x="49" y="573" width="277" height="41"/>
                                 <color key="backgroundColor" red="0.86833822729999999" green="0.1721698046" blue="0.25903424619999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1045,15 +1041,19 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l0n-oE-Tag">
-                                <rect key="frame" x="49" y="149" width="277" height="325"/>
+                                <rect key="frame" x="49" y="193" width="277" height="281"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8T-Tc-sBf">
-                                        <rect key="frame" x="23" y="22" width="232" height="281"/>
+                                        <rect key="frame" x="23" y="22" width="232" height="237"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="40"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uKc-QY-Bg8">
+                                        <rect key="frame" x="23" y="22" width="232" height="237"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.99209731820000002" green="0.99250727890000001" blue="0.97570115329999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -1066,19 +1066,15 @@
                         </subviews>
                         <color key="backgroundColor" red="0.94434553384780884" green="0.96870797872543335" blue="0.97286540269851685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="7no-xm-DFC" firstAttribute="leading" secondItem="ahX-cl-csQ" secondAttribute="leading" id="3VQ-a7-1wV"/>
                             <constraint firstItem="v0p-Pg-p4E" firstAttribute="top" secondItem="l0n-oE-Tag" secondAttribute="bottom" constant="99" id="7VY-E8-cdb"/>
                             <constraint firstItem="9IZ-s0-wMX" firstAttribute="top" secondItem="v0p-Pg-p4E" secondAttribute="bottom" constant="53" id="8pr-6A-Ko2"/>
                             <constraint firstItem="z0L-xA-zXC" firstAttribute="top" secondItem="ahX-cl-csQ" secondAttribute="top" id="Mev-el-JUw"/>
                             <constraint firstItem="9IZ-s0-wMX" firstAttribute="top" secondItem="z0L-xA-zXC" secondAttribute="bottom" id="Nwl-qj-YEg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="l0n-oE-Tag" secondAttribute="trailing" constant="33" id="O0u-bp-iAZ"/>
-                            <constraint firstAttribute="trailing" secondItem="7no-xm-DFC" secondAttribute="trailing" id="Quf-93-fVx"/>
                             <constraint firstItem="z0L-xA-zXC" firstAttribute="leading" secondItem="ahX-cl-csQ" secondAttribute="leading" id="UBf-gc-waL"/>
                             <constraint firstItem="l0n-oE-Tag" firstAttribute="top" secondItem="u1O-nM-p1O" secondAttribute="bottom" constant="129" id="VED-Vi-ghy"/>
                             <constraint firstItem="l0n-oE-Tag" firstAttribute="leading" secondItem="ahX-cl-csQ" secondAttribute="leadingMargin" constant="33" id="ZYe-bw-UUL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="v0p-Pg-p4E" secondAttribute="trailing" constant="33" id="b8m-Jy-zbH"/>
-                            <constraint firstItem="7no-xm-DFC" firstAttribute="top" secondItem="ahX-cl-csQ" secondAttribute="top" id="bE7-CH-Cgi"/>
-                            <constraint firstItem="9IZ-s0-wMX" firstAttribute="top" secondItem="7no-xm-DFC" secondAttribute="bottom" id="eiJ-Jq-Trf"/>
                             <constraint firstAttribute="trailing" secondItem="z0L-xA-zXC" secondAttribute="trailing" id="xRB-ma-vdv"/>
                             <constraint firstItem="v0p-Pg-p4E" firstAttribute="leading" secondItem="ahX-cl-csQ" secondAttribute="leadingMargin" constant="33" id="xas-R7-fU8"/>
                         </constraints>
@@ -1098,6 +1094,7 @@
                     <connections>
                         <outlet property="descriptionLabel" destination="s8T-Tc-sBf" id="61B-Rr-K2u"/>
                         <outlet property="descriptionView" destination="l0n-oE-Tag" id="sWG-ys-AbY"/>
+                        <outlet property="photoImage" destination="uKc-QY-Bg8" id="xSU-ck-Zdi"/>
                         <outlet property="saveButton" destination="p52-gm-R0t" id="pL1-ND-LUf"/>
                         <outlet property="startButton" destination="v0p-Pg-p4E" id="Qaq-fU-7YP"/>
                         <segue destination="F8s-ha-Jxc" kind="show" identifier="OneToDraw" id="Qim-pp-d3G"/>
@@ -1136,6 +1133,9 @@
                                         <state key="normal" title="black">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="changeColourAction:" destination="F8s-ha-Jxc" eventType="touchUpInside" id="G0Y-da-I4F"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwB-wO-a1n">
                                         <rect key="frame" x="47" y="0.0" width="47" height="47"/>
@@ -1146,6 +1146,9 @@
                                         <state key="normal" title="blue">
                                             <color key="titleColor" red="0.001327166334" green="0.32755678890000001" blue="0.57669931649999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="changeColourAction:" destination="F8s-ha-Jxc" eventType="touchUpInside" id="I67-2u-reo"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGC-1l-a3y">
                                         <rect key="frame" x="94" y="0.0" width="47" height="47"/>
@@ -1156,6 +1159,9 @@
                                         <state key="normal" title="brown">
                                             <color key="titleColor" red="0.58157640700000002" green="0.32276099920000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="changeColourAction:" destination="F8s-ha-Jxc" eventType="touchUpInside" id="fgb-M2-TbM"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QVC-hs-C4Y">
                                         <rect key="frame" x="141" y="0.0" width="47" height="47"/>
@@ -1166,6 +1172,9 @@
                                         <state key="normal" title="green">
                                             <color key="titleColor" red="0.55490851399999996" green="0.9814668298" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="changeColourAction:" destination="F8s-ha-Jxc" eventType="touchUpInside" id="ZKn-WI-ay3"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M2f-Yy-Wod">
                                         <rect key="frame" x="188" y="0.0" width="47" height="47"/>
@@ -1176,6 +1185,9 @@
                                         <state key="normal" title="yellow">
                                             <color key="titleColor" red="1" green="0.98406440019999997" blue="0.001863333862" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="changeColourAction:" destination="F8s-ha-Jxc" eventType="touchUpInside" id="2uj-Pd-PLX"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DFW-ZI-qcT">
                                         <rect key="frame" x="235" y="0.0" width="47" height="47"/>
@@ -1186,6 +1198,9 @@
                                         <state key="normal" title="orange">
                                             <color key="titleColor" red="1" green="0.57457399369999995" blue="0.0019781978339999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="changeColourAction:" destination="F8s-ha-Jxc" eventType="touchUpInside" id="fjY-LM-chV"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2g5-4Q-WhU">
                                         <rect key="frame" x="282" y="0.0" width="47" height="47"/>
@@ -1196,6 +1211,9 @@
                                         <state key="normal" title="red">
                                             <color key="titleColor" red="0.99936085939999997" green="0.1497559547" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="changeColourAction:" destination="F8s-ha-Jxc" eventType="touchUpInside" id="bhR-dx-No0"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQL-kn-ZJj">
                                         <rect key="frame" x="329" y="0.0" width="47" height="47"/>
@@ -1211,6 +1229,9 @@
                                                 <integer key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="changeColourAction:" destination="F8s-ha-Jxc" eventType="touchUpInside" id="v7g-Qx-q2i"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -2293,11 +2314,11 @@
         <image name="spellenGespeeld" width="219" height="84"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="EjY-yh-UdT"/>
-        <segue reference="mRR-R1-8x9"/>
+        <segue reference="taJ-F4-eEH"/>
+        <segue reference="7EB-RB-1PN"/>
         <segue reference="Nws-Nh-w07"/>
-        <segue reference="y8T-Gj-4Kh"/>
-        <segue reference="bs3-cg-lEL"/>
-        <segue reference="H33-61-tTr"/>
+        <segue reference="Qim-pp-d3G"/>
+        <segue reference="zSv-cY-wsz"/>
+        <segue reference="M6F-Gy-JuN"/>
     </inferredMetricsTieBreakers>
 </document>

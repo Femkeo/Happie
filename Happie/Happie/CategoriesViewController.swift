@@ -10,18 +10,20 @@ import UIKit
 
 class CategoriesViewController: UIViewController {
 
+    //all the outlets
     @IBOutlet var allButtons: [UIButton]!
     @IBOutlet var allViews: [UIView]!
     @IBOutlet var allBackgroundImages: [UIImageView]!
     @IBOutlet var categorieLabels: [UILabel]!
     @IBOutlet var categoryImages: [UIImageView]!
     
-    
+    //all the variables
     var Data = GameData()
     var userData = UserDefaults.standard.dictionary(forKey: "Games") ?? Dictionary()
     var rememberingButtonTitle = ""
 
     
+    //load data and use the saved data to fill labels
     override func viewWillAppear(_ animated: Bool) {
         if UserDefaults.standard.bool(forKey: "launchedBefore") == true {
             Data.creatingGames()
@@ -33,34 +35,18 @@ class CategoriesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        for view in allViews{
-            view.layer.cornerRadius = 15.0
-        }
-        
-        for image in allBackgroundImages{
-            image.layer.cornerRadius = 15.0
-            image.layer.masksToBounds = true
-            
-        }
-        
-        for label in categorieLabels{
-            label.adjustsFontSizeToFitWidth = true
-            label.minimumScaleFactor = 0.2
-            label.numberOfLines = 0;
-        }
-
+        settingDesign()
     }
 
     
+    //remember the title of the button the user presses, so it can be used to load the next ViewController.
     @IBAction func CategorySelectionButtonAction(_ sender: UIButton) {
         rememberingButtonTitle = sender.currentTitle!
-        print(sender.currentTitle!)
-        print("heey")
         performSegue(withIdentifier: "ToShowingCategory", sender: self)
     }
     
     
+    //filling the labels with the correct names of the categories
     func fillingLabels(){
         
         let categoryUserData = userData["Categories"] as! [String: [String: Any]]
@@ -77,8 +63,26 @@ class CategoriesViewController: UIViewController {
         }
     }
     
+    //designing all the buttons etc
+    func settingDesign(){
+        for view in allViews{
+            view.layer.cornerRadius = 15.0
+        }
+        
+        for image in allBackgroundImages{
+            image.layer.cornerRadius = 15.0
+            image.layer.masksToBounds = true
+            
+        }
+        
+        for label in categorieLabels{
+            label.adjustsFontSizeToFitWidth = true
+            label.minimumScaleFactor = 0.2
+            label.numberOfLines = 0;
+        }
+    }
     
-    
+    //pass on the name of the pressed button, so the next ViewController can use that information. 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "ToShowingCategory" {
