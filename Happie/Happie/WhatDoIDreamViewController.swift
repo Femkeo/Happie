@@ -11,7 +11,6 @@ import UIKit
 class WhatDoIDreamViewController: UIViewController {
 
     //all the outlets
-    @IBOutlet weak var passDeficeButton: UIButton!
     @IBOutlet weak var showDreamLabel: UILabel!
     
     //all the variables
@@ -37,21 +36,13 @@ class WhatDoIDreamViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //first load this text
-        showDreamLabel.text = "Druk de telefoon tegen het hoofd van de ander en onthul de droom door op het scherm te drukken"
+        showDreamLabel.text = currentDream
         
         //set design
         showDreamLabel.adjustsFontSizeToFitWidth = true
         showDreamLabel.minimumScaleFactor = 0.2
         showDreamLabel.numberOfLines = 4
     }
-    
-    
-    //this tells the user to pass the device
-    @IBAction func passDeficeButtonAction(_ sender: Any) {
-        passDeficeButton.isEnabled = false
-        showDreamLabel.text = currentDream
-    }
-    
     
     
     @IBAction func doneButtonAction(_ sender: Any) {

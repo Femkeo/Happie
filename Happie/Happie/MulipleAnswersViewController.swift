@@ -157,9 +157,5 @@ class MulipleAnswersViewController: UIViewController {
         newData["userScore"] = newScoreValue
         
         UserDefaults.standard.set(newData, forKey: "SettingsDict")
-        
     }
-    
-
-    
 }

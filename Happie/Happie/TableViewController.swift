@@ -13,6 +13,7 @@ class TableViewController: UITableViewController {
     //all the outlets
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var infoImage: UIImageView!
+    @IBOutlet weak var backButtonOutlet: UIBarButtonItem!
     
     //all the variables for saving data
     var gameFromPrevious = ""
@@ -89,35 +90,39 @@ class TableViewController: UITableViewController {
         cell.textLabel?.text = Reader.pListResult[row]
         if gameFromPrevious == "Wat is mijn karakter"{
             cell.selectionStyle = UITableViewCellSelectionStyle.none
-            print("reached?")
         }
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         currentIndexPath = indexPath
-        print("Here is the indexpath row \(indexPath.row)")
-        provideCorrectInfo()
+        if gameFromPrevious == "Raad mijn droom"{
+            alert()
+        }
         if gameFromPrevious == "Wat is mijn karakter"{
+            provideCorrectInfo()
             if selectedArray.count < 5{
                 if let selectedCell:UITableViewCell = tableView.cellForRow(at: indexPath){
                     selectedCell.backgroundColor = UIColor(red:151/255.0, green:204/255.0, blue:248/255.0, alpha: 1.0)
-                    print("You selected cell #\(indexPath.row)!")
                     selectedArray.append(indexPath.row)
-                    print(selectedArray)
-                    print("hey")
+                    
                 }
+            }
+            if selectedArray.count == 5{
+                backButtonOutlet.title = "Klaar!"
             }
         }
     }
     
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        if backButtonOutlet.title == "Klaar!" && selectedArray.count == 5{
+            backButtonOutlet.title = "Terug"
+        }
         if gameFromPrevious == "Wat is mijn karakter"{
             if let arrayIndex = selectedArray.index(of: indexPath.row){
                 if let selectedCell:UITableViewCell = tableView.cellForRow(at: indexPath){
                     selectedCell.backgroundColor = UIColor(red:253/255.0, green:252/255.0, blue:248/255.0, alpha: 1.0)
                     selectedArray.remove(at: arrayIndex)
-                    print("After appending \(selectedArray)")
                 }
             }
         }
@@ -130,7 +135,6 @@ class TableViewController: UITableViewController {
     func provideCorrectInfo(){
         switch gameFromPrevious{
         case "Raad mijn droom":
-            //data = self.tableData[indexPath.row]
             let indexPath = tableView.indexPathForSelectedRow!
             let currentCell = tableView.cellForRow(at: indexPath)! as UITableViewCell
             dreamToUse = currentCell.textLabel?.text
@@ -142,7 +146,6 @@ class TableViewController: UITableViewController {
                 if let selectedCell:UITableViewCell = tableView.cellForRow(at: currentIndexPath!){
                     selectedCell.backgroundColor = UIColor.clear
                     selectedArray.remove(at: arrayIndex)
-                    print("After removal \(selectedArray)")
                 }
             }
         default: break
@@ -181,20 +184,25 @@ class TableViewController: UITableViewController {
     
     func savingAndGoingBack(){
         self.performSegue(withIdentifier: "BackToGamesFromTable", sender: self)
-        updateScore()
-        var newCounterValue = 0
-        let counter = gameData["Categories"]![gameCategory]![gameFromPrevious]!["counter"]! as! Int
-        newCounterValue = counter + 1
+        if gameFromPrevious == "Wat is mijn karakter"{
+            if backButtonOutlet.title == "Klaar!"{
+                updateScore()
+                var newCounterValue = 0
+                let counter = gameData["Categories"]![gameCategory]![gameFromPrevious]!["counter"]! as! Int
+                newCounterValue = counter + 1
+                
+                let dataToUpdate = GameData()
+                dataToUpdate.creatingGames()
+                var newData = dataToUpdate.result
+                
+                newData["Categories"]![gameCategory]![gameFromPrevious]![nextDifficulty]! = true
+                
+                newData["Categories"]![gameCategory]![gameFromPrevious]!["counter"] = newCounterValue
+                
+                UserDefaults.standard.set(newData, forKey: "Games")
+            }
+            }
         
-        let dataToUpdate = GameData()
-        dataToUpdate.creatingGames()
-        var newData = dataToUpdate.result
-        
-        newData["Categories"]![gameCategory]![gameFromPrevious]![nextDifficulty]! = true
-        
-        newData["Categories"]![gameCategory]![gameFromPrevious]!["counter"] = newCounterValue
-        
-        UserDefaults.standard.set(newData, forKey: "Games")
     }
     
     
@@ -221,6 +229,21 @@ class TableViewController: UITableViewController {
         
     }
     
+    //this makes sure the user does something before continuing by showing an alert and only responding to ok
+    func alert(){
+        let alert =  UIAlertController(title: nil, message: "Doe de iPhone op de ander z'n hoofd en druk dan pas op ok!", preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: .default){
+        UIAlertAction in self.initiateSegue()
+        }
+        alert.addAction(OKAction)
+        self.present(alert, animated: true, completion:  nil)
+    }
+    
+    //this makes sure providecorrectinfo is called after the alert
+    func initiateSegue(){
+        provideCorrectInfo()
+    }
+    
     
     
     //depending on which game, a new ViewController can be connected
@@ -232,8 +255,4 @@ class TableViewController: UITableViewController {
             viewController.difficultyFromPrevious = difficultyFromPrevious
         }
     }
-
-
-    
-
 }

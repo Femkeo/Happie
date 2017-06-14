@@ -16,6 +16,7 @@ class oneButtonViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var descriptionView: UIView!
+    @IBOutlet weak var backButtonOutlet: UIBarButtonItem!
     
     //all the variables
     var difficultyArray = ["easy", "medium", "hard"]
@@ -39,14 +40,16 @@ class oneButtonViewController: UIViewController, UIImagePickerControllerDelegate
         //checking which game or info to load
         checkingGameCategory(game: gameFromPrevious)
         //this fills everything with the data
-        provideCorrectInfo()
         //getting the design right
-        settingDesign()
     }
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        provideCorrectInfo()
+        settingDesign()
+
+
     }
     
     
@@ -70,10 +73,12 @@ class oneButtonViewController: UIViewController, UIImagePickerControllerDelegate
             alert()
             startButton.setTitle("In process", for: .normal)
             startButton.isEnabled = false
+            backButtonOutlet.title = "Klaar!"
         case "Ik heb een droom en ik neem mee" :
             startButton.isHidden = true
             startButton.isEnabled = true
             descriptionLabel.text = "Ik heb een droom en ik neem mee..."
+            backButtonOutlet.title = "Klaar!"
         case "Foto challenge":
             if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
                 let imagePicker = UIImagePickerController()
@@ -81,7 +86,6 @@ class oneButtonViewController: UIViewController, UIImagePickerControllerDelegate
                 imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
                 imagePicker.allowsEditing = false
                 self.present(imagePicker, animated: true, completion: nil)
-                saveButton.tintColor = UIColor.black
             }
         default: break
         }
@@ -105,10 +109,12 @@ class oneButtonViewController: UIViewController, UIImagePickerControllerDelegate
     
     //if the photosgame is played, the photo will be shown, were the text used to be
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
-        photoImage.image = image
-        descriptionLabel.text = ""
+        descriptionLabel.text = " "
         startButton.setTitle("Opnieuw", for: .normal)
         saveButton.isEnabled = true
+        saveButton.tintColor = UIColor.black
+        photoImage.image = image
+        backButtonOutlet.title = "Klaar!"
         self.dismiss(animated: true, completion: nil);
     }
     
@@ -128,7 +134,7 @@ class oneButtonViewController: UIViewController, UIImagePickerControllerDelegate
         case "Kwaliteiten quiz":
             descriptionLabel.text = "Check met deze quiz of je partner-in-crime dezelfde kwaliteiten in jou ziet als dat je dat zelf doet."
             
-        case"Foto challenge" : descriptionLabel.text = "Maak een foto die jouw droom omschrijft. Je mag items gebruiken, mensen, omgevingen, wees creatief!. Vraag eens aan anderen of ze je droom erin herkennen."
+        case"Foto challenge" : descriptionLabel.text = "Maak een foto die jouw droom omschrijft. Je mag items gebruiken, mensen, omgevingen, wees creatief! Vraag eens aan anderen of ze je droom erin herkennen."
         saveButton.tintColor = UIColor.gray
             
         case "Welja, geen nee" :
@@ -179,7 +185,7 @@ class oneButtonViewController: UIViewController, UIImagePickerControllerDelegate
     func savingAndGoingBack(){
         //activate this segue
         self.performSegue(withIdentifier: "BackToStartFromOne", sender: self)
-        if gameFromPrevious == "Foto challenge"{
+        if backButtonOutlet.title == "Klaar!"{
             //get the score that the user has earned from playing.
             updateScore()
             
@@ -205,7 +211,6 @@ class oneButtonViewController: UIViewController, UIImagePickerControllerDelegate
             //save all the above and all the original data in userdefault"Games"
             UserDefaults.standard.set(newData, forKey: "Games")
         }
-        
     }
     
     
