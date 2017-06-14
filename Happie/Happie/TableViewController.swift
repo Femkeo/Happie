@@ -10,17 +10,16 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
+    //all the outlets
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var infoImage: UIImageView!
     
+    //all the variables for saving data
     var gameFromPrevious = ""
     var difficultyFromPrevious = ""
     var nextDifficulty = ""
     var difficultyArray = ["easy", "medium", "hard"]
     var gameCategory = ""
-    
-    
-    var Reader = PropertyReader()
     var dreamToUse: String?
     var selectedArray = [Int]()
     var currentIndexPath: IndexPath?
@@ -28,20 +27,22 @@ class TableViewController: UITableViewController {
     var gameData = UserDefaults.standard.dictionary(forKey: "Games") as! [String : [String : [String : [String : Any]]]]
     var userData = UserDefaults.standard.dictionary(forKey: "SettingsDict") ?? Dictionary()
 
-    
-    
+    //this connects to the model that reads the Plist
+    var Reader = PropertyReader()
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        //this reads the data from the Plist that matches the current game
         Reader.readPropertyLists(startedFromSection: gameFromPrevious)
+        
         checkingDifficulties()
         checkingGameCategory(game: gameFromPrevious)
         
+        //this makes the lable scalable
         infoLabel.adjustsFontSizeToFitWidth = true
         infoLabel.minimumScaleFactor = 0.2
         infoLabel.numberOfLines = 50
 
-        
+        //give the right text depending on the game
         if gameFromPrevious == "Wat is mijn karakter"{
             infoLabel.text = "Ik vind jou:"
             infoImage.image = UIImage(named: "Persoonlijkheid")
@@ -52,27 +53,30 @@ class TableViewController: UITableViewController {
     }
 
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
     }
     
+    
+    
+    
+    //saving when hitting button
     @IBAction func doneButtonAction(_ sender: Any) {
         savingAndGoingBack()
     }
     
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
+    
+    
+    
+    //filling the tableviews
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return Reader.pListResult.count
-
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -120,6 +124,9 @@ class TableViewController: UITableViewController {
     }
     
     
+    
+    
+    
     func provideCorrectInfo(){
         switch gameFromPrevious{
         case "Raad mijn droom":
@@ -143,6 +150,8 @@ class TableViewController: UITableViewController {
         
     }
     
+    
+
     func checkingGameCategory(game: String){
         let droomGames = Array(gameData["Categories"]!["Droom het"]!.keys)
         let speelGames = Array(gameData["Categories"]!["Speel het"]!.keys)
@@ -157,6 +166,8 @@ class TableViewController: UITableViewController {
         }
     }
     
+    
+    
     func checkingDifficulties(){
         let indexOfDifficulty = difficultyArray.index(of: difficultyFromPrevious)
         if indexOfDifficulty == 2{
@@ -165,6 +176,8 @@ class TableViewController: UITableViewController {
             nextDifficulty = difficultyArray[indexOfDifficulty! + 1]
         }
     }
+    
+    
     
     func savingAndGoingBack(){
         self.performSegue(withIdentifier: "BackToGamesFromTable", sender: self)
@@ -183,6 +196,8 @@ class TableViewController: UITableViewController {
         
         UserDefaults.standard.set(newData, forKey: "Games")
     }
+    
+    
     
     func updateScore(){
         var newScoreValue: Float = 0.0
@@ -208,7 +223,7 @@ class TableViewController: UITableViewController {
     
     
     
-    
+    //depending on which game, a new ViewController can be connected
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "WhatDoIDreamSegue" {
             let viewController = segue.destination as! WhatDoIDreamViewController

@@ -70,6 +70,10 @@ class oneButtonViewController: UIViewController, UIImagePickerControllerDelegate
             alert()
             startButton.setTitle("In process", for: .normal)
             startButton.isEnabled = false
+        case "Ik heb een droom en ik neem mee" :
+            startButton.isHidden = true
+            startButton.isEnabled = true
+            descriptionLabel.text = "Ik heb een droom en ik neem mee..."
         case "Foto challenge":
             if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
                 let imagePicker = UIImagePickerController()
@@ -132,8 +136,6 @@ class oneButtonViewController: UIViewController, UIImagePickerControllerDelegate
             
         case "Ik heb een droom en ik neem mee":
             descriptionLabel.text = "Ik ga op reis en ik neem mee, maar dan met dromen! Wat heb jij nodig om jouw droom te kunnen realiseren? "
-            startButton.isEnabled = false
-            startButton.isHidden = true
             
         case "Dilemma's":
             descriptionLabel.text = "Heb je moeite met keuzes maken? Dan heb je deze dilemma’s nog niet gelezen. Oefen hier eens mee, dan worden je eigen dilemma’s makkelijker op te lossen!"
@@ -175,32 +177,35 @@ class oneButtonViewController: UIViewController, UIImagePickerControllerDelegate
     
     //this saved data and activates going back segue.
     func savingAndGoingBack(){
-        //choose this segue
+        //activate this segue
         self.performSegue(withIdentifier: "BackToStartFromOne", sender: self)
-        //get the score that the user has earned from playing.
-        updateScore()
+        if gameFromPrevious == "Foto challenge"{
+            //get the score that the user has earned from playing.
+            updateScore()
+            
+            //add to the counter of the current game
+            var newCounterValue = 0
+            let counter = gameData["Categories"]![gameCategory]![gameFromPrevious]!["counter"]! as! Int
+            newCounterValue = counter + 1
+            
+            //see what data needs to be update and give it a adaptable Dictionary value.
+            let dataToUpdate = GameData()
+            dataToUpdate.creatingGames()
+            var newData = dataToUpdate.result
+            
+            
+            //unluck new category if earned.
+            newData["Categories"]![gameCategory]![gameFromPrevious]![nextDifficulty]! = true
+            
+            
+            //add to saved counter
+            newData["Categories"]![gameCategory]![gameFromPrevious]!["counter"] = newCounterValue
+            
+            
+            //save all the above and all the original data in userdefault"Games"
+            UserDefaults.standard.set(newData, forKey: "Games")
+        }
         
-        //add to the counter of the current game
-        var newCounterValue = 0
-        let counter = gameData["Categories"]![gameCategory]![gameFromPrevious]!["counter"]! as! Int
-        newCounterValue = counter + 1
-        
-        //see what data needs to be update and give it a adaptable Dictionary value.
-        let dataToUpdate = GameData()
-        dataToUpdate.creatingGames()
-        var newData = dataToUpdate.result
-        
-        
-        //unluck new category if earned.
-        newData["Categories"]![gameCategory]![gameFromPrevious]![nextDifficulty]! = true
-        
-        
-        //add to saved counter
-        newData["Categories"]![gameCategory]![gameFromPrevious]!["counter"] = newCounterValue
-        
-        
-        //save all the above and all the original data in userdefault"Games"
-        UserDefaults.standard.set(newData, forKey: "Games")
     }
     
     

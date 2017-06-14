@@ -10,12 +10,12 @@ import UIKit
 
 class MulipleAnswersViewController: UIViewController {
 
-    
+    //all the outlets
     @IBOutlet weak var preferenceLabel: UILabel!
     @IBOutlet weak var ofLabel: UILabel!
     @IBOutlet var buttons: [UIButton]!
     
-    
+    //all the variables
     var gameFromPrevious = ""
     var Reader = PropertyReader()
 
@@ -53,13 +53,14 @@ class MulipleAnswersViewController: UIViewController {
         for i in 0..<buttons.count {
             buttons[i].setTitle(Reader.pListDictResult["NewItem\(number)"]?[i], for: .normal)
         }
-        
+        //making the labels scalable
         preferenceLabel.adjustsFontSizeToFitWidth = true
         preferenceLabel.minimumScaleFactor = 0.2
         preferenceLabel.numberOfLines = 0
 
     }
     
+    //setting new question or setting to done when a answer button is pressed.
     @IBAction func buttonsAction(_ sender: UIButton) {
         if sender.currentTitle == "Klaar!"{
             savingAndGoingBack()
@@ -83,10 +84,9 @@ class MulipleAnswersViewController: UIViewController {
                 }
             }
         }
-        
     }
     
-    
+    //
     func checkingGameCategory(game: String){
         let droomGames = Array(gameData["Categories"]!["Droom het"]!.keys)
         let speelGames = Array(gameData["Categories"]!["Speel het"]!.keys)
@@ -101,6 +101,9 @@ class MulipleAnswersViewController: UIViewController {
         }
     }
     
+    
+    
+    
     func checkingDifficulties(){
         let indexOfDifficulty = difficultyArray.index(of: difficultyFromPrevious)
         if indexOfDifficulty == 2{
@@ -109,6 +112,9 @@ class MulipleAnswersViewController: UIViewController {
             nextDifficulty = difficultyArray[indexOfDifficulty! + 1]
         }
     }
+    
+    
+    
     
     func savingAndGoingBack(){
         self.performSegue(withIdentifier: "BackToGameFromMulitple", sender: self)
@@ -127,6 +133,10 @@ class MulipleAnswersViewController: UIViewController {
         
         UserDefaults.standard.set(newData, forKey: "Games")
     }
+    
+    
+    
+    
     
     func updateScore(){
         var newScoreValue: Float = 0.0

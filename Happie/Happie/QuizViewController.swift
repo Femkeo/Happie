@@ -10,13 +10,14 @@ import UIKit
 
 class QuizViewController: UIViewController {
 
-    
+    //all the outlets
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet var buttons: [UIButton]!
     @IBOutlet weak var countingLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var timerImage: UIImageView!
     
+    //all the variables
     var difficultyArray = ["easy", "medium", "hard"]
     var gameFromPrevious = ""
     var difficultyFromPrevious = ""
@@ -26,7 +27,6 @@ class QuizViewController: UIViewController {
     var QuestionList = [String]()
     var gameData = UserDefaults.standard.dictionary(forKey: "Games") as! [String : [String : [String : [String : Any]]]]
     var userData = UserDefaults.standard.dictionary(forKey: "SettingsDict") ?? Dictionary()
-
 
     
     //these are the QuilitiesQuiz vars
@@ -43,29 +43,22 @@ class QuizViewController: UIViewController {
     var timer = Timer()
     var seconds = 20
     
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         checkingDifficulties()
         checkingGameCategory(game: gameFromPrevious)
         gettingPreviousInfo(startedFromSection: gameFromPrevious)
         showQualityQuestions()
-        
+        settingDesign()
+
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        for i in 0..<buttons.count {
-            buttons[i].layer.cornerRadius = 7.0
-            buttons[i].layer.borderWidth = 2.0
-            buttons[i].layer.borderColor = UIColor.black.cgColor
-        }
-        
-        questionLabel.adjustsFontSizeToFitWidth = true
-        questionLabel.minimumScaleFactor = 0.2
-        questionLabel.numberOfLines = 50
-        
     }
     
+    //this sets the timer and its label for the quickquiz
     func updateTimer() {
         seconds -= 1
         timerLabel.text = "\(seconds)"
@@ -76,6 +69,10 @@ class QuizViewController: UIViewController {
         }
     }
     
+    
+    
+    
+    //this checks the buttons for input and if needed loads new data
     @IBAction func answerAction(_ sender: UIButton) {
         if sender.currentTitle == "Klaar!"{
             savingAndGoingBack()
@@ -85,6 +82,7 @@ class QuizViewController: UIViewController {
         }
         
     }
+    
     
     
     //This happens when the times up or you've answered all the questions
@@ -107,28 +105,37 @@ class QuizViewController: UIViewController {
     
     
    
-    
+    //this shows the questions when the qualitiesquiz is played.
     func showQualityQuestions(){
+        //if this is the second player (awnsers have been filled in) execute this
         if answersFilledIn == true{
+            //check if there are questions left
             if Questions.count > 0 {
+                //get a random question
                 questionNumber = Int(arc4random_uniform(UInt32(Questions.count)))
+                //show the question to the user
                 questionLabel.text = Questions[questionNumber].question
+                //register which question the other user marked as correct
                 CorrectAnswer = Questions[questionNumber].answer
                 
+                //show the answers to the user
                 for i in 0..<buttons.count {
                     buttons[i].setTitle(Questions[questionNumber].answers[i], for: .normal)
                 }
+                //if done, make sure the question can't appear again.
                 Questions.remove(at: questionNumber)
-                
             }else{
-                NSLog("super done")
+                //If the game is finished, make sure the buttons are set to their correct state
                 disabelingButtons()
-                
+                //show the number correct answers to the user
                 questionLabel.text = "Gefeliciteerd! Je hebt \(Reader.pListResult.count - numberOfWrongAnswers) antwoorden in 1 keer goed"
             }
         }else{
+            //if the questions have previously been entered, load questions untill there are as much new saved questions as there are original questions.
             if Reader.pListResult.count > Questions.count {
+                //get a random question
                 questionNumber = Int(arc4random_uniform(UInt32(Reader.pListResult.count)))
+                //if the question is original show
                 if QuestionArray.contains(Reader.pListResult[questionNumber]){
                     showQualityQuestions()
                 }else{
@@ -139,9 +146,11 @@ class QuizViewController: UIViewController {
                 alert()
             }
         }
-        
     }
     
+    
+    
+    //give the buttons a job to match the desire of the game
     func disabelingButtons(){
         for _ in 0..<buttons.count {
             buttons[1].isHidden = true
@@ -180,6 +189,21 @@ class QuizViewController: UIViewController {
             
         default: break
         }
+    }
+    
+    
+    
+    func settingDesign(){
+        for i in 0..<buttons.count {
+            buttons[i].layer.cornerRadius = 7.0
+            buttons[i].layer.borderWidth = 2.0
+            buttons[i].layer.borderColor = UIColor.black.cgColor
+        }
+        
+        questionLabel.adjustsFontSizeToFitWidth = true
+        questionLabel.minimumScaleFactor = 0.2
+        questionLabel.numberOfLines = 50
+
     }
     
     
@@ -224,6 +248,8 @@ class QuizViewController: UIViewController {
         }
     }
     
+    
+    
     func checkingGameCategory(game: String){
         let droomGames = Array(gameData["Categories"]!["Droom het"]!.keys)
         let speelGames = Array(gameData["Categories"]!["Speel het"]!.keys)
@@ -239,6 +265,8 @@ class QuizViewController: UIViewController {
     }
     
     
+    
+    
     func checkingDifficulties(){
         let indexOfDifficulty = difficultyArray.index(of: difficultyFromPrevious)
         if indexOfDifficulty == 2{
@@ -247,6 +275,8 @@ class QuizViewController: UIViewController {
             nextDifficulty = difficultyArray[indexOfDifficulty! + 1]
         }
     }
+    
+    
     
     func savingAndGoingBack(){
         self.performSegue(withIdentifier: "BackToGames", sender: self)
@@ -265,6 +295,8 @@ class QuizViewController: UIViewController {
         
         UserDefaults.standard.set(newData, forKey: "Games")
     }
+    
+    
     
     func updateScore(){
         var newScoreValue: Float = 0.0
@@ -289,6 +321,8 @@ class QuizViewController: UIViewController {
     }
     
     
+    
+    
     func alert(){
         let alert =  UIAlertController(title: nil, message: "Laat nu iemand raden welke antwoorden je hebt gegeven!", preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "OK", style: .default)
@@ -299,9 +333,4 @@ class QuizViewController: UIViewController {
         showQualityQuestions()
         gettingCorrectButtonInfo()
     }
-
-
-    
-
-
 }

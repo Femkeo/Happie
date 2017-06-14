@@ -9,14 +9,13 @@
 import Foundation
 
 class GameData{
- 
+    //create a variable that can be edited and resaved in the user default
     var Games = [String : [String : [String : [String: Any]]]] ()
     
     func creatingGames(){
         //creatingGames
-
+        //if there is no data already saved, take care of that now
         if UserDefaults.standard.dictionary(forKey: "Games") == nil {
-            print("Hey")
             Games = [
                 "Categories" : [
                     "Droom het" : [
@@ -81,13 +80,15 @@ class GameData{
                     ]
                 ]
             ]
+            //safe to userdefault
             UserDefaults.standard.setValue(Games, forKey: "Games")
         }else{
+            //if there is data retrieve fill the variable with it
             Games = UserDefaults.standard.dictionary(forKey: "Games") as! [String : [String : [String : [String : Any]]]]
         }
         
     }
-    
+    //return the variable so others can add new data to it
     var result: [String : [String : [String : [String : Any]]]]{
         get{
             return Games
