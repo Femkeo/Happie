@@ -9,22 +9,22 @@
 import UIKit
 
 class ViewController: UIViewController, ContainerDelegateProtocol {
-    
+    //all the outlets set from userData
     @IBOutlet weak var dreamNameLabel: UILabel!
     @IBOutlet weak var skinImage: UIImageView!
     @IBOutlet weak var hairImage: UIImageView!
     @IBOutlet weak var clothesImage: UIImageView!
     @IBOutlet var images: [UIImageView]!
-    
+    //background outlet
     @IBOutlet weak var avatarBackgroundImage: UIImageView!
-    
+    //functional outlets
     @IBOutlet weak var getStartedButton: UIButton!
     @IBOutlet weak var tutorialView: UIView!
     @IBOutlet weak var resetLaunchButton: UIButton!
-    
+    //progress outlets
     @IBOutlet weak var stepsLabel: UILabel!
     @IBOutlet weak var userProgressOutlet: UIProgressView!
-    
+    //importing the UserData model
     var Data = UserData()
     
     //this checks if the app has run before. If not, it shows a little tutorial view (ScreenViewController)
@@ -38,16 +38,12 @@ class ViewController: UIViewController, ContainerDelegateProtocol {
             }
             
         }
-        
-        let images = [skinImage, hairImage, clothesImage, avatarBackgroundImage]
-        
         //designstuff
-        
         for image in images{
-            image?.layer.cornerRadius = (image?.frame.size.width)!/2
-            image?.clipsToBounds = true
-            image?.layer.borderColor = UIColor.black.cgColor
-            image?.layer.borderWidth = 2
+            image.layer.cornerRadius = (image.frame.size.width)/2
+            image.clipsToBounds = true
+            image.layer.borderColor = UIColor.black.cgColor
+            image.layer.borderWidth = 2
         }
         
         getStartedButton.layer.cornerRadius = 20.0
@@ -75,7 +71,7 @@ class ViewController: UIViewController, ContainerDelegateProtocol {
         }
         userProgressOutlet.progress = UserDefaults.standard.dictionary(forKey: "SettingsDict")?["userScore"] as? Float ?? Float()
         settingScore()
-    }//end viewWillAppear
+    }
     
     
     

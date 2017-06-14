@@ -288,6 +288,7 @@
                         <outletCollection property="images" destination="FiK-7s-B9C" collectionClass="NSMutableArray" id="T8k-me-Bgo"/>
                         <outletCollection property="images" destination="0oM-U4-Ej5" collectionClass="NSMutableArray" id="Xtd-gY-MU9"/>
                         <outletCollection property="images" destination="xNt-vj-Sai" collectionClass="NSMutableArray" id="ArM-Zu-1I5"/>
+                        <outletCollection property="images" destination="ZI7-h9-yb8" collectionClass="NSMutableArray" id="QbX-PM-svL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -2292,11 +2293,11 @@
         <image name="spellenGespeeld" width="219" height="84"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="EjY-yh-UdT"/>
         <segue reference="mRR-R1-8x9"/>
-        <segue reference="wlm-kL-81H"/>
-        <segue reference="H33-61-tTr"/>
+        <segue reference="Nws-Nh-w07"/>
         <segue reference="y8T-Gj-4Kh"/>
         <segue reference="bs3-cg-lEL"/>
-        <segue reference="EjY-yh-UdT"/>
+        <segue reference="H33-61-tTr"/>
     </inferredMetricsTieBreakers>
 </document>
