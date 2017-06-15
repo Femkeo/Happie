@@ -111,7 +111,7 @@ class oneButtonViewController: UIViewController, UIImagePickerControllerDelegate
         descriptionLabel.text = " "
         startButton.setTitle("Opnieuw", for: .normal)
         saveButton.isEnabled = true
-        saveButton.tintColor = UIColor.black
+        saveButton.tintColor = UIColor(red: CGFloat(0.0), green: CGFloat(122.0 / 255.0), blue: CGFloat(1.0), alpha: CGFloat(1.0))
         photoImage.image = image
         backButtonOutlet.title = "Klaar!"
         self.dismiss(animated: true, completion: nil);
