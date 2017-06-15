@@ -171,11 +171,19 @@ class ViewController: UIViewController, ContainerDelegateProtocol {
         userProgressOutlet.tintColor =  UIColor(red: 220/255, green: 45/255, blue: 66/255, alpha: 1.0)
     }
     
+    //Sending info to different ViewControllers
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //Cardpage
+        if segue.identifier == "FirstLaunchContainer"{
+            (segue.destination as! FirstLaunchViewController).delegate = self;
+        }
+    }
+    
     
     //by uncommenting this, you can link this to a button to make the app think it hasnt been launched before
-        @IBAction func Testbutton(_ sender: Any) {
-            UserDefaults.standard.set(false, forKey: "launchedBefore")
-        }
+//        @IBAction func Testbutton(_ sender: Any) {
+//            UserDefaults.standard.set(false, forKey: "launchedBefore")
+//        }
 
 
 }
