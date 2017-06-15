@@ -171,7 +171,7 @@ class ViewController: UIViewController, ContainerDelegateProtocol {
         userProgressOutlet.tintColor =  UIColor(red: 220/255, green: 45/255, blue: 66/255, alpha: 1.0)
     }
     
-    //Sending info to different ViewControllers
+    //Getting info from FirstLaunchContainer
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //Cardpage
         if segue.identifier == "FirstLaunchContainer"{

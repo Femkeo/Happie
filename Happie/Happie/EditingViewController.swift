@@ -61,7 +61,8 @@ class EditingViewController: UIViewController, UITextFieldDelegate {
             dreamTextField.text = "Vul hier je droom in"
             dreamTextField.textColor = UIColor.lightGray
         }else{
-            backButtonOutlet.tintColor = UIColor.blue
+            backButtonOutlet.tintColor = UIColor(red: CGFloat(0.0), green: CGFloat(122.0 / 255.0), blue: CGFloat(1.0), alpha: CGFloat(1.0))
+
             dreamTextField.text = dream
         }
         
