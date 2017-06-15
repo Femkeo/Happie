@@ -51,6 +51,8 @@ class EditingViewController: UIViewController, UITextFieldDelegate {
     
     
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+
         if UserDefaults.standard.bool(forKey: "launchedBefore") == false{
             UserDefaults.standard.set(true, forKey: "launchedBefore")
 
@@ -62,8 +64,10 @@ class EditingViewController: UIViewController, UITextFieldDelegate {
             backButtonOutlet.tintColor = UIColor.blue
             dreamTextField.text = dream
         }
+        
         //this checks (if their is) stored data.
         Data.creatingUserData()
+        
         //if when this viewcontroller was loaded the data hasnt been loaded yet, do that now
         if hair.isEmpty == true{
             UserDefaults.standard.set(Data.result, forKey: "SettingsDict")

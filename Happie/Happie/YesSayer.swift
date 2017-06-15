@@ -11,8 +11,7 @@ import Speech
 
 class YesSayer{
     
-    
-    var seconds = 3600
+    var seconds = 18000
     var timer = Timer()
     var musicPlayer: AVAudioPlayer!
     var firstTime = true
@@ -28,7 +27,6 @@ class YesSayer{
         seconds -= 1
         
         if seconds == 0{
-            print("Het stopt hier!")
             self.audioEngine.stop()
             self.request.endAudio()
             self.recognitionTask?.cancel()
@@ -36,14 +34,12 @@ class YesSayer{
             self.firstTime = true
             
             timer.invalidate()
-            
         }
     }
     
     func countingTillEnding(){
         timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(stopAction), userInfo: nil, repeats: true)
-        
-        
+    
         //        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: stopAction(), userInfo: nil, repeats: true)
         recordAndRecognizeSpeech()
     }
@@ -111,6 +107,7 @@ class YesSayer{
             print(err.debugDescription)
         }
     }
+    
 
     
 }

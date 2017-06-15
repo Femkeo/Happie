@@ -21,11 +21,13 @@ class FirstLaunchViewController: UIViewController {
     @IBOutlet weak var tutorialPageControl: UIPageControl!
     @IBOutlet weak var launchButton: UIButton!
     
+    var delegate:ContainerDelegateProtocol?
+
+    
     //all the variables
     var number = 0
     var textArray = ["First", "Second", "Third"]
     var pageState = "First"
-    var delegate:ContainerDelegateProtocol?
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -97,7 +99,7 @@ class FirstLaunchViewController: UIViewController {
             tutorialPageControl.currentPage = 0
             imageLabel.image = UIImage(named: "flagScene")
             titleLabel.text = "WELKOM IN H'APPIE"
-            informationTextView.text = "Je hebt zojuist de eerste stap richting de realisatie van je droom gezet, gefeliciteerd!"
+            informationTextView.text = "Je hebt de eerste stap gezet om al je dromen uit te laten komen, gefeliciteerd!"
 
             launchButton.isHidden = true
         }
@@ -105,14 +107,14 @@ class FirstLaunchViewController: UIViewController {
             tutorialPageControl.currentPage = 1
             imageLabel.image = UIImage(named: "airBalloonScene")
             titleLabel.text = "DE REIS BEGINT HIER"
-            informationTextView.text = "Je gaat spelletjes spelen en challenges uitvoeren die jou gaan helpen met de reis naar jouw droom"
+            informationTextView.text = "Je gaat nu spelletjes doen om stappen te zetten richting je droom. Leuk toch!"
             launchButton.isHidden = true
         }
         else if pageState == "Third"{
             tutorialPageControl.currentPage = 2
             imageLabel.image = UIImage(named: "superMan")
-            titleLabel.text = "HOE SPEEL JE H'APPIE?"
-            informationTextView.text = "Het enige wat je nu nog moet doen is je allerleukste vriend(in) opzoeken en gewoon lekker beginnen waar je zelf wilt."
+            titleLabel.text = "HOE WERKT H'APPIE?"
+            informationTextView.text = "Speel met je lievelingsmens jullie favoriete spellen!"
             
             //everything about the button
             launchButton.isHidden = false
@@ -127,6 +129,7 @@ class FirstLaunchViewController: UIViewController {
     //this activates the close function on the original viewcontroller page.
     @IBAction func launchButtonAction(_ sender: Any) {
         delegate?.close()
+        print("blaat")
     }
 
 

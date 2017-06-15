@@ -69,7 +69,6 @@ class oneButtonViewController: UIViewController, UIImagePickerControllerDelegate
         case "Dilemma's":
             performSegue(withIdentifier: "OneToMultiple", sender: self)
         case "Welja, geen nee":
-            print("no game is true")
             alert()
             startButton.setTitle("In process", for: .normal)
             startButton.isEnabled = false
@@ -126,28 +125,28 @@ class oneButtonViewController: UIViewController, UIImagePickerControllerDelegate
             descriptionLabel.text = "Denk je dat ‘Wie ben ik’ lastig is? Probeer dan eens ‘Wat droom ik?’, voor wie van een echte uitdagingen houdt!"
             
         case "Wat is mijn karakter":
-            descriptionLabel.text = " Vraag iemand om 5 karaktereigenschappen voor jou uit te kiezen. Kijk ook gerust of dat overeenkomt met wat je zelf zou invullen!"
+            descriptionLabel.text = "Wat is het karakter van de ander? Je hebt maar 5 opties. Choose wisely"
             
         case "Quick quiz":
-            descriptionLabel.text = "Je hebt 20 seconden de tijd om zoveel mogelijk vragen te beantwoorden. Tik tak tik tak, tempo."
+            descriptionLabel.text = "Jullie hebben 20 seconden de tijd om zoveel mogelijk vragen te beantwoorden. Tik tak tik tak, tempo."
             
         case "Kwaliteiten quiz":
-            descriptionLabel.text = "Check met deze quiz of je partner-in-crime dezelfde kwaliteiten in jou ziet als dat je dat zelf doet."
+            descriptionLabel.text = "Vul de vragen in en kijk of jouw partner in crime hetzelfde over je invult. Misschien kun je wel meer dan je denkt!"
             
-        case"Foto challenge" : descriptionLabel.text = "Maak een foto die jouw droom omschrijft. Je mag items gebruiken, mensen, omgevingen, wees creatief! Vraag eens aan anderen of ze je droom erin herkennen."
+        case"Foto challenge" : descriptionLabel.text = "Maak samen een foto die een droom uitbeeld. Gebruik items, mensen, dieren. Alles mag!"
         saveButton.tintColor = UIColor.gray
             
         case "Welja, geen nee" :
-            descriptionLabel.text = "NEEgativiteit staat tussen jou en je droom in. Hoe los je dit op? Door gewoon lekker ja te zeggen, word je blij van. Bonus: Het brengt je droom een beetje (of heel veel) dichterbij. Wil je toch?"
+            descriptionLabel.text = "NEEgativiteit staat tussen jou en je droom in. Hoe los je dit op? Door gewoon lekker ja te zeggen, word je blij van. Bonus: Het brengt je droom een beetje (of heel veel) dichterbij."
             
         case "Ik heb een droom en ik neem mee":
-            descriptionLabel.text = "Ik ga op reis en ik neem mee, maar dan met dromen! Wat heb jij nodig om jouw droom te kunnen realiseren? "
+            descriptionLabel.text = "Ik ga op reis en ik neem mee, maar dan met dromen! Wat heb jij nodig om jouw droom uit te laten komen? "
             
         case "Dilemma's":
-            descriptionLabel.text = "Heb je moeite met keuzes maken? Dan heb je deze dilemma’s nog niet gelezen. Oefen hier eens mee, dan worden je eigen dilemma’s makkelijker op te lossen!"
+            descriptionLabel.text = "Heb je moeite met keuzes maken? Dan heb je deze dilemma’s nog niet gelezen. Oefen hier samen mee, dan worden je eigen dilemma’s makkelijker op te lossen!"
             
         case "Raad de tekening":
-            descriptionLabel.text = "Teken een element dat betrekking heeft op jouw droom. Laat tijdens het tekenen je vrienden raden wat het wordt!"
+            descriptionLabel.text = "Maak een tekening over je droom en laat de ander raden wat het is. Haal de Picasso in je naar boven!"
             
             default: break
         }
@@ -270,7 +269,7 @@ class oneButtonViewController: UIViewController, UIImagePickerControllerDelegate
     //this starts an alart depending on which game is played.
     func alert(){
         Yes.recordAndRecognizeSpeech()
-        let alert =  UIAlertController(title: nil, message: "Je mag nu een minuut geen nee meer zeggen!", preferredStyle: .alert)
+        let alert =  UIAlertController(title: nil, message: "Je mag nu 5 minuten geen nee meer zeggen!", preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "OK", style: .default)
         alert.addAction(OKAction)
         self.present(alert, animated: true)
@@ -302,7 +301,6 @@ class oneButtonViewController: UIViewController, UIImagePickerControllerDelegate
             let viewController = segue.destination as! MulipleAnswersViewController
             viewController.difficultyFromPrevious = difficultyFromPrevious
             viewController.gameFromPrevious = gameFromPrevious
-
         }
         if segue.identifier == "OneToTableView" {
             let viewController = segue.destination as! TableViewController

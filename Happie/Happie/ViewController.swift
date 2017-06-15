@@ -9,21 +9,23 @@
 import UIKit
 
 class ViewController: UIViewController, ContainerDelegateProtocol {
+    
     //all the outlets set from userData
     @IBOutlet weak var dreamNameLabel: UILabel!
     @IBOutlet weak var skinImage: UIImageView!
     @IBOutlet weak var hairImage: UIImageView!
     @IBOutlet weak var clothesImage: UIImageView!
     @IBOutlet var images: [UIImageView]!
+    
     //background outlet
     @IBOutlet weak var avatarBackgroundImage: UIImageView!
     //functional outlets
     @IBOutlet weak var getStartedButton: UIButton!
     @IBOutlet weak var tutorialView: UIView!
-    @IBOutlet weak var resetLaunchButton: UIButton!
     //progress outlets
     @IBOutlet weak var stepsLabel: UILabel!
     @IBOutlet weak var userProgressOutlet: UIProgressView!
+    
     //importing the UserData model
     var Data = UserData()
     
@@ -69,7 +71,6 @@ class ViewController: UIViewController, ContainerDelegateProtocol {
             skinImage.isHidden = true
             clothesImage.isHidden = true
             getStartedButton.isHidden = true
-            resetLaunchButton.isHidden = true
         }
     }
     
@@ -83,8 +84,12 @@ class ViewController: UIViewController, ContainerDelegateProtocol {
         skinImage.isHidden = false
         clothesImage.isHidden = false
         getStartedButton.isHidden = false
-        resetLaunchButton.isHidden = false
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    //this hides the tutorialview
+    func hideStuff(buttonPressed: Bool){
+        self.tutorialView.isHidden = true
     }
     
     
@@ -125,13 +130,13 @@ class ViewController: UIViewController, ContainerDelegateProtocol {
             //let the label give feedback on what the user has already achieved.
             switch startingScore{
             case 25.0 : stepsLabel.text = "Je hebt je eerste stappen gezet! Houd hier in de gaten hoever je al opweg bent!"
-            case 100.0: stepsLabel.text = "Je hebt de 100 stappen bereikt! Dat is hetzelfde twee baantjes trekken in een zwembad!"
-            case 250.0 : stepsLabel.text = "Je hebt 250 stappen gezet! Daarmee kom je zo hoog als de hoogste wolkenkrabber van Spanje!"
-            case 500: stepsLabel.text = "Hoppa, 500 stappen alweer! Knap hoor!"
-            case 1000.0 : stepsLabel.text = "1000 stappen alweer! En zo te zien bruis je nog van de energie!"
-            case 1500.0: stepsLabel.text = "Anderhalve kilometer! poeh poeh!"
-            case 2000.0: stepsLabel.text = "Wauw! 2000 stappen heb je gezet!"
-            case 3000.0: stepsLabel.text = "Je bent echt een expert op het gebied van dromen laten uitkomen!"
+            case 100.0: stepsLabel.text = "Je bent 100 steppen dichterbij je droom!"
+            case 250.0 : stepsLabel.text = "Je bent 250 stappen dichterbij je droom!"
+            case 1000.0 : stepsLabel.text = "Je bent 1000 stappen dichterbij je droom!"
+            case 1500.0: stepsLabel.text = "Je bent 1500 stappen dichterbij je droom!"
+            case 2000.0: stepsLabel.text = "Je bent 2000 stappen dichterbij je droom!"
+            case 3000.0: stepsLabel.text = "Je bent 3000 stappen dichterbij je droom!"
+            case 1000000000000.0: stepsLabel.text = "Je bent echt aan een nieuwe droom beginnen!"
             default: stepsLabel.text = "Je hebt je eerste stappen gezet! houd hier in de gaten hoever je al opweg"
             }
         }

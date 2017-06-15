@@ -14,6 +14,8 @@ class drawingViewController: UIViewController {
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var undoDrawingOutlet: UIBarButtonItem!
     @IBOutlet weak var saveImageOutlet: UIBarButtonItem!
+    @IBOutlet weak var backButtonOutlet: UIBarButtonItem!
+    
     
     //all the variables for drawing
     var lastPoint:CGPoint!
@@ -94,8 +96,9 @@ class drawingViewController: UIViewController {
     
     override func touchesMoved(_ touches: Set<UITouch>,
                                with event: UIEvent?){
-        isSwiping = true;
+        isSwiping = true
         if let touch = touches.first{
+            backButtonOutlet.title = "Klaar!"
             let currentPoint = touch.location(in: mainImageView)
             UIGraphicsBeginImageContext(self.mainImageView.frame.size)
             self.mainImageView.image?.draw(in: CGRect(x: 0, y: 0, width: self.mainImageView.frame.size.width, height: self.mainImageView.frame.size.height))
@@ -156,20 +159,23 @@ class drawingViewController: UIViewController {
     
     func savingAndGoingBack(){
         self.performSegue(withIdentifier: "BackToStartFromDraw", sender: self)
-        updateScore()
-        var newCounterValue = 0
-        let counter = gameData["Categories"]![gameCategory]![gameFromPrevious]!["counter"]! as! Int
-        newCounterValue = counter + 1
-        
-        let dataToUpdate = GameData()
-        dataToUpdate.creatingGames()
-        var newData = dataToUpdate.result
-        
-        newData["Categories"]![gameCategory]![gameFromPrevious]![nextDifficulty]! = true
-        
-        newData["Categories"]![gameCategory]![gameFromPrevious]!["counter"] = newCounterValue
-        
-        UserDefaults.standard.set(newData, forKey: "Games")
+        if backButtonOutlet.title == "Klaar!"{
+            updateScore()
+            var newCounterValue = 0
+            let counter = gameData["Categories"]![gameCategory]![gameFromPrevious]!["counter"]! as! Int
+            newCounterValue = counter + 1
+            
+            let dataToUpdate = GameData()
+            dataToUpdate.creatingGames()
+            var newData = dataToUpdate.result
+            
+            newData["Categories"]![gameCategory]![gameFromPrevious]![nextDifficulty]! = true
+            
+            newData["Categories"]![gameCategory]![gameFromPrevious]!["counter"] = newCounterValue
+            
+            UserDefaults.standard.set(newData, forKey: "Games")
+
+        }
     }
     
     
