@@ -54,7 +54,6 @@ class CategoriesViewController: UIViewController {
         var allCategories = Array(categoryUserData.keys)
         let element = allCategories.remove(at: 1)
         allCategories.insert(element, at: 0)
-        print(allCategories)
         
         for label in 0..<allButtons.count{
             allButtons[label].setTitle(allCategories[label], for: .normal)

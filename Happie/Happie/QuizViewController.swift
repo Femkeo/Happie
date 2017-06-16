@@ -165,7 +165,6 @@ class QuizViewController: UIViewController {
     
     func gettingPreviousInfo(startedFromSection: String){
         Reader.readPropertyLists(startedFromSection: startedFromSection)
-        print("Hi \(startedFromSection)")
         switch startedFromSection{
             
         case "Quick quiz":
@@ -209,7 +208,6 @@ class QuizViewController: UIViewController {
     
     
     func gettingCorrectButtonInfo(){
-        print("hey! \(answersFilledIn)")
 
         switch gameFromPrevious{
         case "Quick quiz":

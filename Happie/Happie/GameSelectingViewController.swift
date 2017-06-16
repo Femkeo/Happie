@@ -129,10 +129,8 @@ class GameSelectingViewController: UIViewController {
             //for each label do something
             for i in 0..<allButtons.count{
                 allButtons[i].setTitle(difficultyArray[difficultyNumber], for: .normal)
-                print(difficultyArray[difficultyNumber])
                 //check if the difficulty that is used is true or false.
                 let checkingBool = userData["Categories"]![PreviousButtonTitle]![categoryArray[categoryNumber]]![difficultyArray[difficultyNumber]]! as! Bool
-                print("\(categoryArray[categoryNumber]).\(difficultyArray[difficultyNumber]) = \(checkingBool)")
                 allGameLabels[categoryNumber].text = categoryArray[categoryNumber]
                 //if its true set it to active
                 if checkingBool == true{
@@ -184,56 +182,44 @@ class GameSelectingViewController: UIViewController {
         switch category{
         case "Raad mijn droom" :
             if checkingCounter == 0{
-                print("checking is 0")
                 performSegue(withIdentifier: "GameToOne", sender: self)
             }else{
-                print("checking is not 0")
                 performSegue(withIdentifier: "GameToTableView", sender: self)
             }
         case "Foto challenge" :
                 performSegue(withIdentifier: "GameToOne", sender: self)
         case "Raad de tekening" :
             if checkingCounter == 0{
-                print("checking is 0")
                 performSegue(withIdentifier: "GameToOne", sender: self)
             }else{
-                print("checking is not 0")
                 performSegue(withIdentifier: "GameToDraw", sender: self)
             }
         case "Dilemma's" :
             if checkingCounter == 0{
-                print("checking is 0")
                 performSegue(withIdentifier: "GameToOne", sender: self)
             }else{
-                print("checking is not 0")
                 performSegue(withIdentifier: "GameToMultiple", sender: self)
             }
         case "Ik heb een droom en ik neem mee":
             performSegue(withIdentifier: "GameToOne", sender: self)
         case "Quick quiz" :
             if checkingCounter == 0{
-                print("checking is 0")
                 performSegue(withIdentifier: "GameToOne", sender: self)
             }else{
-                print("checking is not 0")
                 performSegue(withIdentifier: "GameToQuiz", sender: self)
             }
         case "Welja, geen nee":
             performSegue(withIdentifier: "GameToOne", sender: self)
         case "Kwaliteiten quiz":
             if checkingCounter == 0{
-                print("checking is 0")
                 performSegue(withIdentifier: "GameToOne", sender: self)
             }else{
-                print("checking is not 0")
                 performSegue(withIdentifier: "GameToQuiz", sender: self)
             }
         case "Wat is mijn karakter":
             if checkingCounter == 0{
-                print("checking is 0")
                 performSegue(withIdentifier: "GameToOne", sender: self)
             }else{
-                print("checking is not 0")
                 performSegue(withIdentifier: "GameToTableView", sender: self)
             }
         default: performSegue(withIdentifier: "GameToOne", sender: self)

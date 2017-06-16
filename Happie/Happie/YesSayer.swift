@@ -78,7 +78,6 @@ class YesSayer{
                     }
                     self.recognizingNo(resultString: lastString)
                 }else{
-                    print("WAAAH")
                     self.firstTime = false
                 }
             })

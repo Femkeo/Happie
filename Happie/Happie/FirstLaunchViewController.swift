@@ -129,7 +129,6 @@ class FirstLaunchViewController: UIViewController {
     //this activates the close function on the original viewcontroller page.
     @IBAction func launchButtonAction(_ sender: Any) {
         delegate?.close()
-        print("blaat")
     }
 
 
