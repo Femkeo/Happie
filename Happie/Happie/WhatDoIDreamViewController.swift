@@ -10,9 +10,10 @@ import UIKit
 
 class WhatDoIDreamViewController: UIViewController {
 
-    @IBOutlet weak var passDeficeButton: UIButton!
+    //all the outlets
     @IBOutlet weak var showDreamLabel: UILabel!
     
+    //all the variables
     var currentDream: String?
     var gameFromPrevious = ""
     var difficultyFromPrevious = ""
@@ -20,7 +21,9 @@ class WhatDoIDreamViewController: UIViewController {
     var difficultyArray = ["easy", "medium", "hard"]
     var gameCategory = ""
     
-    var userData = UserDefaults.standard.dictionary(forKey: "Games") as! [String : [String : [String : [String : Any]]]]
+    var gameData = UserDefaults.standard.dictionary(forKey: "Games") as! [String : [String : [String : [String : Any]]]]
+    var userData = UserDefaults.standard.dictionary(forKey: "SettingsDict") ?? Dictionary()
+
     
     
     
@@ -32,27 +35,27 @@ class WhatDoIDreamViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //first load this text
+        showDreamLabel.text = currentDream
         
-        showDreamLabel.text = "Geef de telefoon aan de persoon die zijn of haar droom moet raden en laat die persoon het scherm indrukken wanneer deze hem tegen het hoofd heeft"
-        
+        //set design
         showDreamLabel.adjustsFontSizeToFitWidth = true
         showDreamLabel.minimumScaleFactor = 0.2
         showDreamLabel.numberOfLines = 4
     }
     
-    @IBAction func passDeficeButtonAction(_ sender: Any) {
-        passDeficeButton.isEnabled = false
-        showDreamLabel.text = currentDream
-    }
     
     @IBAction func doneButtonAction(_ sender: Any) {
         savingAndGoingBack()
     }
     
+    
+    
+    
     func checkingGameCategory(game: String){
-        let droomGames = Array(userData["Categories"]!["Droom het"]!.keys)
-        let speelGames = Array(userData["Categories"]!["Speel het"]!.keys)
-        let doeGames = Array(userData["Categories"]!["Doe het"]!.keys)
+        let droomGames = Array(gameData["Categories"]!["Droom het"]!.keys)
+        let speelGames = Array(gameData["Categories"]!["Speel het"]!.keys)
+        let doeGames = Array(gameData["Categories"]!["Doe het"]!.keys)
         
         if droomGames.contains(game){
             gameCategory = "Droom het"
@@ -74,9 +77,9 @@ class WhatDoIDreamViewController: UIViewController {
     
     func savingAndGoingBack(){
         self.performSegue(withIdentifier: "BackToGameFromDream", sender: self)
-        
+        updateScore()
         var newCounterValue = 0
-        let counter = userData["Categories"]![gameCategory]![gameFromPrevious]!["counter"]! as! Int
+        let counter = gameData["Categories"]![gameCategory]![gameFromPrevious]!["counter"]! as! Int
         newCounterValue = counter + 1
         
         let dataToUpdate = GameData()
@@ -88,6 +91,28 @@ class WhatDoIDreamViewController: UIViewController {
         newData["Categories"]![gameCategory]![gameFromPrevious]!["counter"] = newCounterValue
         
         UserDefaults.standard.set(newData, forKey: "Games")
+    }
+    
+    func updateScore(){
+        var newScoreValue: Float = 0.0
+        let score = userData["userScore"] as! Float
+        
+        switch difficultyFromPrevious{
+        case "easy" : newScoreValue = 50
+        case "medium" : newScoreValue = 100
+        case "hard" : newScoreValue = 150
+        default: newScoreValue = 50
+        }
+        newScoreValue += score
+        
+        let dataToUpdate = UserData()
+        dataToUpdate.creatingUserData()
+        var newData = dataToUpdate.result
+        
+        newData["userScore"] = newScoreValue
+        
+        UserDefaults.standard.set(newData, forKey: "SettingsDict")
+        
     }
 
 

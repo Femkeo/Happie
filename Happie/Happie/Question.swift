@@ -8,6 +8,7 @@
 
 import Foundation
 
+//give the qualities quiz something to write to
 struct Question{
     var question: String!
     var answers: [String]!

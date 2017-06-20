@@ -38,7 +38,7 @@ class PropertyReader{
                 as! [String:AnyObject]
         }
         catch{
-            print("Error reading plist: \(error), format: \(format)")
+            plistData = [:]
         }
         if sectionStart == "Dilemmas"{
             dictData = plistData[sectionStart] as! [String : [String]]

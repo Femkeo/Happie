@@ -2,14 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSSpeechRecognitionUsageDescription</key>
-	<string>Recognizes the word no and corrects you</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Listens when you turn something down</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>$(Happie)</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Uses your camera, so can take a picture of a sertain subject</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -30,6 +22,14 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Gebruik je camera om je droom uit te beelden!</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Ik luister of je nog nee zegt!</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>$(Happie)</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Ik herken het woord nee en corrigeer je!</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -41,8 +41,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
