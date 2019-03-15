@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20E124DB223BA599004E6B60 /* HappieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E124DA223BA599004E6B60 /* HappieTests.swift */; };
+		20E124E9223BA5B0004E6B60 /* HappieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E124E8223BA5B0004E6B60 /* HappieUITests.swift */; };
 		EC1FEB5B1EE6D16C000E6485 /* YesSayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1FEB5A1EE6D16C000E6485 /* YesSayer.swift */; };
 		EC7E671A1EE5815D00643E43 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7E67191EE5815C00643E43 /* GameData.swift */; };
 		ECA7ECB01EE6AD58007C05C4 /* oneButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA7ECAF1EE6AD58007C05C4 /* oneButtonViewController.swift */; };
@@ -31,7 +33,30 @@
 		ECF4CBB91EE9790E000A0F61 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF4CBB81EE9790E000A0F61 /* UserData.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		20E124DD223BA599004E6B60 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ECE643DD1EDC4BB700E7E58D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECE643E41EDC4BB700E7E58D;
+			remoteInfo = Happie;
+		};
+		20E124EB223BA5B0004E6B60 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ECE643DD1EDC4BB700E7E58D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECE643E41EDC4BB700E7E58D;
+			remoteInfo = Happie;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		20E124D8223BA599004E6B60 /* HappieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HappieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		20E124DA223BA599004E6B60 /* HappieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HappieTests.swift; sourceTree = "<group>"; };
+		20E124DC223BA599004E6B60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20E124E6223BA5B0004E6B60 /* HappieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HappieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		20E124E8223BA5B0004E6B60 /* HappieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HappieUITests.swift; sourceTree = "<group>"; };
+		20E124EA223BA5B0004E6B60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC1FEB5A1EE6D16C000E6485 /* YesSayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YesSayer.swift; sourceTree = "<group>"; };
 		EC7E67191EE5815C00643E43 /* GameData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
 		ECA7ECAF1EE6AD58007C05C4 /* oneButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = oneButtonViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +84,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		20E124D5223BA599004E6B60 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20E124E3223BA5B0004E6B60 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ECE643E21EDC4BB700E7E58D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -69,6 +108,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20E124D9223BA599004E6B60 /* HappieTests */ = {
+			isa = PBXGroup;
+			children = (
+				20E124DA223BA599004E6B60 /* HappieTests.swift */,
+				20E124DC223BA599004E6B60 /* Info.plist */,
+			);
+			path = HappieTests;
+			sourceTree = "<group>";
+		};
+		20E124E7223BA5B0004E6B60 /* HappieUITests */ = {
+			isa = PBXGroup;
+			children = (
+				20E124E8223BA5B0004E6B60 /* HappieUITests.swift */,
+				20E124EA223BA5B0004E6B60 /* Info.plist */,
+			);
+			path = HappieUITests;
+			sourceTree = "<group>";
+		};
 		ECA7ECAE1EE6AD1A007C05C4 /* gameControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +143,8 @@
 			isa = PBXGroup;
 			children = (
 				ECE643E71EDC4BB700E7E58D /* Happie */,
+				20E124D9223BA599004E6B60 /* HappieTests */,
+				20E124E7223BA5B0004E6B60 /* HappieUITests */,
 				ECE643E61EDC4BB700E7E58D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,6 +153,8 @@
 			isa = PBXGroup;
 			children = (
 				ECE643E51EDC4BB700E7E58D /* Happie.app */,
+				20E124D8223BA599004E6B60 /* HappieTests.xctest */,
+				20E124E6223BA5B0004E6B60 /* HappieUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -102,14 +163,14 @@
 			isa = PBXGroup;
 			children = (
 				ECE643FF1EDC86A700E7E58D /* SupportingFiles */,
-				ECE643FE1EDC868F00E7E58D /* Views */,
-				ECE643FC1EDC866A00E7E58D /* Controller */,
+				ECE643FE1EDC868F00E7E58D /* Storyboards */,
+				ECE643FC1EDC866A00E7E58D /* UI */,
 				ECE643FD1EDC867300E7E58D /* Model */,
 			);
 			path = Happie;
 			sourceTree = "<group>";
 		};
-		ECE643FC1EDC866A00E7E58D /* Controller */ = {
+		ECE643FC1EDC866A00E7E58D /* UI */ = {
 			isa = PBXGroup;
 			children = (
 				ECE643EA1EDC4BB700E7E58D /* ViewController.swift */,
@@ -119,7 +180,7 @@
 				ECE644041EDC884700E7E58D /* GameSelectingViewController.swift */,
 				ECA7ECAE1EE6AD1A007C05C4 /* gameControllers */,
 			);
-			name = Controller;
+			name = UI;
 			sourceTree = "<group>";
 		};
 		ECE643FD1EDC867300E7E58D /* Model */ = {
@@ -134,13 +195,13 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		ECE643FE1EDC868F00E7E58D /* Views */ = {
+		ECE643FE1EDC868F00E7E58D /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
 				ECE643EC1EDC4BB700E7E58D /* Main.storyboard */,
 				ECE643F11EDC4BB700E7E58D /* LaunchScreen.storyboard */,
 			);
-			name = Views;
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 		ECE643FF1EDC86A700E7E58D /* SupportingFiles */ = {
@@ -158,6 +219,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		20E124D7223BA599004E6B60 /* HappieTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20E124DF223BA599004E6B60 /* Build configuration list for PBXNativeTarget "HappieTests" */;
+			buildPhases = (
+				20E124D4223BA599004E6B60 /* Sources */,
+				20E124D5223BA599004E6B60 /* Frameworks */,
+				20E124D6223BA599004E6B60 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				20E124DE223BA599004E6B60 /* PBXTargetDependency */,
+			);
+			name = HappieTests;
+			productName = HappieTests;
+			productReference = 20E124D8223BA599004E6B60 /* HappieTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		20E124E5223BA5B0004E6B60 /* HappieUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20E124ED223BA5B0004E6B60 /* Build configuration list for PBXNativeTarget "HappieUITests" */;
+			buildPhases = (
+				20E124E2223BA5B0004E6B60 /* Sources */,
+				20E124E3223BA5B0004E6B60 /* Frameworks */,
+				20E124E4223BA5B0004E6B60 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				20E124EC223BA5B0004E6B60 /* PBXTargetDependency */,
+			);
+			name = HappieUITests;
+			productName = HappieUITests;
+			productReference = 20E124E6223BA5B0004E6B60 /* HappieUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		ECE643E41EDC4BB700E7E58D /* Happie */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = ECE643F71EDC4BB700E7E58D /* Build configuration list for PBXNativeTarget "Happie" */;
@@ -181,10 +278,22 @@
 		ECE643DD1EDC4BB700E7E58D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = femkeo;
 				TargetAttributes = {
+					20E124D7223BA599004E6B60 = {
+						CreatedOnToolsVersion = 10.1;
+						DevelopmentTeam = UST6SU92LY;
+						ProvisioningStyle = Automatic;
+						TestTargetID = ECE643E41EDC4BB700E7E58D;
+					};
+					20E124E5223BA5B0004E6B60 = {
+						CreatedOnToolsVersion = 10.1;
+						DevelopmentTeam = UST6SU92LY;
+						ProvisioningStyle = Automatic;
+						TestTargetID = ECE643E41EDC4BB700E7E58D;
+					};
 					ECE643E41EDC4BB700E7E58D = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = UST6SU92LY;
@@ -206,11 +315,27 @@
 			projectRoot = "";
 			targets = (
 				ECE643E41EDC4BB700E7E58D /* Happie */,
+				20E124D7223BA599004E6B60 /* HappieTests */,
+				20E124E5223BA5B0004E6B60 /* HappieUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		20E124D6223BA599004E6B60 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20E124E4223BA5B0004E6B60 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ECE643E31EDC4BB700E7E58D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -226,6 +351,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		20E124D4223BA599004E6B60 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20E124DB223BA599004E6B60 /* HappieTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20E124E2223BA5B0004E6B60 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20E124E9223BA5B0004E6B60 /* HappieUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ECE643E11EDC4BB700E7E58D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -252,6 +393,19 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		20E124DE223BA599004E6B60 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECE643E41EDC4BB700E7E58D /* Happie */;
+			targetProxy = 20E124DD223BA599004E6B60 /* PBXContainerItemProxy */;
+		};
+		20E124EC223BA5B0004E6B60 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECE643E41EDC4BB700E7E58D /* Happie */;
+			targetProxy = 20E124EB223BA5B0004E6B60 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		ECE643EC1EDC4BB700E7E58D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -272,6 +426,130 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		20E124E0223BA599004E6B60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UST6SU92LY;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = HappieTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.femkeo.HappieTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Happie.app/Happie";
+			};
+			name = Debug;
+		};
+		20E124E1223BA599004E6B60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UST6SU92LY;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = HappieTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.femkeo.HappieTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Happie.app/Happie";
+			};
+			name = Release;
+		};
+		20E124EE223BA5B0004E6B60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UST6SU92LY;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = HappieUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.femkeo.HappieUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Happie;
+			};
+			name = Debug;
+		};
+		20E124EF223BA5B0004E6B60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UST6SU92LY;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = HappieUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.femkeo.HappieUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Happie;
+			};
+			name = Release;
+		};
 		ECE643F51EDC4BB700E7E58D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -398,6 +676,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		20E124DF223BA599004E6B60 /* Build configuration list for PBXNativeTarget "HappieTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20E124E0223BA599004E6B60 /* Debug */,
+				20E124E1223BA599004E6B60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		20E124ED223BA5B0004E6B60 /* Build configuration list for PBXNativeTarget "HappieUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20E124EE223BA5B0004E6B60 /* Debug */,
+				20E124EF223BA5B0004E6B60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		ECE643E01EDC4BB700E7E58D /* Build configuration list for PBXProject "Happie" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
