@@ -1,15 +1,16 @@
 //
-//  YesSayer.swift
+//  NoMonitor.swift
 //  DreamPrototypeTwo
 //
 //  Created by G.F Offringa on 01-05-17.
+//  Changed name by G.F. Offringa on 03-15-19
 //  Copyright © 2017 femkeo. All rights reserved.
 //
 
 import Foundation
 import Speech
 
-class YesSayer{
+class NoMonitor{
     
     var seconds = 18000
     var timer = Timer()

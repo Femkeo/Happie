@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		20E124DB223BA599004E6B60 /* HappieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E124DA223BA599004E6B60 /* HappieTests.swift */; };
 		20E124E9223BA5B0004E6B60 /* HappieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E124E8223BA5B0004E6B60 /* HappieUITests.swift */; };
-		EC1FEB5B1EE6D16C000E6485 /* YesSayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1FEB5A1EE6D16C000E6485 /* YesSayer.swift */; };
+		EC1FEB5B1EE6D16C000E6485 /* NoMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1FEB5A1EE6D16C000E6485 /* NoMonitor.swift */; };
 		EC7E671A1EE5815D00643E43 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7E67191EE5815C00643E43 /* GameData.swift */; };
 		ECA7ECB01EE6AD58007C05C4 /* oneButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA7ECAF1EE6AD58007C05C4 /* oneButtonViewController.swift */; };
 		ECA7ECB41EE6ADE1007C05C4 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA7ECB31EE6ADE1007C05C4 /* TableViewController.swift */; };
@@ -57,7 +57,7 @@
 		20E124E6223BA5B0004E6B60 /* HappieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HappieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		20E124E8223BA5B0004E6B60 /* HappieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HappieUITests.swift; sourceTree = "<group>"; };
 		20E124EA223BA5B0004E6B60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EC1FEB5A1EE6D16C000E6485 /* YesSayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YesSayer.swift; sourceTree = "<group>"; };
+		EC1FEB5A1EE6D16C000E6485 /* NoMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoMonitor.swift; sourceTree = "<group>"; };
 		EC7E67191EE5815C00643E43 /* GameData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
 		ECA7ECAF1EE6AD58007C05C4 /* oneButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = oneButtonViewController.swift; sourceTree = "<group>"; };
 		ECA7ECB31EE6ADE1007C05C4 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
@@ -190,7 +190,7 @@
 				ECF4CBB81EE9790E000A0F61 /* UserData.swift */,
 				ECC77CCE1EEE99C100DB5450 /* Question.swift */,
 				ECA7ECBB1EE6BB48007C05C4 /* PropertyReader.swift */,
-				EC1FEB5A1EE6D16C000E6485 /* YesSayer.swift */,
+				EC1FEB5A1EE6D16C000E6485 /* NoMonitor.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -386,7 +386,7 @@
 				ECE644031EDC872F00E7E58D /* EditingViewController.swift in Sources */,
 				ECE643E91EDC4BB700E7E58D /* AppDelegate.swift in Sources */,
 				ECA7ECC21EE6C9DB007C05C4 /* WhatDoIDreamViewController.swift in Sources */,
-				EC1FEB5B1EE6D16C000E6485 /* YesSayer.swift in Sources */,
+				EC1FEB5B1EE6D16C000E6485 /* NoMonitor.swift in Sources */,
 				ECA7ECBC1EE6BB48007C05C4 /* PropertyReader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
