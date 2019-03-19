@@ -26,7 +26,7 @@ class QuizViewController: UIViewController {
     var Reader = PropertyReader()
     var QuestionList = [String]()
     var gameData = UserDefaults.standard.dictionary(forKey: "Games") as! [String : [String : [String : [String : Any]]]]
-    var userData = UserDefaults.standard.dictionary(forKey: "SettingsDict") ?? Dictionary()
+    var userData = UserData().creatingUserData()
 
     
     //these are the QuilitiesQuiz vars
@@ -59,7 +59,7 @@ class QuizViewController: UIViewController {
     }
     
     //this sets the timer and its label for the quickquiz
-    func updateTimer() {
+    @objc func updateTimer() {
         seconds -= 1
         timerLabel.text = "\(seconds)"
         
@@ -307,14 +307,8 @@ class QuizViewController: UIViewController {
         default: newScoreValue = 50
         }
         newScoreValue += score
-        
-        let dataToUpdate = UserData()
-        dataToUpdate.creatingUserData()
-        var newData = dataToUpdate.result
-        
-        newData["userScore"] = newScoreValue
-        
-        UserDefaults.standard.set(newData, forKey: "SettingsDict")
+        userData["userScore"] = newScoreValue
+        UserDefaults.standard.set(userData, forKey: "SettingsDict")
         
     }
     

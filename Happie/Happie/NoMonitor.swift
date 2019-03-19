@@ -49,7 +49,7 @@ class NoMonitor{
     
     func recordAndRecognizeSpeech(){
         if firstTime == true{
-            guard let node = audioEngine.inputNode else { return }
+            guard let node = audioEngine.inputNode ?? nil else { return }
             node.installTap(onBus: 0, bufferSize: 1024, format: node.inputFormat(forBus: 0)) {buffer,_ in
                 self.request.append(buffer)
             }
@@ -97,7 +97,7 @@ class NoMonitor{
     func initAudio(){
         let path = Bundle.main.path(forResource: "music", ofType: "mp3")!
         do {
-            try AVAudioSession.sharedInstance().overrideOutputAudioPort(AVAudioSessionPortOverride.speaker)
+            try AVAudioSession.sharedInstance().overrideOutputAudioPort(AVAudioSession.PortOverride.speaker)
             musicPlayer = try AVAudioPlayer(contentsOf: NSURL(string: path)! as URL)
             musicPlayer.prepareToPlay()
             musicPlayer.numberOfLoops = 0

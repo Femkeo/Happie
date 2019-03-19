@@ -7,6 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20227F5A2240E7AE004414C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE643EA1EDC4BB700E7E58D /* ViewController.swift */; };
+		20227F5B2240E7AE004414C1 /* FirstLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE643FA1EDC51BB00E7E58D /* FirstLaunchViewController.swift */; };
+		20227F5C2240E7AE004414C1 /* EditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE644021EDC872F00E7E58D /* EditingViewController.swift */; };
+		20227F5D2240E7AE004414C1 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE644001EDC86ED00E7E58D /* CategoriesViewController.swift */; };
+		20227F5E2240E7AE004414C1 /* GameSelectingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE644041EDC884700E7E58D /* GameSelectingViewController.swift */; };
+		20227F5F2240E7AE004414C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE643EA1EDC4BB700E7E58D /* ViewController.swift */; };
+		20227F602240E7AE004414C1 /* FirstLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE643FA1EDC51BB00E7E58D /* FirstLaunchViewController.swift */; };
+		20227F612240E7AE004414C1 /* EditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE644021EDC872F00E7E58D /* EditingViewController.swift */; };
+		20227F622240E7AE004414C1 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE644001EDC86ED00E7E58D /* CategoriesViewController.swift */; };
+		20227F632240E7AE004414C1 /* GameSelectingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE644041EDC884700E7E58D /* GameSelectingViewController.swift */; };
+		20227F642240E7B1004414C1 /* oneButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA7ECAF1EE6AD58007C05C4 /* oneButtonViewController.swift */; };
+		20227F652240E7B1004414C1 /* drawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA7ECBF1EE6BBEB007C05C4 /* drawingViewController.swift */; };
+		20227F662240E7B1004414C1 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA7ECB31EE6ADE1007C05C4 /* TableViewController.swift */; };
+		20227F672240E7B1004414C1 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA7ECC71EE6CD6B007C05C4 /* QuizViewController.swift */; };
+		20227F682240E7B1004414C1 /* MulipleAnswersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA7ECB71EE6AE2F007C05C4 /* MulipleAnswersViewController.swift */; };
+		20227F692240E7B1004414C1 /* WhatDoIDreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA7ECC11EE6C9DB007C05C4 /* WhatDoIDreamViewController.swift */; };
+		20227F6A2240E7B1004414C1 /* oneButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA7ECAF1EE6AD58007C05C4 /* oneButtonViewController.swift */; };
+		20227F6B2240E7B1004414C1 /* drawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA7ECBF1EE6BBEB007C05C4 /* drawingViewController.swift */; };
+		20227F6C2240E7B1004414C1 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA7ECB31EE6ADE1007C05C4 /* TableViewController.swift */; };
+		20227F6D2240E7B1004414C1 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA7ECC71EE6CD6B007C05C4 /* QuizViewController.swift */; };
+		20227F6E2240E7B1004414C1 /* MulipleAnswersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA7ECB71EE6AE2F007C05C4 /* MulipleAnswersViewController.swift */; };
+		20227F6F2240E7B1004414C1 /* WhatDoIDreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA7ECC11EE6C9DB007C05C4 /* WhatDoIDreamViewController.swift */; };
+		20227F702240ED24004414C1 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7E67191EE5815C00643E43 /* GameData.swift */; };
+		20227F712240ED24004414C1 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF4CBB81EE9790E000A0F61 /* UserData.swift */; };
+		20227F722240ED24004414C1 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC77CCE1EEE99C100DB5450 /* Question.swift */; };
+		20227F732240ED24004414C1 /* PropertyReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA7ECBB1EE6BB48007C05C4 /* PropertyReader.swift */; };
+		20227F742240ED24004414C1 /* NoMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1FEB5A1EE6D16C000E6485 /* NoMonitor.swift */; };
+		20227F752240ED24004414C1 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7E67191EE5815C00643E43 /* GameData.swift */; };
+		20227F762240ED24004414C1 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF4CBB81EE9790E000A0F61 /* UserData.swift */; };
+		20227F772240ED24004414C1 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC77CCE1EEE99C100DB5450 /* Question.swift */; };
+		20227F782240ED24004414C1 /* PropertyReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA7ECBB1EE6BB48007C05C4 /* PropertyReader.swift */; };
+		20227F792240ED24004414C1 /* NoMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1FEB5A1EE6D16C000E6485 /* NoMonitor.swift */; };
 		20E124DB223BA599004E6B60 /* HappieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E124DA223BA599004E6B60 /* HappieTests.swift */; };
 		20E124E9223BA5B0004E6B60 /* HappieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E124E8223BA5B0004E6B60 /* HappieUITests.swift */; };
 		EC1FEB5B1EE6D16C000E6485 /* NoMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1FEB5A1EE6D16C000E6485 /* NoMonitor.swift */; };
@@ -355,7 +387,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20227F772240ED24004414C1 /* Question.swift in Sources */,
+				20227F682240E7B1004414C1 /* MulipleAnswersViewController.swift in Sources */,
+				20227F5A2240E7AE004414C1 /* ViewController.swift in Sources */,
+				20227F762240ED24004414C1 /* UserData.swift in Sources */,
+				20227F672240E7B1004414C1 /* QuizViewController.swift in Sources */,
+				20227F652240E7B1004414C1 /* drawingViewController.swift in Sources */,
+				20227F792240ED24004414C1 /* NoMonitor.swift in Sources */,
+				20227F752240ED24004414C1 /* GameData.swift in Sources */,
+				20227F782240ED24004414C1 /* PropertyReader.swift in Sources */,
+				20227F5C2240E7AE004414C1 /* EditingViewController.swift in Sources */,
+				20227F5B2240E7AE004414C1 /* FirstLaunchViewController.swift in Sources */,
+				20227F5E2240E7AE004414C1 /* GameSelectingViewController.swift in Sources */,
+				20227F642240E7B1004414C1 /* oneButtonViewController.swift in Sources */,
 				20E124DB223BA599004E6B60 /* HappieTests.swift in Sources */,
+				20227F662240E7B1004414C1 /* TableViewController.swift in Sources */,
+				20227F692240E7B1004414C1 /* WhatDoIDreamViewController.swift in Sources */,
+				20227F5D2240E7AE004414C1 /* CategoriesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,7 +411,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20227F722240ED24004414C1 /* Question.swift in Sources */,
+				20227F6E2240E7B1004414C1 /* MulipleAnswersViewController.swift in Sources */,
+				20227F5F2240E7AE004414C1 /* ViewController.swift in Sources */,
+				20227F712240ED24004414C1 /* UserData.swift in Sources */,
+				20227F6D2240E7B1004414C1 /* QuizViewController.swift in Sources */,
+				20227F6B2240E7B1004414C1 /* drawingViewController.swift in Sources */,
+				20227F742240ED24004414C1 /* NoMonitor.swift in Sources */,
+				20227F702240ED24004414C1 /* GameData.swift in Sources */,
+				20227F732240ED24004414C1 /* PropertyReader.swift in Sources */,
+				20227F612240E7AE004414C1 /* EditingViewController.swift in Sources */,
+				20227F602240E7AE004414C1 /* FirstLaunchViewController.swift in Sources */,
+				20227F632240E7AE004414C1 /* GameSelectingViewController.swift in Sources */,
+				20227F6A2240E7B1004414C1 /* oneButtonViewController.swift in Sources */,
 				20E124E9223BA5B0004E6B60 /* HappieUITests.swift in Sources */,
+				20227F6C2240E7B1004414C1 /* TableViewController.swift in Sources */,
+				20227F6F2240E7B1004414C1 /* WhatDoIDreamViewController.swift in Sources */,
+				20227F622240E7AE004414C1 /* CategoriesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -28,11 +28,11 @@ class HappieTests: XCTestCase {
     }
     
     func testIfDreamIsBeginSaved(){
-        userData.Data = [String: Any]()
-        userData.initializeStartingUserData()
-        let result : String = userData.result["hair"] as! String
-        XCTAssertEqual(result,
-                       "Hair1", "The result should be Hair1, but it is \(result)")
+        var data = userData.creatingUserData()
+        data["dream"] = "Default dream"
+        let result = data["dream"] as! String
+        XCTAssertNotEqual(result,
+                       "Vul hier je droom in", "The should should not be default")
     }
     
     func testIfDataIsRetreived(){

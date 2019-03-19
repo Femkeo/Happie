@@ -46,8 +46,8 @@ class FirstLaunchViewController: UIViewController {
         checkingStates()
         
         //Creating the swiping option
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector((self.respond)))
-        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector((self.respond)))
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respond))
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.respond))
         
         swipeRight.direction = .right
         swipeLeft.direction = .left
@@ -62,16 +62,16 @@ class FirstLaunchViewController: UIViewController {
     
 
     //Creating the swiping function
-    func respond(gesture: UIGestureRecognizer){
+    @objc func respond(gesture: UIGestureRecognizer){
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             switch swipeGesture.direction{
-            case UISwipeGestureRecognizerDirection.right:
+            case UISwipeGestureRecognizer.Direction.right:
                 if number > 0 {
                     arrayMaker(state: false)
                     pageState = textArray[number]
                     checkingStates()
                 }
-            case UISwipeGestureRecognizerDirection.left:
+            case UISwipeGestureRecognizer.Direction.left:
                 if number < 2 {
                     arrayMaker(state: true)
                     pageState = textArray[number]

@@ -26,7 +26,7 @@ class TableViewController: UITableViewController {
     var currentIndexPath: IndexPath?
     
     var gameData = UserDefaults.standard.dictionary(forKey: "Games") as! [String : [String : [String : [String : Any]]]]
-    var userData = UserDefaults.standard.dictionary(forKey: "SettingsDict") ?? Dictionary()
+    var userData = UserData().creatingUserData()
 
     //this connects to the model that reads the Plist
     var Reader = PropertyReader()
@@ -89,7 +89,7 @@ class TableViewController: UITableViewController {
         let row = indexPath.row
         cell.textLabel?.text = Reader.pListResult[row]
         if gameFromPrevious == "Wat is mijn karakter"{
-            cell.selectionStyle = UITableViewCellSelectionStyle.none
+            cell.selectionStyle = UITableViewCell.SelectionStyle.none
         }
         return cell
     }
@@ -218,14 +218,8 @@ class TableViewController: UITableViewController {
         default: newScoreValue = 50
         }
         newScoreValue += score
-        
-        let dataToUpdate = UserData()
-        dataToUpdate.creatingUserData()
-        var newData = dataToUpdate.result
-        
-        newData["userScore"] = newScoreValue
-        
-        UserDefaults.standard.set(newData, forKey: "SettingsDict")
+        userData["userScore"] = newScoreValue
+        UserDefaults.standard.set(userData, forKey: "SettingsDict")
         
     }
     

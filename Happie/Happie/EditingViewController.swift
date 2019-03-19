@@ -29,7 +29,7 @@ class EditingViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var skinLeftButtonOutlet: UIButton!
     
     //import the UserData model
-    var Data = UserData()
+    var userData = UserData().creatingUserData()
     
     //these groupes make sure the user can create new data for their avatar
     var skinArray = ["Skin1","Skin2","Skin3", "Skin4", "Skin5"]
@@ -67,11 +67,9 @@ class EditingViewController: UIViewController, UITextFieldDelegate {
         }
         
         //this checks (if their is) stored data.
-        Data.creatingUserData()
-        
         //if when this viewcontroller was loaded the data hasnt been loaded yet, do that now
         if hair.isEmpty == true{
-            UserDefaults.standard.set(Data.result, forKey: "SettingsDict")
+            UserDefaults.standard.set(userData, forKey: "SettingsDict")
             hair = UserDefaults.standard.dictionary(forKey: "SettingsDict")?["hair"] as? String ?? String()
             skin = UserDefaults.standard.dictionary(forKey: "SettingsDict")?["skin"] as? String ?? String()
             clothes = UserDefaults.standard.dictionary(forKey: "SettingsDict")?["clothes"] as? String ?? String()

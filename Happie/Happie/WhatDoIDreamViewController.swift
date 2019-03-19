@@ -22,7 +22,7 @@ class WhatDoIDreamViewController: UIViewController {
     var gameCategory = ""
     
     var gameData = UserDefaults.standard.dictionary(forKey: "Games") as! [String : [String : [String : [String : Any]]]]
-    var userData = UserDefaults.standard.dictionary(forKey: "SettingsDict") ?? Dictionary()
+    var userData = UserData().creatingUserData()
 
     
     
@@ -104,14 +104,8 @@ class WhatDoIDreamViewController: UIViewController {
         default: newScoreValue = 50
         }
         newScoreValue += score
-        
-        let dataToUpdate = UserData()
-        dataToUpdate.creatingUserData()
-        var newData = dataToUpdate.result
-        
-        newData["userScore"] = newScoreValue
-        
-        UserDefaults.standard.set(newData, forKey: "SettingsDict")
+        userData["userScore"] = newScoreValue
+        UserDefaults.standard.set(userData, forKey: "SettingsDict")
         
     }
 

@@ -29,7 +29,7 @@ class oneButtonViewController: UIViewController, UIImagePickerControllerDelegate
     
     //this collects the saved data from userdefaults
     var gameData = UserDefaults.standard.dictionary(forKey: "Games") as! [String : [String : [String : [String : Any]]]]
-    var userData = UserDefaults.standard.dictionary(forKey: "SettingsDict") ?? Dictionary()
+    var userData = UserData().creatingUserData()
     //this import a model to keep track of someone saying "Nee"
     var Yes = NoMonitor()
 
@@ -79,10 +79,10 @@ class oneButtonViewController: UIViewController, UIImagePickerControllerDelegate
             descriptionLabel.text = "Ik heb een droom en ik neem mee..."
             backButtonOutlet.title = "Klaar!"
         case "Foto challenge":
-            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
                 let imagePicker = UIImagePickerController()
                 imagePicker.delegate = self
-                imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
+                imagePicker.sourceType = UIImagePickerController.SourceType.camera;
                 imagePicker.allowsEditing = false
                 self.present(imagePicker, animated: true, completion: nil)
             }
@@ -229,17 +229,8 @@ class oneButtonViewController: UIViewController, UIImagePickerControllerDelegate
         default: newScoreValue = 50
         }
         newScoreValue += score
-        
-        //collect the data that needs to be update and make it adaptable
-        let dataToUpdate = UserData()
-        dataToUpdate.creatingUserData()
-        var newData = dataToUpdate.result
-        
-        //add the new data where the score is saved
-        newData["userScore"] = newScoreValue
-        
-        //resave the data to the userdefault "SettingsDict"
-        UserDefaults.standard.set(newData, forKey: "SettingsDict")
+        userData["userScore"] = newScoreValue
+        UserDefaults.standard.set(userData, forKey: "SettingsDict")
         
     }
     
@@ -275,7 +266,7 @@ class oneButtonViewController: UIViewController, UIImagePickerControllerDelegate
         self.present(alert, animated: true)
     }
     
-    func imageAlert(_ image: UIImage, withPotentialError error: NSErrorPointer, contextInfo: UnsafeRawPointer){
+    @objc func imageAlert(_ image: UIImage, withPotentialError error: NSErrorPointer, contextInfo: UnsafeRawPointer){
         let alert =  UIAlertController(title: nil, message: "Je foto is succesvol opgeslagen!", preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "OK", style: .default)
         alert.addAction(OKAction)

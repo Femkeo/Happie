@@ -32,7 +32,7 @@ class drawingViewController: UIViewController {
     var gameCategory = ""
     
     var gameData = UserDefaults.standard.dictionary(forKey: "Games") as! [String : [String : [String : [String : Any]]]]
-    var userData = UserDefaults.standard.dictionary(forKey: "SettingsDict") ?? Dictionary()
+    var userData = UserData().creatingUserData()
 
     
     
@@ -192,21 +192,15 @@ class drawingViewController: UIViewController {
         default: newScoreValue = 50
         }
         newScoreValue += score
-        
-        let dataToUpdate = UserData()
-        dataToUpdate.creatingUserData()
-        var newData = dataToUpdate.result
-        
-        newData["userScore"] = newScoreValue
-        
-        UserDefaults.standard.set(newData, forKey: "SettingsDict")
+        userData["userScore"] = newScoreValue
+        UserDefaults.standard.set(userData, forKey: "SettingsDict")
         
     }
 
     
     
     //this gives an alert when the image is saved succesfully
-    func imageAlert(_ image: UIImage, withPotentialError error: NSErrorPointer, contextInfo: UnsafeRawPointer) {
+    @objc func imageAlert(_ image: UIImage, withPotentialError error: NSErrorPointer, contextInfo: UnsafeRawPointer) {
         let alert =  UIAlertController(title: nil, message: "Je foto is succesvol opgeslagen!", preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "OK", style: .default)
         alert.addAction(OKAction)

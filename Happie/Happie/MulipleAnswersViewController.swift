@@ -25,7 +25,7 @@ class MulipleAnswersViewController: UIViewController {
     var difficultyArray = ["easy", "medium", "hard"]
     
     var gameData = UserDefaults.standard.dictionary(forKey: "Games") as! [String : [String : [String : [String : Any]]]]
-    var userData = UserDefaults.standard.dictionary(forKey: "SettingsDict") ?? Dictionary()
+    var userData = UserData().creatingUserData()
 
     var number = 0
     
@@ -44,7 +44,7 @@ class MulipleAnswersViewController: UIViewController {
             button.layer.borderWidth = 2.0
             button.layer.borderColor = UIColor.black.cgColor
             button.titleLabel?.textAlignment = NSTextAlignment.center
-            button.contentEdgeInsets = UIEdgeInsetsMake(5,5,5,5)
+            button.contentEdgeInsets = UIEdgeInsets(top: 5,left: 5,bottom: 5,right: 5)
         }
         
         
@@ -149,13 +149,7 @@ class MulipleAnswersViewController: UIViewController {
         default: newScoreValue = 50
         }
         newScoreValue += score
-        
-        let dataToUpdate = UserData()
-        dataToUpdate.creatingUserData()
-        var newData = dataToUpdate.result
-        
-        newData["userScore"] = newScoreValue
-        
-        UserDefaults.standard.set(newData, forKey: "SettingsDict")
+        userData["userScore"] = newScoreValue
+        UserDefaults.standard.set(userData, forKey: "SettingsDict")
     }
 }
