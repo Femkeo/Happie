@@ -9,21 +9,21 @@
 import SwiftUI
 
 struct LevelView: View {
-    @Binding var isNavigationBarHidden: Bool
+    @EnvironmentObject var navBarPrefs: NavBarPreferences
     
     var body: some View {
         ZStack {
             Color(Colors.orangeLightest)
             Text("Hello, World!")
         }
-        .onAppear{
-            self.isNavigationBarHidden = false
+        .onAppear {
+            self.navBarPrefs.navBarIsHidden = false
         }
     }
 }
 
 struct LevelView_Previews: PreviewProvider {
     static var previews: some View {
-        LevelView(isNavigationBarHidden: .constant(false))
+        LevelView()
     }
 }

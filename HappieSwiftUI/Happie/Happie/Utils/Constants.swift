@@ -9,6 +9,10 @@
 import Foundation
 import SwiftUI
 
+class NavBarPreferences: ObservableObject {
+    @Published var navBarIsHidden = true
+}
+
 struct userDefaultKeys {
     static let currentUser = "CurrentUser"
     static let launchedBefore = "wasLaunchedBefore"

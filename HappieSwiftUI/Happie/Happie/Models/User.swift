@@ -9,10 +9,12 @@
 import Foundation
 
 struct User: Codable {
+    var dream: String?
     var avatar: Avatar?
     var progress: Progress?
 
-    init(avatar: Avatar?, progress: Progress?) {
+    init(dream: String?, avatar: Avatar?, progress: Progress?) {
+        self.dream = dream
         self.avatar = avatar
         self.progress = progress
     }

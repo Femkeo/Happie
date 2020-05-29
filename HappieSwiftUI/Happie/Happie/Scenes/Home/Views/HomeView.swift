@@ -9,15 +9,15 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State var isNavigationBarHidden = true
+    @EnvironmentObject var navBarPrefs: NavBarPreferences
 
     var body: some View {
         NavigationView{
-            AvatarView(navBarIsHidden: $isNavigationBarHidden)
+            AvatarView()
                 .navigationBarTitle(Text(""),displayMode: .inline)
-                .navigationBarHidden(isNavigationBarHidden)
+                .navigationBarHidden(navBarPrefs.navBarIsHidden)
                 .onAppear{
-                    self.isNavigationBarHidden = true
+                    self.navBarPrefs.navBarIsHidden = true
             }
         }
     }

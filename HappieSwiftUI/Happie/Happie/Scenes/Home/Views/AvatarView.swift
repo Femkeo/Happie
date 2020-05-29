@@ -9,12 +9,11 @@
 import SwiftUI
 
 struct AvatarView: View {
-    @Binding var navBarIsHidden: Bool
     var body: some View {
         ZStack {
             Color(Colors.orangeDarkest)
             NavigationLink(
-            destination: LevelView(isNavigationBarHidden: $navBarIsHidden)) {
+            destination: LevelView()) {
                 VStack{
                     Image(images.airBalloonScene)
                         .resizable()
@@ -31,6 +30,6 @@ struct AvatarView: View {
 
 struct AvatarView_Previews: PreviewProvider {
     static var previews: some View {
-        AvatarView(navBarIsHidden: .constant(false))
+        AvatarView()
     }
 }
