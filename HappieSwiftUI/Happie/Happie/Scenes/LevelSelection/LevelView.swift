@@ -10,7 +10,7 @@ import SwiftUI
 
 struct LevelView: View {
     @EnvironmentObject var navBarPrefs: NavBarPreferences
-    
+
     var body: some View {
         ZStack {
             Color(Colors.orangeLightest)
@@ -25,5 +25,6 @@ struct LevelView: View {
 struct LevelView_Previews: PreviewProvider {
     static var previews: some View {
         LevelView()
+            .environmentObject(NavBarPreferences())
     }
 }
